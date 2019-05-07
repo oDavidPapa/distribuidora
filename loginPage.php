@@ -26,7 +26,7 @@
 
                         </form>
 
-                        <div class="card-footer bg-white mt-4 pt-0">
+                        <div class="card-footer bg-white mt-3 pt-2">
                             <p class="text-muted">Não possui conta?</p>
                             <a class="card-link mt-0" href="#"> Cadastrar </a>
                         </div>
