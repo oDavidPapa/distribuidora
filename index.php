@@ -1,75 +1,48 @@
-<!doctype html>
-<html lang="pt-br">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<?php include_once './include/cabecalho.php'; ?>
 
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="node_modules/bootstrap/compiler/bootstrap.css">
-        <link rel="stylesheet" href="node_modules/bootstrap/compiler/style.css">
+<body>
 
-        <title>Distribuidora</title>
-    </head>
-    <body>
+    <?php include_once './include/menuNavegacao.php'; ?>
 
-        <nav class="navbar navbar-expand-lg navbar-fixed-top navbar-dark bg-gradient-primary">
-            <div class="container">
-                <a class="navbar-brand h1 mb-0" href="#" >Distribuidora</a> <!--mb-0 : Margem 0 do componente -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">
-                    <span class="navbar-toggler-icon"></span>
-                </button> 
+    <div class="row mb-5 pt-4 mr-2 ml-2">
 
-                <div class="collapse navbar-collapse" id="navbarSite">
-                    <ul class="navbar-nav mr-auto"> <!--mr-auto :  alinha a margem right da UL automáticamente -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"> Representantes </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"> Marcas </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"> Produtos </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"> Contatos </a>
-                        </li>
-                    </ul>
-
-                    <ul class="navbar-nav ml-auto"> <!--ml-auto :  alinha a margem left da UL automáticamente --> 
-                        <li class ="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="navDrop">Social</a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Facebook</a>
-                                <a class="dropdown-item" href="#">Twitter</a>
-                                <a class="dropdown-item" href="#">Instagram</a>
-                            </div>
-                        </li>
-
-                    </ul>
-
-                    <form class="form-inline ml-5">
-                        <input class="form-control ml-5 mr-2" type="search" placeholder="Buscar...">
-                        <button class="btn btn-dark" type="subtmit">Ok</button>
-                    </form>
-
-                    <div class="collapse navbar-collapse" id="navbarSite">
-                        <ul class="navbar-nav ml-auto"> <!--mr-auto :  alinha a margem right da UL automáticamente -->
-                            <li class="nav-item">
-                                <a class="nav-link mb-0"  href="#"> Carrinho </a>
-                            </li>
-                        </ul>
-                    </div>
-
+        <div class="col-sm-4">
+            <div class="card ">
+                <div class="card-body">
+                    <h4 class="card-title">Aliquam elementum</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">varius ac.</h6>
+                    <p class="card-text">Aliquam elementum eleifend tellus, sit amet faucibus dui varius ac.</p>
+                    <a class="card-link" href="#">Entrar</a>
                 </div>
-        </nav>
+            </div>
+        </div>
 
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="node_modules/jquery/dist/jquery.js"></script>
-        <script src="node_modules/popper.js/dist/umd/popper.js"></script>
-        <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+        <div class="col-sm-4">
+            <div class="card ">
+                <div class="card-body">
+                    <h4 class="card-title">Aliquam elementum</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">varius ac.</h6>
+                    <p class="card-text">Aliquam elementum eleifend tellus, sit amet faucibus dui varius ac.</p>
+                    <a class="card-link" href="#">Entrar</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card ">
+               <!-- <img class="card-img-top" src="imagens/vinho.png"> -->
+                <div class="card-body">
+                    <h4 class="card-title">Aliquam elementum</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">varius ac.</h6>
+                    <p class="card-text">Aliquam elementum eleifend tellus, sit amet faucibus dui varius ac.</p>
+                    <a class="card-link" href="#">Entrar</a>
+                   
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 
 
-    </body>
+</body>
 </html>
