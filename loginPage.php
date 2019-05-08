@@ -8,7 +8,7 @@
 
         <div class="row mb-5 pt-5">
 
-            <div class=" col-md-5 offset-md-3">
+            <div class=" col-md-5 offset-md-4">
                 <div class="card text-center">
                     <div class="card-body">
                         <h5 class="card-title text-muted mb-4">Identificação do Usuário</h5>
@@ -30,7 +30,7 @@
                                 <label class="form-check-label mb-3 small" for="manterConectado">Manter-me conectado</label>
                             </div>
                             <p class="text-muted">Não possui conta?</p>
-                            <a class="card-link mt-0" href="#"> Cadastrar </a>
+                            <a class="card-link mt-0" href="./cadastroCliente.php"> Cadastrar </a>
 
                         </div>
                     </div>
@@ -39,8 +39,8 @@
 
         </div>
 
-
+    </div>
 
 </body>
 
- <?php include_once './include/rodape.php'; ?>
+<?php include_once './include/rodape.php'; ?>

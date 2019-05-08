@@ -2,7 +2,7 @@
 <?php
     class Conexao{
         private $servidor_mysql ='localhost';
-        private $nome_banco ='livraria';
+        private $nome_banco ='distribuidora';
         private $usuario ='root';
         private $senha = '';
         private $con;

@@ -1,4 +1,4 @@
- <nav class="navbar navbar-expand-lg navbar-fixed-top navbar-dark bg-gradient-primary">
+ <nav class="navbar navbar-expand-lg navbar-dark bg-gradient-primary">
         <div class="container">
             <a class="navbar-brand h1 mb-0" href="../distribuidora/index.php" >Distribuidora</a> <!--mb-0 : Margem 0 do componente -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">
