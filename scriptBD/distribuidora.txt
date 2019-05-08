@@ -29,11 +29,10 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `bebidas` (
-  `idBebida` int(11) NOT NULL,
+  `idBebida` varchar(7) NOT NULL,
   `nome` varchar(50) NOT NULL,
   `volume` varchar(7) NOT NULL,
   `preco` float NOT NULL,
-  `peso` float NOT NULL,
   `quantidadeEstoque` int(11) NOT NULL,
   `fabricante` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -49,8 +48,7 @@ CREATE TABLE `cidades` (
   `cidade` varchar(30) NOT NULL,
   `estado` varchar(2) NOT NULL,
   `CEP` varchar(9) NOT NULL,
-  `valorFretePeso` float NOT NULL,
-  `peso` float NOT NULL
+  `valorFreteVolume` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -91,7 +89,7 @@ CREATE TABLE `compras` (
 
 CREATE TABLE `itensCompra` (
   `idItem` int(11) NOT NULL,
-  `idBebida` int(11) NOT NULL,
+  `idBebida` varchar(7) NOT NULL,
   `quantidade` int(11) NOT NULL,
   `valorItem` float NOT NULL,
   `idCompra` int(11) NOT NULL
