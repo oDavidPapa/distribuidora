@@ -47,4 +47,3 @@
 </body>
 
 <?php include_once './include/rodape.php';?>
-</html>
