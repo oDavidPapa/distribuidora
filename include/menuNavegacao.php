@@ -40,7 +40,7 @@
                 -->
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item ml-1">
-                        <a class="nav-link" href="../distribuidora/loginPage.php"> Login </a>
+                        <a class="nav-link" href="./loginPage.php"> Login </a>
                     </li>
                 </ul>
                 <div class="collapse navbar-collapse" id="navbarSite">
