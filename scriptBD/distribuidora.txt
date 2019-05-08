@@ -89,7 +89,7 @@ CREATE TABLE `compras` (
 -- Estrutura da tabela `itens_compra`
 --
 
-CREATE TABLE `itens_compra` (
+CREATE TABLE `itensCompra` (
   `idItem` int(11) NOT NULL,
   `idBebida` int(11) NOT NULL,
   `quantidade` int(11) NOT NULL,
@@ -128,7 +128,7 @@ ALTER TABLE `compras`
 --
 -- Indexes for table `itens_compra`
 --
-ALTER TABLE `itens_compra`
+ALTER TABLE `itensCompra`
   ADD PRIMARY KEY (`idItem`);
 
 --
@@ -156,7 +156,7 @@ ALTER TABLE `compras`
 --
 -- AUTO_INCREMENT for table `itens_compra`
 --
-ALTER TABLE `itens_compra`
+ALTER TABLE `itensCompra`
   MODIFY `idItem` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
