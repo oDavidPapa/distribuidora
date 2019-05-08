@@ -1,10 +1,6 @@
-<?php
-
-?>
-
  <nav class="navbar navbar-expand-lg navbar-fixed-top navbar-dark bg-gradient-primary">
         <div class="container">
-            <a class="navbar-brand h1 mb-0" href="#" >Distribuidora</a> <!--mb-0 : Margem 0 do componente -->
+            <a class="navbar-brand h1 mb-0" href="../distribuidora/index.php" >Distribuidora</a> <!--mb-0 : Margem 0 do componente -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">
                 <span class="navbar-toggler-icon"></span>
             </button> 
@@ -44,7 +40,7 @@
                 -->
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item ml-1">
-                        <a class="nav-link" href="#"> Login </a>
+                        <a class="nav-link" href="../distribuidora/loginPage.php"> Login </a>
                     </li>
                 </ul>
                 <div class="collapse navbar-collapse" id="navbarSite">

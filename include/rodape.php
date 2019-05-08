@@ -1,8 +1,5 @@
-<?php
+<footer class="page-footer bg-gradient-primary fixed-bottom"> 
+    <p class="text-center text-white"> ©Copyright - 2019<br>Universidade Federal do Espírito Santo - UFES </p>
+</footer>
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
+</html>
