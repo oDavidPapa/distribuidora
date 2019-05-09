@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php include_once './include/cabecalho.php'; ?>
 
 
@@ -14,26 +15,26 @@
                     <div class="card-body ">
                         <h5 class="card-title text-muted mt-3 mb-3">Cadastro de Usuário</h5>
 
-                        <form action="./loginPage.php"> 
+                        <form action="controler/controlerCliente.php" method="POST"> 
                             <h6 class="text-muted text-justify"><label for="email">Dados Pessoais:</label></h6>
                             <div class="form-group mb-3">
-                                <input type="text" class="form-control" id="nomeInput" name="nome" placeholder="Nome">
+                                <input type="text" required class="form-control" id="nomeInput" name="nome" placeholder="Nome">
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" class="form-control" id="cnpjInput" name="cnpj" placeholder="CNPJ">
+                                <input type="text" required class="form-control" id="cnpjInput" name="cnpj" placeholder="CNPJ">
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" class="form-control" id="enderecoInput" name="endereco" placeholder="Endereço. Ex: Rua, número, bairro">
+                                <input type="text" required class="form-control" id="enderecoInput" name="endereco" placeholder="Endereço. Ex: Rua, número, bairro">
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" class="form-control" id="cidadeInput" name="cidade" placeholder="Cidade">
+                                <input type="text" required class="form-control" id="cidadeInput" name="cidade" placeholder="Cidade">
                             </div>
                             <h6 class="text-muted text-justify"><label for="email">Informações site:</label></h6>
                             <div class="form-group mb-3">
-                                <input type="text" class="form-control" id="emailInput" name="email" placeholder="E-mail">
+                                <input type="email" required class="form-control" id="emailInput" name="email" placeholder="E-mail">
                             </div>
                             <div class="form-group mb-3">
-                                <input type="password" class="form-control" id="senhaInput" name="senha" placeholder="Senha">
+                                <input type="password" required class="form-control" id="senhaInput" name="senha" placeholder="Senha">
                             </div>
                               <div class="form-group mb-3">
                                   <input type="hidden" class="form-control" value="1" name="opcao">
@@ -49,12 +50,5 @@
 
     </div>
 </body>
-
-
-
-
-
-
-
 
 <?php include_once './include/rodape.php'; ?>
