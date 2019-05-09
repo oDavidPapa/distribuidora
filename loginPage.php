@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php include_once './include/cabecalho.php'; ?>
 
 <body>
@@ -12,14 +13,14 @@
                 <div class="card text-center">
                     <div class="card-body">
                         <h5 class="card-title text-muted mb-4">Identificação do Usuário</h5>
-                        <form>
+                        <form action="controler/efetuarLogin.php" method="POST">
                             <div class="form-group mb-3">
                                 <!--<h6 class="text-muted"><label for="email">Email</label></h6> -->
-                                <input type="text" class="form-control" id="emailInput" placeholder="E-mail">
+                                <input type="email" required class="form-control" id="emailInput" placeholder="E-mail" name="email">
                             </div>
                             <div class="form-group mb-3">
                                 <!--<h6 class="text-muted"><label for="formGroupExampleInput2">Senha</label></h6>-->
-                                <input type="password" class="form-control" id="senhaInput" placeholder="Senha">
+                                <input type="password" required class="form-control" id="senhaInput" placeholder="Senha" name="senha">
                             </div>
                             <button class="btn texte-center btn-primary btn-lg btn-block pt-0 pb-0" href='#'>Entrar</button>
                         </form>
