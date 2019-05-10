@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <?php include_once './include/cabecalho.php'; ?>
-
+<?php include_once 'dao/CidadeDAO.php'; ?>
 
 <body>
-
     <?php include_once './include/menuNavegacao.php'; ?>
 
     <div class="container">
@@ -27,7 +26,19 @@
                                 <input type="text" required class="form-control" id="enderecoInput" name="endereco" placeholder="Endereço. Ex: Rua, número, bairro">
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" required class="form-control" id="cidadeInput" name="cidade" placeholder="Cidade">
+                                <select required class="form-control" id="cidadeInput">
+                                    <?php
+                                    $cidades = array();
+                                    $cidadeDAO = new CidadeDAO();
+                                    $cidades = $cidadeDAO->getCidades();
+                                    
+                                    foreach ($cidades as $cidade) {
+                                        echo"<option  name='cidade' placeholder='Cidade' value='.$cidade->idCidade.'>$cidade->cidade</option>";
+                                    }
+                                    ?>                            
+                                    
+                                </select>
+                                
                             </div>
                             <h6 class="text-muted text-justify"><label for="email">Informações site:</label></h6>
                             <div class="form-group mb-3">
