@@ -1,6 +1,6 @@
 <?php
     include_once('Conexao.php');
-    include_once('../model/Cidade.php');
+    require __DIR__ .'/../model/Cidade.php';
     
     class CidadeDAO{
         
