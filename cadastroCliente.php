@@ -26,14 +26,14 @@
                                 <input type="text" required class="form-control" id="enderecoInput" name="endereco" placeholder="Endereço. Ex: Rua, número, bairro">
                             </div>
                             <div class="form-group mb-3">
-                                <select required class="form-control" id="cidadeInput">
+                                <select required class="form-control" id="cidadeInput" name="cidade">
                                     <?php
                                     $cidades = array();
                                     $cidadeDAO = new CidadeDAO();
                                     $cidades = $cidadeDAO->getCidades();
                                     
                                     foreach ($cidades as $cidade) {
-                                        echo"<option  name='cidade' placeholder='Cidade' value='.$cidade->idCidade.'>$cidade->cidade</option>";
+                                        echo"<option  name='cidade' value='$cidade->idCidade'>$cidade->cidade</option>";
                                     }
                                     ?>                            
                                     
