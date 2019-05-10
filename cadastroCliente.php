@@ -1,6 +1,5 @@
-<!DOCTYPE html>
 <?php include_once './include/cabecalho.php'; ?>
-<?php include_once 'dao/CidadeDAO.php'; ?>
+<?php include_once './dao/CidadeDAO.php';?>
 
 <body>
     <?php include_once './include/menuNavegacao.php'; ?>
