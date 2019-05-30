@@ -1,6 +1,5 @@
 <?php
 
-include_once('./ItemCompra.php');
 
 class Compra {
 

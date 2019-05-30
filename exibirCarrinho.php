@@ -3,16 +3,10 @@
 <?php
 include_once './model/ItemCompra.php';
 include_once './dao/BebidaDAO.php';
+include_once './model/Bebida.php';
 
 session_start();
-
-
-
 ?>
-
-
-
-
 
 <body>
 
@@ -23,10 +17,11 @@ session_start();
         include_once './include/menuNavegacao.php';
     }
 
-    if (!isset($_SESSION['carrinho'])) {
+    if (isset($_REQUEST['status']) && $_REQUEST['status'] == 1) {
         echo "<h1 class='text-center text-muted'>CARRINHO VAZIO!</h1>";
         echo "<br><h2 class='text-center'>Realize Compras!</h1>";
     } else {
+        
         $carrinho = $_SESSION['carrinho'];
         ?>
 
@@ -44,28 +39,28 @@ session_start();
                 </thead>
                 <tbody>
 
-    <?php
-    $bebidaDAO = new BebidaDAO();
-    $cont = 1;
-    foreach ($carrinho as $item) {
-        $bebida = $bebidaDAO->getBebida($item->getIdBebida());
+                    <?php
+                    $bebidaDAO = new BebidaDAO();
+                    $cont = 1;
+                    foreach ($carrinho as $item) {
+                        $bebida = $bebidaDAO->getBebida($item->getIdBebida());
 
-        echo "<tr align='center'>";
-        echo "<td>" . $cont . "</td>";
-        echo "<td>" . $bebida->nome .", ".$bebida->volume . "</td>";
-        echo "<td><input type='text' nome='quantidade' size='2'>&nbsp;&nbsp;<a href='./controler/carrinhoControler.php?idItem=".$item->getIdItem()."&idBebida=" . $bebida->idBebida . "'><img src='imagens/confirmarPequeno.png'></a>&nbsp "
-        . "<a href='#" . $bebida->idBebida . "'><img src='imagens/editarMenor.png'></a>";
-        echo "<td>(Qdt x Preço do Produto)</td>";
-        echo "<td><a href='#" . $bebida->idBebida . "'><img src='imagens/excluir.png'></a></td>";
-        echo "</tr>";
-        $cont ++;
-    }
-    ?>
+                        echo "<tr align='center'>";
+                        echo "<td>" . $cont . "</td>";
+                        echo "<td>" . $bebida->nome . ", " . $bebida->volume . "</td>";
+                        echo "<td><input type='text' nome='quantidade' size='2'>&nbsp;&nbsp;<a href='./controler/carrinhoControler.php?idItem=" . $item->getIdItem() . "&idBebida=" . $bebida->idBebida . "'><img src='imagens/confirmarPequeno.png'></a>&nbsp "
+                        . "<a href='#" . $bebida->idBebida . "'><img src='imagens/editarMenor.png'></a>";
+                        echo "<td>(Qdt x Preço do Produto)</td>";
+                        echo"<td><a href='controler/carrinhoControler.php?opcao=2&index=" . ($cont - 1) . "'><img src='imagens/excluir.png'></a></td>";
+                        echo "</tr>";
+                        $cont ++;
+                    }
+                    ?>
                 </tbody>
             </table>
         </div>
         <!--FILTRANDO OS DADOS NA TABELA-->
-<?php } ?>
+    <?php } ?>
 </body>
 
 

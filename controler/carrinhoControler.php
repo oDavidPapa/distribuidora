@@ -1,10 +1,8 @@
 <?php
 
-include_once('../model/ItemCompra.php');
-include_once('../dao/ItemCompraDAO.php');
-include_once ('../dao/CompraDAO.php');
-include_once('../model/Compra.php');
-include_once('../dao/BebidaDAO.php');
+include_once '../dao/BebidaDAO.php';
+include_once '../model/Bebida.php';
+include_once '../model/ItemCompra.php';
 
 
 $opcao = $_REQUEST['opcao'];
@@ -39,9 +37,23 @@ if ($opcao == 2) {
     $indice = $_REQUEST['index'];
     $carrinho = $_SESSION['carrinho'];
 
+
     unset($carrinho[$indice]);
+    sort($carrinho);
 
     $_SESSION['carrinho'] = $carrinho;
-    header("Location:../exibirCarrinho.php");
+    
+
+    header("Location:carrinhoControler.php?opcao=3");
+}
+
+if ($opcao == 3) {
+    session_start();
+
+    if (!isset($_SESSION['carrinho']) || sizeof($_SESSION['carrinho']) == 0) {
+        header("Location:../exibirCarrinho.php?status=1");
+    } else {
+        header("Location:../exibirCarrinho.php");
+    }
 }
 ?>

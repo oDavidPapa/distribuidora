@@ -25,7 +25,7 @@
 
         /*continuar com getCliente*/
         private function getCliente($id){
-           $sql = $this->con->prepare("SELECT cnpj from clientes where idCliente = :id");
+           $sql = $this->con->prepare("SELECT cnpj FROM clientes WHERE idCliente = :id");
            $sql->bindValue(':id', $id);
            $sql->execute();
            

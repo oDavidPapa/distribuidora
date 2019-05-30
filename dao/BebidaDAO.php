@@ -1,8 +1,7 @@
 <?php
     
     include_once('Conexao.php');
-    include_once('../distribuidora/model/Bebida.php');
-
+    include_once '../distribuidora/model/Bebida.php';
     class BebidaDAO{
         
         private $con;
