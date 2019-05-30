@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php include_once './include/cabecalho.php'; ?>
 
 <body>
@@ -13,34 +12,34 @@
                 <div class="card text-center">
                     <div class="card-body">
                         <h5 class="card-title text-muted mb-4">Identificação do Usuário</h5>
-                        <form action="controler/efetuarLogin.php" method="POST">
+                        <form action="controler/loginControler.php">
                             <div class="form-group mb-3">
                                 <!--<h6 class="text-muted"><label for="email">Email</label></h6> -->
-                                <input type="email" required class="form-control" id="emailInput" placeholder="E-mail" name="email">
+                                <input type="text" class="form-control" required="" name="login" id="emailInput" placeholder="E-mail">
                             </div>
                             <div class="form-group mb-3">
                                 <!--<h6 class="text-muted"><label for="formGroupExampleInput2">Senha</label></h6>-->
-                                <input type="password" required class="form-control" id="senhaInput" placeholder="Senha" name="senha">
+                                <input type="password" class="form-control" required="" name="senha" id="senhaInput" placeholder="Senha">
                             </div>
-                            <button class="btn texte-center btn-primary btn-lg btn-block pt-0 pb-0" href='#'>Entrar</button>
+                            <input type="submit" value="Entrar" class="btn texte-center btn-primary btn-lg btn-block pt-0 pb-0">
+
+                            <div class="card-footer bg-white mt-3 pt-2">
+                                <div class="form-check form-check-inline offset-md-1">
+                                    <input class="form-check-input small" type="checkbox" id="manterConectado" name="manterConectado">
+                                    <label class="form-check-label mb-3 small" for="manterConectado">Manter-me conectado</label>
+                                </div>
+                                <p class="text-muted">Não possui conta?</p>
+                                <a class="card-link mt-0" href="./formCadastroCliente.php"> Cadastrar </a>
                         </form>
 
-                        <div class="card-footer bg-white mt-3 pt-2">
-                            <div class="form-check form-check-inline offset-md-1">
-                                <input class="form-check-input small" type="checkbox" id="manterConectado" value="sim">
-                                <label class="form-check-label mb-3 small" for="manterConectado">Manter-me conectado</label>
-                            </div>
-                            <p class="text-muted">Não possui conta?</p>
-                            <a class="card-link mt-0" href="./cadastroCliente.php"> Cadastrar </a>
-
-                        </div>
                     </div>
                 </div>
             </div>
-
         </div>
 
     </div>
+
+</div>
 
 </body>
 
