@@ -2,8 +2,8 @@
     
     include_once('Conexao.php');
     /* mudar o diretorio, tirar a palavra classes*/
-    include_once('../classes/Compra.php');
-    include_once('../classes/ItemCompra.php');
+    include_once('../model/Compra.php');
+    include_once('../model/ItemCompra.php');
     
     class CompraDAO{
         
@@ -49,7 +49,7 @@
         }
 
         public function getCompra($id){
-            $rs = $this->con->prepare("SELECT * FROM compras where idCompra = :id");
+            $rs = $this->con->prepare("SELECT * FROM compras WHERE idCompra = :id");
             
             $sql->bindValue(':id', $id);
             $sql->execute();

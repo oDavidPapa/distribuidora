@@ -1,63 +1,69 @@
 <?php
-    include_once('ItemCompra.php');
-class Compra{
-        private $idCompra;
-        private $cliente;
-        private $dataCompra;
-        private $valorTotal;
-        private $valorFrete;
-        private ItemCompra $itens[];
-        
 
-        public function Compra(){
-            $this->dataCompra = date();
-            $this->itens = array();
-        }
+include_once('./ItemCompra.php');
 
-        public function getIdCompra(){
-            return $this->idCompra;
-        }
-        public function setIdCompra($pIdCompra){
-            $this->idCompra = $pIdCompra; 
-        }
+class Compra {
 
-        public function getCliente(){
-            return $this->cliente;
-        }
-        public function setCliente($pCliente){
-            $this->cliente = $pCliente; 
-        }
+    private $idCompra;
+    private $cliente;
+    private $dataCompra;
+    private $valorTotal;
+    private $valorFrete;
+    private $itens;
 
-        public function getDataCompra(){
-            return $this->dataCompra;
-        }
-        public function setDataCompra($pDataCompra){
-            $this->dataCompra =$pDataCompra; 
-        }
-
-        public function getValorTotal(){
-            return $this->valorTotal;
-        }
-        public function setValorTotal($pValTotComp){
-            $this->valorTotal = $pValTotComp; 
-        }
-
-        public function getValorFrete(){
-            return $this->valFrete;
-        }
-        public function setValorFrete($pValFrete){
-            $this->valFrete = $pValFrete; 
-        }
-
-        public function addItem($item){
-            $itens[] = $item;
-
-        }
-
-        public function calcularFrete($pVolume, $pPrecoVol){
-            $this->valFrete = $pVolume * $pPrecoVol;
-        }
-    
+    public function Compra() {
+        $this->dataCompra = date();
+        $this->itens = array();
     }
+
+    function getIdCompra() {
+        return $this->idCompra;
+    }
+
+    function getCliente() {
+        return $this->cliente;
+    }
+
+    function getDataCompra() {
+        return $this->dataCompra;
+    }
+
+    function getValorTotal() {
+        return $this->valorTotal;
+    }
+
+    function getValorFrete() {
+        return $this->valorFrete;
+    }
+
+    function setIdCompra($idCompra) {
+        $this->idCompra = $idCompra;
+    }
+
+    function setCliente($cliente) {
+        $this->cliente = $cliente;
+    }
+
+    function setDataCompra($dataCompra) {
+        $this->dataCompra = $dataCompra;
+    }
+
+    function setValorTotal($valorTotal) {
+        $this->valorTotal = $valorTotal;
+    }
+
+    function setValorFrete($valorFrete) {
+        $this->valorFrete = $valorFrete;
+    }
+
+    public function addItem($item) {
+        $itens[] = $item;
+    }
+
+    public function calcularFrete($pVolume, $pPrecoVol) {
+        $this->valFrete = $pVolume * $pPrecoVol;
+    }
+
+}
 
 ?>
