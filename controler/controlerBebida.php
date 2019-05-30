@@ -1,63 +1,76 @@
 <?php
+
+include_once('../model/Bebida.php');
+include_once('../dao/BebidaDAO.php');
+
+$opcao = (int) $_REQUEST["opcao"];
+
+if ($opcao == 1) {
+
+    $idBebida = $_REQUEST['idBebida'];
+    $nome = $_REQUEST['nome'];
+    $volume = $_REQUEST['volume'];
+    $preco = $_REQUEST['preco'];
+    $fabricante = $_REQUEST['fabricante'];
+    $quantidadeEstoque = $_REQUEST['quantidadeEstoque'];
+
+    $bebida = new Bebida($idBebida, $nome, $volume, $preco, $quantidadeEstoque, $fabricante);
+    $bebidaDao = new BebidaDAO();
+
+    //var_dump($bebida);
+    $bebidaDao->incluirBebida($bebida);
+    echo "CADASTROU, VAI VER NO BANCO";
+
+    header("Location:../controler/controlerBebida.php?opcao=2");
+}
+
+if ($opcao == 2) {
+    $bebidaDao = new BebidaDAO();
+
+    $lista = $bebidaDao->getBebidas();
+
+    session_start();
+    $_SESSION['bebidas'] = $lista;
+
+    header("Location:../exibirBebidas.php");
+}
+
+if ($opcao == 3) {
+    $id = $_REQUEST["idBebida"];
+
+    $bebidaDao = new BebidaDAO();
+    $bebida = $bebidaDao->getBebida($id);
+
+    session_start();
+
+    $_SESSION['bebida'] = $bebida;
+
+    header("Location: ../formAtualizaBebida.php");
+}
+
+if ($opcao == 4) {
+    $id = $_REQUEST["idBebida"];
+
+    $bebidaDao = new BebidaDAO();
+    $bebidaDao->excluirBebida($id);
+
+    header("Location:../controler/controlerBebida.php?opcao=2");
+}
+
+if ($opcao == 5) {
+    $idBebida = $_REQUEST['idBebida'];
+    $nome = $_REQUEST['nome'];
+    $volume = $_REQUEST['volume'];
+    $preco = $_REQUEST['preco'];
+    $fabricante = $_REQUEST['fabricante'];
+    $quantidadeEstoque = $_REQUEST['quantidadeEstoque'];
     
-    include_once('../model/Bebida.php');
-    include_once('../dao/BebidaDAO.inc');
+    $bebida = new Bebida($idBebida, $nome, $volume, $preco, $quantidadeEstoque, $fabricante);
+    //var_dump($bebida);
+    $bebidaDao = new BebidaDAO();
+    $bebidaDao->atualizarBebida($bebida);
+    
 
-    $opcao = (int)$_REQUEST["popcao"];
-
-    if($opcao == 1){
-        $bebida = new Bebida($_REQUEST["pIdBebida"],$_REQUEST["pNome"],$_REQUEST["pVolume"],(float)$_REQUEST["pPreco"],(int)$_REQUEST["pQdeEstoque"],$_REQUEST["pFabricante"]);
-
-        $bebidaDao = new BebidaDAO();
-
-        //var_dump($bebida);
-        $bebidaDao->incluirBebida($bebida);
-        
-
-        header("Location:../controler/controlerBebida.php?popcao=2");
-    }
-
-    if($opcao == 2){
-        $bebidaDao = new BebidaDAO();
-
-        $lista = $bebidaDao->getBebidas();
-
-        session_start();
-        $_SESSION['bebidas'] = $lista;
-        
-        header("Location:../exibirBebidas.php");
-    }
-
-    if($opcao == 3){
-        $id = $_REQUEST["idBebida"];   
-
-        $bebidaDao = new BebidaDAO();
-        $bebida = $bebidaDao->getBebida($id);
-
-        session_start();
-
-        $_SESSION['bebida'] = $bebida;
-
-        header("Location: ../formBebidaAtualizar.php");
-    }
-
-    if($opcao == 4){
-        $id = $_REQUEST["idBebida"];
-
-        $bebidaDao = new BebidaDAO();
-        $bebidaDao->excluirBebida($id);
-
-        header("Location:../controler/controlerBebida.php?popcao=2");
-    }
-
-    if($opcao == 5){
-        $bebida = new Bebida($_REQUEST["pIdBebida"],$_REQUEST["pNome"],$_REQUEST["pVolume"],(float)$_REQUEST["pPreco"],(int)$_REQUEST["pQdeEstoque"], $_REQUEST["pFabricante"]);
-        $bebida->setIdBebida($_REQUEST["pIdBebida"]);
-        
-        $bebidaDao = new BebidaDAO();
-        $bebidaDao->atualizarBebida($bebida);
-
-        header("Location:../controler/controlerBebida.php?popcao=2");
-    }
-
+    header("Location:../controler/controlerBebida.php?opcao=2");
+}
 ?>    

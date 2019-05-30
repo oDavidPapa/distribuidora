@@ -7,55 +7,63 @@
         private $quantidadeEstoque;
         private $fabricante;
 
-        public function Bebida($pIdBebida, $pNome, $pVolume, $pPreco, $pQdeEstoque, $pFabricante){
-            $this->idBebida = $pIdBebida;
-            $this->nome = $pNome;
-            $this->volume = $pVolume;
-            $this->preco = $pPreco;
-            $this->quantidadeEstoque = $pQdeEstoque;
-            $this->fabricante = $pFabricante;
+       public function Bebida($idBebida, $nome, $volume, $preco, $quantidadeEstoque, $fabricante) {
+            $this->idBebida = $idBebida;
+            $this->nome = $nome;
+            $this->volume = $volume;
+            $this->preco = $preco;
+            $this->quantidadeEstoque = $quantidadeEstoque;
+            $this->fabricante = $fabricante;
         }
 
-        public function getIdBebida(){
+        function getIdBebida() {
             return $this->idBebida;
         }
-        public function setIdBebida($pIdBebida){
-            $this->idBebida = $pIdBebida;
-        }
 
-        public function getNome(){
+        function getNome() {
             return $this->nome;
         }
-        public function setNome($pNome){
-            $this->nome = $pNome;
-        }
 
-        public function getVolume(){
+        function getVolume() {
             return $this->volume;
         }
-        public function setVolume($pVolume){
-            $this->volume = $pVolume;
-        }
 
-        public function getPreco(){
+        function getPreco() {
             return $this->preco;
         }
-        public function setPreco($pPreco){
-            $this->preco = $pPreco;
-        }
 
-        public function getQdeEstoque(){
+        function getQuantidadeEstoque() {
             return $this->quantidadeEstoque;
         }
-        public function setQdeEstoque($pQdeEstoque){
-            $this->quantidadeEstoque = $pQdeEstoque;
-        }
 
-        public function getFabricante(){
+        function getFabricante() {
             return $this->fabricante;
         }
-        public function setFabricante($pFabricante){
-            $this->fabricante = $pFabricante;
+
+
+        function setIdBebida($idBebida) {
+            $this->idBebida = $idBebida;
         }
+
+        function setNome($nome) {
+            $this->nome = $nome;
+        }
+
+        function setVolume($volume) {
+            $this->volume = $volume;
+        }
+
+        function setPreco($preco) {
+            $this->preco = $preco;
+        }
+
+        function setQuantidadeEstoque($quantidadeEstoque) {
+            $this->quantidadeEstoque = $quantidadeEstoque;
+        }
+
+        function setFabricante($fabricante) {
+            $this->fabricante = $fabricante;
+        }
+
     }
 ?>

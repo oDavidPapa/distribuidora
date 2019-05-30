@@ -1,8 +1,8 @@
 <?php
 
-include_once '../model/Cliente.php';
-include_once './Conexao.php';
-
+    include_once('Conexao.php');
+    include_once('../model/Cliente.php');
+    
 class ClienteDAO {
 
     private $con;

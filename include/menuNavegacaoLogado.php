@@ -45,16 +45,27 @@
                 <button class="btn btn-dark" type="subtmit">Ok</button>
             </form>
             -->
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item ml-1">
-                    <a class="nav-link" href="./loginPage.php"> Login </a>
+            <?php 
+                $usuario = $_SESSION['usuario'];
+            ?>
+            
+            <ul class="navbar-nav ml-auto"> <!--ml-auto :  alinha a margem left da UL automáticamente --> 
+                <li class ="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="navDrop"><?php echo"$usuario->nome" ?></a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="../distribuidora/contaCliente.php">Minha Conta</a>
+                        <a class="dropdown-item" href="#">Minhas Compras</a>
+                        <a class="dropdown-item" href="../distribuidora/controler/logoffControler.php?logoff=true">Sair</a>
+                    </div>
                 </li>
+
             </ul>
+
             <div class="collapse navbar-collapse" id="navbarSite">
                 <ul class="navbar-nav ml-auto"> <!--mr-auto :  alinha a margem right da UL automáticamente -->
                     <li class="nav-item">
                         <!--<a class="nav-link mb-0"  href="#"> Carrinho </a>-->
-                        <a href="../distribuidora/loginPage.php"><img src="../distribuidora/imagens/cesto.png"></a>
+                        <a href="../distribuidora/exibirCarrinho.php"><img src="../distribuidora/imagens/cesto.png"></a>
                     </li>
                 </ul>
             </div>
