@@ -13,10 +13,14 @@ if ($opcao == 1) {
     $idBebida = $_REQUEST['idBebida'];
 
     if (isset($_SESSION['usuario'])) {
+        #Neste caso, seria se a quantidade viesse direto da página de compra!
+        $quantidade = 2; #simulação de Preço;
 
         $bebida = $bebidaDAO->getBebida($idBebida);
+        $preco = (float) $bebida->preco;
         $item = new ItemCompra();
         $item->setIdBebida($bebida->idBebida);
+        $item->setValorItem($preco * $quantidade );
 
         if (!isset($_SESSION['carrinho'])) {
             $carrinho = array();
@@ -29,7 +33,7 @@ if ($opcao == 1) {
         $_SESSION['carrinho'] = $carrinho;
         header("Location:../exibirCarrinho.php");
     } else {
-        header("Location:../loginPage.php");
+         header("Location:../loginPage.php");
     }
 }
 if ($opcao == 2) {
