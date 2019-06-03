@@ -26,7 +26,7 @@ $lista = $_SESSION['listaBebidas'];
                     <div class="card ">
                         <div class="card-body">
                             <img class="card-img-top" src="imagens/<?php echo "$bebida->idBebida" ?>.jpg">
-                            <h6  class="card-title text-center"><?php echo "$bebida->nome, $bebida->volume" ?></h6>
+                            <h6  class="card-title text-center"><?php echo "$bebida->nome, $bebida->volume ml" ?></h6>
                             <h6 class="card-subtitle text-center mb-2 text-muted"><?php echo "R$ $bebida->preco" ?></h6>
 
                             <p class="card-text text-center"><?php echo "$bebida->fabricante" ?></p>
