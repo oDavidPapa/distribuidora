@@ -38,7 +38,7 @@ session_start();
                     <tr>
                         <th>#</th>
                         <th>Produto</th>
-                        <th>Qunatidade</th>
+                        <th>Quantidade</th>
                         <th>Preço (R$)</th>
                         <th></th>      
                     </tr>
@@ -75,6 +75,7 @@ session_start();
                     $volume += $item->getQuantidade() * (int) $bebida->volume;
 
                     $valorTotal += $item->getValorItem();
+                    $valorTotal = number_format($valorTotal, 2, ",", ".")
                 }
                 ?>
 
@@ -138,48 +139,62 @@ session_start();
                     switch ($usuario->idCidade) {
                         CASE 1:
                             $valor = ($volume * 0.9) / 1000;
-                            echo number_format($valor, 2, ',', '');
+                            $valor = number_format($valor, 2, "," ".");
+                            echo $valor;
                             break;
                         CASE 2:
                             $valor = ($volume * 0.5) / 1000;
-                            echo number_format($valor, 2, ',', '');
+                            $valor = number_format($valor, 2, "," ".");
+                            echo $valor;
                             break;
                         CASE 3:
                             $valor = ($volume * 0.7) / 1000;
-                            echo number_format($valor, 2, ',', '');
+                            $valor = number_format($valor, 2, "," ".");
+                            echo $valor;
                             break;
                         CASE 4:
                             $valor = ($volume * 0.5) / 1000;
-                            echo number_format($valor, 2, ',', '');
+                            $valor = number_format($valor, 2, "," ".");
+                            echo $valor;
                             break;
                         CASE 5:
                             $valor = ($volume * 0.7) / 1000;
-                            echo number_format($valor, 2, ',', '');
+                            $valor = number_format($valor, 2, "," ".");
+                            echo $valor;
                             break;
                         CASE 6:
                             $valor = ($volume * 0.9) / 1000;
-                            echo number_format($valor, 2, ',', '');
+                            $valor = number_format($valor, 2, "," ".");
+                            echo $valor;
                             break;
                         CASE 7:
                             $valor = ($volume * 0.5) / 1000;
-                            echo number_format($valor, 2, ',', '');
+                            $valor = number_format($valor, 2, "," ".");
+                            echo $valor;
                             break;
                         CASE 8:
                             $valor = ($volume * 0.9) / 1000;
-                            echo number_format($valor, 2, ',', '');
+                            $valor = number_format($valor, 2, "," ".");
+                            echo $valor;
                             break;
                         CASE 9:
                             $valor = ($volume * 0.7) / 1000;
-                            echo number_format($valor, 2, ',', '');
+                            $valor = number_format($valor, 2, "," ".");
+                            echo $valor;
                             break;
                     }
                     ?>
                 </td>
                 <td>
-                    <?php echo number_format($valorTotal, 2, ',', '') ?>
+                    <?php echo $valorTotal ?>
                 </td>
                 <td>
-                    <?php echo number_format($valorTotal + $valor, 2, ',', '') ?>
+                    <?php
+                        $valorFinalCompra = $valorTotal + $valor;
+                        $valorFinalCompra = number_format($valorFinalCompra, 2, ",", ".");
+                        echo $valorFinalCompra;
+
+                    ?>
                 </td>
                 </tbody>
             </table>
