@@ -61,7 +61,7 @@
             <h5 class="font-italic text-center">Marcas</h5>
             <p class="text-justify">Trabalhamos em conjunto com as maiores produtoras de bebidas do Brasil e do Mundo, prezamos pela qualidade de nossos serviços e produtos, por isso escolhemos marcas já consolidadas no mercado para que nossos clientes se sintam seguros na hora de contar com nossa equipe.
                 Entre elas podemos destacar: <i>Antartica, Brahma, Budweiser, Corona, Skol, Stella Artois, Red Bull, Bacardi, Jhonnie Walker, Smirnoff</i>, entre outras.<br>
-                <br>Para mais informações acesse: <a class="text-truncate" href="#">Marcas.</a></p>
+                <br>Para mais informações acesse: <a class="text-truncate" href="marcas.php">Marcas.</a></p>
         </div>
         <div class="col-5" id="representantes">
             <h5 class="font-italic text-center">Representantes</h5>
