@@ -75,7 +75,7 @@ session_start();
                     $volume += $item->getQuantidade() * (int) $bebida->volume;
 
                     $valorTotal += $item->getValorItem();
-                    $valorTotal = number_format($valorTotal, 2, ",", ".")
+                    //$valorTotal = number_format($valorTotal, 2,  ',', '');
                 }
                 ?>
 
@@ -139,61 +139,60 @@ session_start();
                     switch ($usuario->idCidade) {
                         CASE 1:
                             $valor = ($volume * 0.9) / 1000;
-                            $valor = number_format($valor, 2, "," ".");
-                            echo $valor;
+                           // $valor = number_format($valor, 2, ',', '.');
+                            echo number_format($valor, 2, ",", ".");
                             break;
                         CASE 2:
                             $valor = ($volume * 0.5) / 1000;
-                            $valor = number_format($valor, 2, "," ".");
-                            echo $valor;
+                           // $valor = number_format($valor, 2, ',', '.');
+                            echo number_format($valor, 2, ',', '.');
                             break;
                         CASE 3:
                             $valor = ($volume * 0.7) / 1000;
-                            $valor = number_format($valor, 2, "," ".");
+                           // $valor = number_format($valor, 2, ',', '.');
                             echo $valor;
                             break;
                         CASE 4:
                             $valor = ($volume * 0.5) / 1000;
-                            $valor = number_format($valor, 2, "," ".");
-                            echo $valor;
+                          //  $valor = number_format($valor, 2, ',', '.');
+                            echo number_format($valor, 2, ',', '.');
                             break;
                         CASE 5:
                             $valor = ($volume * 0.7) / 1000;
-                            $valor = number_format($valor, 2, "," ".");
-                            echo $valor;
+                           // $valor = number_format($valor, 2, ',', '.');
+                            echo number_format($valor, 2, ',', '.');
                             break;
                         CASE 6:
                             $valor = ($volume * 0.9) / 1000;
-                            $valor = number_format($valor, 2, "," ".");
-                            echo $valor;
+                          //  $valor = number_format($valor, 2, ',', '.');
+                            echo number_format($valor, 2, ',', '.');
                             break;
                         CASE 7:
                             $valor = ($volume * 0.5) / 1000;
-                            $valor = number_format($valor, 2, "," ".");
-                            echo $valor;
+                           
+                            echo  number_format($valor, 2, ',', '.');
                             break;
                         CASE 8:
                             $valor = ($volume * 0.9) / 1000;
-                            $valor = number_format($valor, 2, "," ".");
+                           // $valor = number_format($valor, 2, ',', '.');
                             echo $valor;
                             break;
                         CASE 9:
                             $valor = ($volume * 0.7) / 1000;
-                            $valor = number_format($valor, 2, "," ".");
-                            echo $valor;
+                            //$valor = number_format($valor, 2, ',', '.');
+                            echo number_format($valor, 2,  ",", ".");
                             break;
                     }
                     ?>
                 </td>
                 <td>
-                    <?php echo $valorTotal ?>
+                    <?php echo number_format($valorTotal, 2, ',', '.'); ?>
                 </td>
                 <td>
                     <?php
-                        $valorFinalCompra = $valorTotal + $valor;
-                        $valorFinalCompra = number_format($valorFinalCompra, 2, ",", ".");
-                        echo $valorFinalCompra;
-
+                    $valorFinalCompra = $valorTotal + $valor;
+                   // $valorFinalCompra = number_format($valorFinalCompra, 2, ',', '.');
+                    echo number_format($valorFinalCompra, 2, ',', '.');;
                     ?>
                 </td>
                 </tbody>
