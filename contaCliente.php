@@ -4,6 +4,7 @@ include_once ('dao/CidadeDAO.php');
 $usuario = $_SESSION['usuario'];
 
 
+
 $cidadeDAO = new CidadeDAO();
 $cidade = $cidadeDAO->getCidade($usuario->idCidade);
 ?>
@@ -51,8 +52,7 @@ $cidade = $cidadeDAO->getCidade($usuario->idCidade);
                     echo "<td>" . $usuario->endereco . "</td>";
                     echo "<td>" . $cidade->cidade .", ".$cidade->estado. "</td>";
 
-                    echo "<td><a href='#" . $usuario->idCliente . "'><img src='imagens/editar.png'></a>&nbsp;";
-                   // echo "<td><a href='#" . $usuario->idCliente . "'><img src='imagens/excluir.png'></a></td>";
+                    echo "<td><a href='controler/controlerCliente.php?opcao=3&idCliente=" .$usuario->idCliente ."'><img src='imagens/editar.png'></a>&nbsp;";
                     echo "</tr>";
                 
                 ?>

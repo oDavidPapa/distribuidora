@@ -22,7 +22,7 @@ session_start();
         echo "<div class='container py-5 pb-5'>";
         echo "<div class='py-4 '>";
         echo "<h4 class='text-center text-muted'><img src='imagens/ops.png'> Ops... Você ainda não possui itens no carrinho!</h4>";
-        echo "<br><h5 class='text-center'><a href='controler/compraControler.php' style='text-decoration:none'><img src='imagens/adicionarItens.png'>Adicionar Itens</a></h5>";
+        echo "<br><h5 class='text-center'><a href='controler/carregandoProduto.php' style='text-decoration:none'><img src='imagens/adicionarItens.png'>Adicionar Itens</a></h5>";
         echo "</div>";
         echo "</div>";
     } else {
@@ -75,17 +75,22 @@ session_start();
                     $volume += $item->getQuantidade() * (int) $bebida->volume;
 
                     $valorTotal += $item->getValorItem();
-                    //$valorTotal = number_format($valorTotal, 2,  ',', '');
                 }
                 ?>
+                <td colspan="3" align='right'>
+                    Valor Parcial:
+                </td>
+                <td colspan="2" align='center'>
+                    <?php echo "R$ " . number_format($valorTotal, 2, ',', '.'); ?>
+                </td>
 
 
                 </tbody>
             </table>
-            <p align="right"><a href="./controler/compraControler.php"><img src="./imagens/botao_continuar_comprando.png"></a></p>
+            <p align="right"><a href="./controler/carregandoProduto.php"><img src="./imagens/botao_continuar_comprando.png"></a></p>
         </div>
         <div class="container text-center py-2">
-            <h4 class="text-center text-muted font-italic">Finalizar Pedido</h4>
+            <h4 class="text-center text-muted font-italic">Detalhes do Pedido</h4>
             <table id="tabela" class="table table-striped table-bordered">
                 <thead>
                     <tr>
@@ -139,48 +144,40 @@ session_start();
                     switch ($usuario->idCidade) {
                         CASE 1:
                             $valor = ($volume * 0.9) / 1000;
-                           // $valor = number_format($valor, 2, ',', '.');
-                            echo number_format($valor, 2, ",", ".");
+                            echo number_format($valor, 2, ',', '.');
                             break;
                         CASE 2:
                             $valor = ($volume * 0.5) / 1000;
-                           // $valor = number_format($valor, 2, ',', '.');
                             echo number_format($valor, 2, ',', '.');
                             break;
                         CASE 3:
                             $valor = ($volume * 0.7) / 1000;
-                           // $valor = number_format($valor, 2, ',', '.');
                             echo $valor;
                             break;
                         CASE 4:
                             $valor = ($volume * 0.5) / 1000;
-                          //  $valor = number_format($valor, 2, ',', '.');
                             echo number_format($valor, 2, ',', '.');
                             break;
                         CASE 5:
                             $valor = ($volume * 0.7) / 1000;
-                           // $valor = number_format($valor, 2, ',', '.');
                             echo number_format($valor, 2, ',', '.');
                             break;
                         CASE 6:
                             $valor = ($volume * 0.9) / 1000;
-                          //  $valor = number_format($valor, 2, ',', '.');
                             echo number_format($valor, 2, ',', '.');
                             break;
                         CASE 7:
                             $valor = ($volume * 0.5) / 1000;
-                           
-                            echo  number_format($valor, 2, ',', '.');
+
+                            echo number_format($valor, 2, ',', '.');
                             break;
                         CASE 8:
                             $valor = ($volume * 0.9) / 1000;
-                           // $valor = number_format($valor, 2, ',', '.');
-                            echo $valor;
+                            echo number_format($valor, 2, ',', '.');
                             break;
                         CASE 9:
                             $valor = ($volume * 0.7) / 1000;
-                            //$valor = number_format($valor, 2, ',', '.');
-                            echo number_format($valor, 2,  ",", ".");
+                            echo number_format($valor, 2, ',', '.');
                             break;
                     }
                     ?>
@@ -191,13 +188,12 @@ session_start();
                 <td>
                     <?php
                     $valorFinalCompra = $valorTotal + $valor;
-                   // $valorFinalCompra = number_format($valorFinalCompra, 2, ',', '.');
-                    echo number_format($valorFinalCompra, 2, ',', '.');;
+                    echo number_format($valorFinalCompra, 2, ',', '.');
                     ?>
                 </td>
                 </tbody>
             </table>
-            <p align="center"><a href="./controler/compraControler.php"><img src="./imagens/finalizarCompra.png"></a></p>
+            <p align="center"><a href="./controler/controlerCompra.php?opcao=1&valorTotal=<?php echo $valorTotal ?>&valorFrete=<?php echo $valor ?>"><img src="./imagens/finalizarCompra.png"></a></p>
 
         </div>
 

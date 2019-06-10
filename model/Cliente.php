@@ -9,6 +9,7 @@ class Cliente {
     private $idCidade;
     private $email;
     private $senha;
+    
 
     function Cliente($nome, $cnpj, $endereco, $idCidade, $email, $senha) {
         $this->nome = $nome;

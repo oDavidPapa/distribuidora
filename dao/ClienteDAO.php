@@ -1,8 +1,8 @@
 <?php
 
-    include_once('Conexao.php');
-    include_once('../model/Cliente.php');
-    
+include_once('Conexao.php');
+include_once('../model/Cliente.php');
+
 class ClienteDAO {
 
     private $con;
@@ -52,8 +52,8 @@ class ClienteDAO {
         $sql->execute();
         return $sql->fetch(PDO::FETCH_OBJ);
     }
-    
-    public function atualizarCliente(Cliente $cliente){
+
+    public function atualizarCliente(Cliente $cliente) {
         $sql = $this->con->prepare("UPDATE clientes SET "
                 . "nome = :nome, "
                 . "cnpj = :cnpj, "
@@ -62,15 +62,25 @@ class ClienteDAO {
                 . "email = :email, "
                 . "senha = :senha "
                 . "WHERE idCliente = :idCliente");
-        
+
         $sql->bindValue(':nome', $cliente->getNome());
         $sql->bindValue(':cnpj', $cliente->getCnpj());
         $sql->bindValue(':endereco', $cliente->getEndereco());
         $sql->bindValue(':idCidade', $cliente->getIdCidade());
         $sql->bindValue(':email', $cliente->getEmail());
         $sql->bindValue(':senha', $cliente->getSenha());
-        
+        $sql->bindValue(':idCliente', $cliente->getIdCliente());
+
+
         $sql->execute();
+    }
+
+    public function getCidade($idCidade) {
+        $sql = $this->con->prepare("SELECT cidade, estado FROM cidades WHERE idCidade = :idCidade");
+
+        $sql->bindValue(':idCidade', $idCidade);
+        $sql->execute();
+        return $sql->fetch(PDO::FETCH_OBJ);
     }
 
 }

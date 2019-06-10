@@ -1,6 +1,5 @@
 <?php
 
-
 class Compra {
 
     private $idCompra;
@@ -10,9 +9,12 @@ class Compra {
     private $valorFrete;
     private $itens;
 
-    public function Compra() {
-        $this->dataCompra = date();
+    public function Compra($cliente, $valorTotal, $valorFrete) {
+        $this->dataCompra = time();
         $this->itens = array();
+        $this->cliente = $cliente;
+        $this->valorTotal = $valorTotal;
+        $this->valorFrete = $valorFrete;
     }
 
     function getIdCompra() {
