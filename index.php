@@ -21,18 +21,17 @@
         </ol>
         <div class="carousel-inner center-block">
             <div class="carousel-item active offset-4">
-                <img src="imagens/teste4.jpg" class="img-fluid d-block">
+                <img src="imagens/vinhos2.jpg" class="img-fluid d-block">
             </div>
             <div class="carousel-item offset-3">
                 <img src="imagens/teste2.jpg" class="img-fluid d-block">
             </div>
             <div class="carousel-item offset-3">
-                <img src="imagens/teste3.png" class="img-fluid d-block">
+                <img src="imagens/vinhos1.jpg" class="img-fluid d-block">
             </div>
             <div class="carousel-item offset-3">
-                <img src="imagens/teste1.jpg" class="img-fluid d-block">
+                <img src="imagens/teste3.png" class="img-fluid d-block">
             </div>
-
         </div>
         <a class="carousel-control-prev" href="#carouselSite" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon"></span>
