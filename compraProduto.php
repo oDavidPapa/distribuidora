@@ -22,7 +22,7 @@ $lista = $_SESSION['listaBebidas'];
                 ?>
 
 
-                <div class="col-sm-4 my-2">
+                <div class="col-sm-3 my-2">
                     <div class="card ">
                         <div class="card-body">
                             <img class="card-img-top" src="imagens/<?php echo "$bebida->idBebida" ?>.jpg">

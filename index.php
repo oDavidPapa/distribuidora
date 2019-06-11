@@ -1,33 +1,36 @@
 <?php include_once './include/cabecalho.php'; ?>
 
 <body>
-   
-     <?php
-      session_start();
+
+    <?php
+    session_start();
     if (isset($_SESSION['usuario'])) {
         include_once './include/menuNavegacaoLogado.php';
     } else {
         include_once './include/menuNavegacao.php';
     }
     ?>
-    
+
     <div id="carouselSite" class="carousel slide pt-2 pb-2 mr-auto" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselSite" data-slide-to="0" class="active"></li>
             <li data-target="#carouselSite" data-slide-to="1"></li>
             <li data-target="#carouselSite" data-slide-to="2"></li>
+            <li data-target="#carouselSite" data-slide-to="3"></li>
+
         </ol>
         <div class="carousel-inner center-block">
             <div class="carousel-item active offset-4">
-
-                <img src="imagens/teste1.jpg" class="img-fluid d-block">
-
+                <img src="imagens/teste4.jpg" class="img-fluid d-block">
             </div>
             <div class="carousel-item offset-3">
                 <img src="imagens/teste2.jpg" class="img-fluid d-block">
             </div>
             <div class="carousel-item offset-3">
                 <img src="imagens/teste3.png" class="img-fluid d-block">
+            </div>
+            <div class="carousel-item offset-3">
+                <img src="imagens/teste1.jpg" class="img-fluid d-block">
             </div>
 
         </div>
@@ -107,7 +110,7 @@
     <div class="container my-5" id="representantes">
 
     </div>
-    
+
 
 </body>
 
