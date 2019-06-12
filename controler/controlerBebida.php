@@ -73,4 +73,34 @@ if ($opcao == 5) {
 
     header("Location:../controler/controlerBebida.php?opcao=2");
 }
+
+    // ------ COMEÇA AQUI A PAGINAÇÃO CASO SEJA NECESSÁRIO ------
+    // ------ SE PRECISAR SÓ DESCOMENTAR -----
+    /*
+    if($opcao == 6){
+        $pagina = (int)$_REQUEST['pagina'];
+        
+        $bebidaDao = new BebidaDAO();
+  
+        $lista = $bebidaDao->getBebidasPaginacao($pagina);
+        $numPaginas = $bebidaDao->getPagina();
+  
+        session_start();
+        $_SESSION['bebidas'] = $lista;
+  
+        header("Location:../exibirBebidasPaginacao.php?paginas=".$numPaginas);
+  
+     }
+  
+     if($opcao == 7){
+        
+        $bebidaDao = new BebidaDAO();
+        
+        $bebidaDao->incluirVariasBebidas();
+        
+  
+        header("Location:controlerBebida.php?popcao=6&pagina=1");
+  
+     }*/
+
 ?>    

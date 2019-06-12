@@ -85,7 +85,46 @@
             
            // var_dump($sql);
             $sql->execute();
-        }   
+        } 
+        
+        // ------ COMEÇA AQUI A PAGINAÇÃO CASO SEJA NECESSÁRIO ------
+        // ------ SE PRECISAR SÓ DESCOMENTAR -----
+        /*
+        public function getBebidasPaginacao($pagina){
+            $init = ($pagina - 1) * $this->porPagina;
+
+            $result = $this->con->query("SELECT * FROM bebidas limit $init, $this->porPagina");
+
+            $lista = array();
+            
+            while($row = $result->fetch(PDO::FETCH_OBJ)){
+                $lista[] = $row;
+            }
+            
+            return $lista;
+        }
+
+        public function getPagina(){
+            
+            $resultTotal = $this->con->query("SELECT count(*) as total FROM bebidas")->fetch(PDO::FETCH_OBJ);
+
+            $numPaginas = ceil($resultTotal->total / $this->porPagina);
+
+            return $numPaginas;
+        }
+
+        public function incluirVariasBebidas(){
+            for($i=1; $i<=100; $i++){
+                $sql = $this->con->prepare("INSERT INTO bebidas (nome, volume, preco, quantidadeEstoque, fabricante) values (:nom, :vol, :preco, :qntdEstoque, :fabri)");
+
+                $sql->bindValue(':nom', 'nome'.$i);
+                $sql->bindValue(':vol', $i.'l/ml');
+                $sql->bindValue(':preco', $i.'.50');
+                $sql->bindValue(':qntdEstoque', $i);
+                $sql->bindValue(':fabri', 'fabricante'.$i);
+                $sql->execute();
+            }
+        }*/
     }
 
 ?>        
