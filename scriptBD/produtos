@@ -1,0 +1,10 @@
+INSERT INTO bebidas(idBebida, nome, volume, preco, quantidadeEstoque, fabricante) VALUES('cerv001', 'Cerveja Premium Pilsen Lager','550', 7.99, 500, 'Stella Artois');
+INSERT INTO bebidas(idBebida, nome, volume, preco, quantidadeEstoque, fabricante) VALUES('cerv002', 'Cerveja Long Neck','343', 7.99, 500, 'Budweiser');
+INSERT INTO bebidas(idBebida, nome, volume, preco, quantidadeEstoque, fabricante) VALUES('cerv003', 'Cerveja Extra','355', 4.89, 500, 'Corona');
+INSERT INTO bebidas(idBebida, nome, volume, preco, quantidadeEstoque, fabricante) VALUES('cha001', 'Champagne','750', 378.97, 500, 'Moet e Chandon Imper');
+INSERT INTO bebidas(idBebida, nome, volume, preco, quantidadeEstoque, fabricante) VALUES('redb001', 'Energy Drink RB','437', 9.00, 500, 'Red Bull');
+INSERT INTO bebidas(idBebida, nome, volume, preco, quantidadeEstoque, fabricante) VALUES('rum001', 'Rum Tangerina','980', 26.96, 500, 'Bacardi');
+INSERT INTO bebidas(idBebida, nome, volume, preco, quantidadeEstoque, fabricante) VALUES('vin001', 'Vinho Cabernet Sauvignon','750', 25.00, 500, 'Balduzzi');
+INSERT INTO bebidas(idBebida, nome, volume, preco, quantidadeEstoque, fabricante) VALUES('vin002', 'Vinho Di Manduria','750', 122.73, 500, 'Primitivo Madrigale');
+INSERT INTO bebidas(idBebida, nome, volume, preco, quantidadeEstoque, fabricante) VALUES('vodk001', 'Vodka Red Smirnoff','998', 32.99, 500, 'Smirnoff');
+INSERT INTO bebidas(idBebida, nome, volume, preco, quantidadeEstoque, fabricante) VALUES('wisk001', 'Whisky Black Label	','1000', 119.00, 500, 'Jhonny Walker');
