@@ -9,7 +9,7 @@ session_start();
 $valorTotal = $_SESSION['valorTotal'];
 $cliente = $_SESSION['usuario'];
 $carrinho = $_SESSION['carrinho'];
-unset($_SESSION['carrinho']);
+
 
 
 ## DADOS PARA O BOLETO

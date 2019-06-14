@@ -13,33 +13,49 @@ if (isset($_REQUEST['manterConectado'])) {
 
 $login = $_REQUEST['login'];
 $senha = $_REQUEST['senha'];
+$status = $_REQUEST['status'];
 
 
 $autentica = new AutenticacaoDAO();
 $validado = $autentica->autenticar($login, $senha);
 
+if ($status == 1) { 
+// // SE ENTRAR AQUI É PQ ELE VEIO CLICANDO PARA COMPRAR UM PRODUTO SEM ESTAR LOGADO,
+//  ENTAO ELE DEVE RETORNAR PARA A PAGINA DE COMPRA!
+   
+    if (!$validado) {
 
-if (!$validado) {
-    
-   // echo "<script type='javascript'>alert('Email enviado com Sucesso!');";
-   // echo "javascript:window.location='../loginPage.php';</script>";
+        header("Location: ../loginPage.php");
+    } else if ($validado && $manterConectado == 'on') {
+        $_SESSION['lembrarUsuario'] = $validado;
+        $usuario = $autentica->getUsuario($login, $senha);
+        $_SESSION['usuario'] = $usuario;
 
-    header("Location: ../loginPage.php");
-    //echo "<script>alert('Email ou Senhas Incorretas!')</script>";
-    
-} else if ($validado && $manterConectado == 'on') {
-    $_SESSION['lembrarUsuario'] = $validado;
-    $usuario = $autentica->getUsuario($login, $senha);
-    $_SESSION['usuario'] = $usuario;
-
-    //echo "USUARIO LOGADO E LEMBRADO!";
-    header("Location: ../index.php");
+        //echo "USUARIO LOGADO E LEMBRADO!";
+        header("Location:./carregandoProduto.php");
+    } else {
+        $usuario = $autentica->getUsuario($login, $senha);
+        $_SESSION['usuario'] = $usuario;
+        //echo "USUÁRIO LOGADO MAS NÃO SALVO";
+        header("Location:./carregandoProduto.php");
+    }
 } else {
-    $usuario = $autentica->getUsuario($login, $senha);
-    $_SESSION['usuario'] = $usuario;
-    //echo "USUÁRIO LOGADO MAS NÃO SALVO";
-    header("Location: ../index.php");
-}
+    if (!$validado) {
 
+        header("Location: ../loginPage.php");
+    } else if ($validado && $manterConectado == 'on') {
+        $_SESSION['lembrarUsuario'] = $validado;
+        $usuario = $autentica->getUsuario($login, $senha);
+        $_SESSION['usuario'] = $usuario;
+
+        //echo "USUARIO LOGADO E LEMBRADO!";
+        header("Location: ../index.php");
+    } else {
+        $usuario = $autentica->getUsuario($login, $senha);
+        $_SESSION['usuario'] = $usuario;
+        //echo "USUÁRIO LOGADO MAS NÃO SALVO";
+        header("Location: ../index.php");
+    }
+}
 ?>
 

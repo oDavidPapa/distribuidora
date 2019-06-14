@@ -34,7 +34,8 @@ if ($opcao == 1) {
         $_SESSION['carrinho'] = $carrinho;
         header("Location:../exibirCarrinho.php");
     } else {
-        header("Location:../loginPage.php");
+        $status = $_REQUEST['status'];
+        header("Location:../loginPage.php?status=".$status);
     }
 }
 if ($opcao == 2) {

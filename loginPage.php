@@ -3,6 +3,14 @@
 <body>
 
     <?php include_once './include/menuNavegacao.php'; ?>
+    <?php
+    if(isset($_REQUEST['status'])){
+        $status = $_REQUEST['status'];
+    } else {
+        $status = 0;
+        
+    }
+    ?>
 
     <div class="container">
 
@@ -20,7 +28,9 @@
                             <div class="form-group mb-3">
                                 <!--<h6 class="text-muted"><label for="formGroupExampleInput2">Senha</label></h6>-->
                                 <input type="password" class="form-control" required="" name="senha" id="senhaInput" placeholder="Senha">
+                                
                             </div>
+                            <input type="hidden" value="<?php echo $status ?>" name="status">
                             <input type="submit" value="Entrar" class="btn texte-center btn-primary btn-lg btn-block pt-0 pb-0">
 
                             <div class="card-footer bg-white mt-3 pt-2">

@@ -57,7 +57,7 @@
         <div class="col-5">
             <h5 class="font-italic text-center">Nossos Produtos</h5>
             <p class="text-justify">Os produtos variam entre bebidas alcóolicas e não alcóolicas de diversas marcas já consolidadas no mercado brasileiro, atendendo a todos os públicos. Nossa equipe é responsável por suprir grande parte da demanda dos comércios do município de Alegre - ES, e conta também com uma consideravel fatia do mercado do Estado.
-                Nosso atendimento fácil e personalizado garante total satisfação de nossos clientes, sejam eles empresas ou pessoas físicas buscando o melhor para seu evento de grande e médio porte. <a class="text-truncate" href="compraProduto.php">Adquirir nossos produtos.</a></p>
+                Nosso atendimento fácil e personalizado garante total satisfação de nossos clientes, sejam eles empresas ou pessoas físicas buscando o melhor para seu evento de grande e médio porte. <a class="text-truncate" href="./controler/carregandoProduto.php">Adquirir nossos produtos.</a></p>
         </div>
         <div class="offset-6">
             <h5 class="font-italic text-center">Marcas</h5>

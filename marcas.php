@@ -1,6 +1,8 @@
 <?php include_once './include/cabecalho.php'; ?>
 
+
 <body>
+
 
     <?php include_once './include/menuNavegacao.php'; ?>
 
@@ -34,14 +36,15 @@
                     <h6  class="card-title text-center"><b>JOHNNIE WALKER</b></h6>
                     <p class="card-text text-center"><table>
                         <tr>    
-                            <td>A história de Johnnie começa com a morte do seu pai. <span style="color:blue; cursor:pointer" onclick="document.getElementById('expandir2').style.display = ''" >Expandir</span>
+                            <td>A história de Johnnie começa com a morte do seu pai. 
+                                <a data-toggle="collapse" href="#expandir" aria-expanded="false" aria-controls="multiCollapseExample1">Expandir</a><p>
                             </td>
                         </tr>
                         <tr>
-                            <td id="expandir2" style="display:none;">Um duro começo para um menino da área rural, mas John sempre teve algo de especial. 
+                            <td class ="collapse multi-collapse" id="expandir">Um duro começo para um menino da área rural, mas John sempre teve algo de especial. 
                                 Nessa época, o mundo não era o lugar mais amigável e John sabia disso. Não havia tempo para aflições. 
                                 Ele tinha que ganhar a vida. Hoje, Johnnie Walker é a maior marca de whiskies do mundo e seu slogan é visto como um grito de guerra pelo progresso, 
-                                coragem na adversidade, expressão alegre de otimismo e como o melhor conselho que você escutará na sua vida. <span style="color:blue; cursor:pointer" onclick="document.getElementById('expandir2').style.display = 'none'">Ocultar</span>
+                                coragem na adversidade, expressão alegre de otimismo e como o melhor conselho que você escutará na sua vida.
                             </td>
                         </tr>
                     </table>
@@ -129,7 +132,7 @@
                     <p class="card-text text-center"><table>
                         <tr>    
                             <td>A Absolut Vodka foi lançada primeiro em 1979, na cidade de Nova York. 
-                                 <span style="color:blue; cursor:pointer" onclick="document.getElementById('expandir6').style.display = ''" >Expandir</span>
+                                <span style="color:blue; cursor:pointer" onclick="document.getElementById('expandir6').style.display = ''" >Expandir</span>
                             </td>
                         </tr>
                         <tr>
@@ -203,7 +206,7 @@
                     <p class="card-text text-center"><table>
                         <tr>    
                             <td>Tudo começou quando num daqueles dias de verão no Rio de Janeiro.
-                                 <span style="color:blue; cursor:pointer" onclick="document.getElementById('expandir9').style.display = ''" >Expandir</span>
+                                <span style="color:blue; cursor:pointer" onclick="document.getElementById('expandir9').style.display = ''" >Expandir</span>
                             </td>
                         </tr>
                         <tr>
@@ -236,12 +239,12 @@
                         </tr>
                         <tr>
                             <td id="expandir10" style="display:none;">Comercializado em caráter experimental, na cidade de Denver, 
-                            o novo refrigerante foi um verdadeiro fracasso e consequentemente retirado do mercado 
-                            pouco depois. A H2OH! foi então guardada no catálogo de marcas registradas da PepsiCo. 
-                            E por lá ficaria esquecida por alguns anos. Até que, em 2003, a tradicional 7 Up, também pertencente a PepsiCo, 
-                            estava em processo de reformulação da fórmula para a produção de um novo refrigerante em virtude da expressiva queda nas vendas.
-                            O primeiro protótipo, batizado internamente de Splash, foi um fracasso, 
-                            foi então que a empresa decidiu afastar a bebida da categoria dos refrigerantes para aproximá-la das águas aromatizadas. <span style="color:blue; cursor:pointer" onclick="document.getElementById('expandir10').style.display = 'none'">Ocultar</span>
+                                o novo refrigerante foi um verdadeiro fracasso e consequentemente retirado do mercado 
+                                pouco depois. A H2OH! foi então guardada no catálogo de marcas registradas da PepsiCo. 
+                                E por lá ficaria esquecida por alguns anos. Até que, em 2003, a tradicional 7 Up, também pertencente a PepsiCo, 
+                                estava em processo de reformulação da fórmula para a produção de um novo refrigerante em virtude da expressiva queda nas vendas.
+                                O primeiro protótipo, batizado internamente de Splash, foi um fracasso, 
+                                foi então que a empresa decidiu afastar a bebida da categoria dos refrigerantes para aproximá-la das águas aromatizadas. <span style="color:blue; cursor:pointer" onclick="document.getElementById('expandir10').style.display = 'none'">Ocultar</span>
                             </td>
                         </tr>
                     </table>
@@ -265,10 +268,10 @@
                         </tr>
                         <tr>
                             <td id="expandir11" style="display:none;">Apresenta índices de crescimento superiores aos da média nacional. 
-                            Resultado de uma história de investimentos, de profissionalização, de união e de uma trajetória que carrega em sua bagagem o trabalho e a vida de milhares de pessoas.
-                            Com um quadro de 400 famílias associadas, investimos permanentemente em manutenção e melhoria dos processos produtivos e na qualidade dos produtos. 
-                            Com uma área de 32 mil metros quadrados de construção e capacidade de processamento que ultrapassa os 20 milhões de quilos, 
-                            utilizamos tecnologia e equipamentos europeus para a elaboração de nossos vinhos e espumantes. <span style="color:blue; cursor:pointer" onclick="document.getElementById('expandir11').style.display = 'none'">Ocultar</span>
+                                Resultado de uma história de investimentos, de profissionalização, de união e de uma trajetória que carrega em sua bagagem o trabalho e a vida de milhares de pessoas.
+                                Com um quadro de 400 famílias associadas, investimos permanentemente em manutenção e melhoria dos processos produtivos e na qualidade dos produtos. 
+                                Com uma área de 32 mil metros quadrados de construção e capacidade de processamento que ultrapassa os 20 milhões de quilos, 
+                                utilizamos tecnologia e equipamentos europeus para a elaboração de nossos vinhos e espumantes. <span style="color:blue; cursor:pointer" onclick="document.getElementById('expandir11').style.display = 'none'">Ocultar</span>
                             </td>
                         </tr>
                     </table>
@@ -292,14 +295,14 @@
                         </tr>
                         <tr>
                             <td id="expandir12" style="display:none;">Bom, "brassar" é o nome dado ao ato de se fazer o nosso mé (a cerveja). 
-                            O processo se chama "brassagem". Brassaria é um termo que criamos e que nada mais é que o aportuguesamento de "Brasserie" ou de "Brewery". 
-                            Onde se faz pão é padaria, onde se faz queijo é queijaria, onde se faz brassagens é brassaria. Tá claris?! 
-                            Então vamos lá: Mais que uma cervejaria divertida e com a alma do Rio de Janeiro, 
-                            este é um projeto feito com o carinho, a atenção e o cuidado de um filho em forma de homenagem ao seu pai, 
-                            um dos maiores apreciadores de cerveja e um dos artistas mais queridos da história do Brasil.
-                            Um selo de qualidade e criatividade que tem como missão elevar o nível das cervejas que se bebem no Brasil, de uma forma leve, bem-humorada e “sem frescuris” 
-                            – marcas registradas do saudoso Mussum – e oferecer cervejas surpreendentes para bebedores cansados do banal e do sem graça.
-                            Uma homenagem e um presente oficial da família do Mussum, para os apreciadores de boas risadas e belas cervejas. Saúdis! <span style="color:blue; cursor:pointer" onclick="document.getElementById('expandir12').style.display = 'none'">Ocultar</span>
+                                O processo se chama "brassagem". Brassaria é um termo que criamos e que nada mais é que o aportuguesamento de "Brasserie" ou de "Brewery". 
+                                Onde se faz pão é padaria, onde se faz queijo é queijaria, onde se faz brassagens é brassaria. Tá claris?! 
+                                Então vamos lá: Mais que uma cervejaria divertida e com a alma do Rio de Janeiro, 
+                                este é um projeto feito com o carinho, a atenção e o cuidado de um filho em forma de homenagem ao seu pai, 
+                                um dos maiores apreciadores de cerveja e um dos artistas mais queridos da história do Brasil.
+                                Um selo de qualidade e criatividade que tem como missão elevar o nível das cervejas que se bebem no Brasil, de uma forma leve, bem-humorada e “sem frescuris” 
+                                – marcas registradas do saudoso Mussum – e oferecer cervejas surpreendentes para bebedores cansados do banal e do sem graça.
+                                Uma homenagem e um presente oficial da família do Mussum, para os apreciadores de boas risadas e belas cervejas. Saúdis! <span style="color:blue; cursor:pointer" onclick="document.getElementById('expandir12').style.display = 'none'">Ocultar</span>
                             </td>
                         </tr>
                     </table>

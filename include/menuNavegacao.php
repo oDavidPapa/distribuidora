@@ -55,7 +55,7 @@
                 <ul class="navbar-nav ml-auto"> <!--mr-auto :  alinha a margem right da UL automáticamente -->
                     <li class="nav-item">
                         <!--<a class="nav-link mb-0"  href="#"> Carrinho </a>-->
-                        <a href="../distribuidora/loginPage.php"><img src="../distribuidora/imagens/cesto.png"></a>
+                        <a href="../distribuidora/controler/carrinhoControler.php?opcao=3"><img src="../distribuidora/imagens/cesto.png"></a>
                     </li>
                 </ul>
             </div>
