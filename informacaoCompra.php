@@ -107,14 +107,14 @@ session_start();
 
             <div class="container-fluid">
                 <h5 class="text-left font-italic text-muted">Forma de Pagamento: </h5>
-                <form action="controler/controlerCompra.php"  class="form-control border-0 col-4">
+                <form action="controler/controlerCompra.php" target="_blank"  class="form-control border-0 col-4">
                     <select class="form-control " name="formaPagamento">
                         <option value="1">Boleto</option>
                         <option value="2">Cartão de Crédito</option>
                         <option value="3">Débito em Conta</option>
                     </select><br>
                     <input type="hidden" name="opcao" value="2">
-                    <p class="text-center"><input type="image" onclick="executar()" src="./imagens/botao_comprar2.png"></p>
+                    <p class="text-center"><input type="image" src="./imagens/botao_comprar2.png"></p>
                 </form>
 
             </div>
