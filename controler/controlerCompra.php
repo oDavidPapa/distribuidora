@@ -39,7 +39,6 @@ if ($opcao == 1) {
     $formaPagamento = $_REQUEST['formaPagamento'];
     
     if($formaPagamento == 1){
-        
         header("Location: ../boleto/meuBoleto.php");
     } else {
         echo "Tipo de pagamento Indisponível";
