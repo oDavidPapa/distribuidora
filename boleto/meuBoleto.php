@@ -1,4 +1,9 @@
 <?php
+    echo "<center>";
+    echo"<input type='button' value='Imprimir'  onclick='window.print();'>";
+?>
+
+<?php
 
 require 'autoloader.php';
 
@@ -74,3 +79,5 @@ $boleto = new BancoDoBrasil(array(
         ));
 
 echo $boleto->getOutput();
+
+echo"</center>";
