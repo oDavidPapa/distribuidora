@@ -39,8 +39,8 @@
                 <tr>
                     <th>Código</th>
                     <th>Data</th>
-                    <th>Total</th>
                     <th>Frete</th>
+                    <th>Total</th>
                     <th></th>
                     <!--<th></th>-->      
                 </tr>
