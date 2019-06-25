@@ -52,8 +52,8 @@
                         echo "<tr align='center'>";
                         echo "<td>" . $compra->idCompra . "</td>";
                         echo "<td>" .formatarData(strtotime($compra->dataCompra))."</td>";
-                        echo "<td>R$ ".number_format($compra->valorTotal, 2, ',', '.')."</td>";
                         echo "<td>R$ ".number_format($compra->valorFrete, 2, ',', '.')."</td>";
+                        echo "<td>R$ ".number_format($compra->valorTotal, 2, ',', '.')."</td>";                        
 
                         echo "<td>Visualizar</td>";
                         echo "</tr>";
