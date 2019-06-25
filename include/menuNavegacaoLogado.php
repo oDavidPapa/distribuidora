@@ -54,7 +54,7 @@
                     <a class="nav-link dropdown-toggle text-white" href="#" data-toggle="dropdown" id="navDrop"><?php echo"$usuario->nome" ?></a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="../distribuidora/contaCliente.php">Minha Conta</a>
-                        <a class="dropdown-item" href="#">Minhas Compras</a>
+                        <a class="dropdown-item" href="../distribuidora/minhasCompras.php">Minhas Compras</a>
                         <a class="dropdown-item" href="../distribuidora/controler/logoffControler.php?logoff=true">Sair</a>
                     </div>
                 </li>
