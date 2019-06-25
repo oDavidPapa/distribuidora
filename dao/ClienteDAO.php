@@ -1,7 +1,7 @@
 <?php
 
-include_once('Conexao.php');
-include_once('../model/Cliente.php');
+include_once("Conexao.php");
+include_once '../distribuidora/model/Cliente.php';
 
 class ClienteDAO {
 
@@ -81,6 +81,23 @@ class ClienteDAO {
         $sql->bindValue(':idCidade', $idCidade);
         $sql->execute();
         return $sql->fetch(PDO::FETCH_OBJ);
+    }
+
+    public function getCompras(){
+        $usuario = $_SESSION['usuario'];
+        $idCliente = $usuario->idCliente;
+        
+        $sql = $this->con->prepare("SELECT * FROM compras WHERE idCliente = :idCliente");
+
+        $sql->bindValue(':idCliente', $idCliente);
+        $sql->execute();
+        
+        $lista = array();
+
+        while($compra = $sql->fetch(PDO::FETCH_OBJ)){
+            $lista[] = $compra;
+        }
+        return $lista;
     }
 
 }
