@@ -114,7 +114,7 @@ session_start();
                         <option value="3">Débito em Conta</option>
                     </select><br>
                     <input type="hidden" name="opcao" value="2">
-                    <p class="text-center"><input type="image" src="./imagens/botao_comprar2.png" onclick="window.location.replace('controler/controlerMinhasCompras.php');"></p>
+                    <p class="text-center"><input type="image"  onclick="carregaCompras();" src="./imagens/botao_comprar2.png"></p>
                 </form>
 
             </div>
