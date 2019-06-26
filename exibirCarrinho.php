@@ -57,26 +57,27 @@ session_start();
                         <tr align='center'>
                             <td> <?php echo $cont ?> </td>
                             <td> <?php echo "$bebida->nome, $bebida->volume" ?> </td>
-                    <form action="./controler/carrinhoControler.php" class="form-control-sm">
-                        <td><input class="form-control-sm col-xl-3" type="number" value="<?php echo $item->getQuantidade() ?>" name="quantidade">
-                            <input hidden="" value="7" name="opcao">
-                            <input hidden="" value="<?php echo $bebida->idBebida ?>" name="idBebida">
-                            &nbsp;&nbsp;<input type="image" src="imagens/addPequeno.png">
+                    
+                        <td>
+                            <input type="image" id="menos" onclick="menos(<?php echo $cont ?>)" src="imagens/menosPequeno.png">
+                            <input class="form-control-sm col-xl-3" type="number" style="text-align:center" value="<?php echo $item->getQuantidade() ?>" id="quantidade<?php echo $cont ?>">
+                            <input hidden="" value="<?php echo $bebida->idBebida ?>" id="idBebida<?php echo $cont ?>">
+                            <input type="image" id="mais" onclick="mais(<?php echo $cont ?>)" src="imagens/addPequeno.png">                            
                         </td> 
-                    </form>
+                    
 
-                    <td>R$ <?php echo $item->getValorItem() ?></td> 
+                        <td>R$ <?php echo $item->getValorItem() ?></td> 
 
-                    <td><a href="controler/carrinhoControler.php?opcao=2&index=<?php echo ($cont - 1) ?> "><img src="imagens/excluir.png"></a></td>
-                    </tr>                        
+                        <td><a href="controler/carrinhoControler.php?opcao=2&index=<?php echo ($cont - 1) ?> "><img src="imagens/excluir.png"></a></td>
+                        </tr>                        
 
-                    <?php
-                    $cont ++;
-                    $volume += $item->getQuantidade() * (int) $bebida->volume;
+                        <?php
+                        $cont ++;
+                        $volume += $item->getQuantidade() * (int) $bebida->volume;
 
-                    $valorTotal += $item->getValorItem();
-                }
-                ?>
+                        $valorTotal += $item->getValorItem();
+                    }
+                    ?>
                 <td colspan="3" align='right'>
                     Valor Parcial:
                 </td>
