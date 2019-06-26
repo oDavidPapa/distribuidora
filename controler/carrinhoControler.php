@@ -32,6 +32,7 @@ if ($opcao == 1) {
         foreach ($carrinho as $it) {
             if ($it->getIdBebida() == $item->getIdBebida()) {
                 $noCarrinho = true;
+                break;
             } else {
                 $noCarrinho = false;
             }
@@ -42,8 +43,7 @@ if ($opcao == 1) {
                 if ($it->getIdBebida() == $item->getIdBebida()) {
                     $bebida = $bebidaDAO->getBebida($idBebida);
                     $it->setValorItem($it->getValorItem() + $bebida->preco);
-                    $it->setQuantidade($it->getQuantidade() + 1);
-                    
+                    $it->setQuantidade($it->getQuantidade() + 1);                    
                 }
             }
         } else {
