@@ -33,7 +33,7 @@ session_start();
 
         <div class="container py-5 mb-1 text-center">
             <h4 class="text-center text-muted font-italic">Carrinho de Compras</h4>
-            <table id="tabela" class="table table-striped table-bordered">
+            <table id="tabela" class="table table-striped table-bordered table-hover">
                 <thead>
                     <tr>
                         <th>#</th>
@@ -60,13 +60,14 @@ session_start();
                     
                         <td>
                             <input type="image" id="menos" onclick="menos(<?php echo $cont ?>)" src="imagens/menosPequeno.png">
-                            <input class="form-control-sm col-xl-3" type="number" style="text-align:center" value="<?php echo $item->getQuantidade() ?>" id="quantidade<?php echo $cont ?>">
+                            &nbsp;<input class="form-control-sm col-xl-3" type="number" style="text-align:center" value="<?php echo $item->getQuantidade() ?>" id="quantidade<?php echo $cont ?>">
                             <input hidden="" value="<?php echo $bebida->idBebida ?>" id="idBebida<?php echo $cont ?>">
-                            <input type="image" id="mais" onclick="mais(<?php echo $cont ?>)" src="imagens/addPequeno.png">                            
+                            &nbsp;<input type="image" id="mais" onclick="mais(<?php echo $cont ?>)" src="imagens/addPequeno.png">                            
+                            
                         </td> 
                     
 
-                        <td>R$ <?php echo $item->getValorItem() ?></td> 
+                        <td >R$ <?php echo $item->getValorItem() ?></td> 
 
                         <td><a href="controler/carrinhoControler.php?opcao=2&index=<?php echo ($cont - 1) ?> "><img src="imagens/excluir.png"></a></td>
                         </tr>                        
@@ -78,13 +79,14 @@ session_start();
                         $valorTotal += $item->getValorItem();
                     }
                     ?>
-                <td colspan="3" align='right'>
-                    Valor Parcial:
-                </td>
-                <td colspan="2" align='center'>
-                    <?php echo "R$ " . number_format($valorTotal, 2, ',', '.'); ?>
-                </td>
-
+                <tfoot>
+                    <td colspan="3" align='right'>
+                        Valor Parcial:
+                    </td>
+                    <td colspan="2" align='center'>
+                        <?php echo "R$ " . number_format($valorTotal, 2, ',', '.'); ?>
+                    </td>
+                </tfoot>
 
                 </tbody>
             </table>
