@@ -12,7 +12,11 @@ session_start();
 
     <?php
     if (isset($_SESSION['usuario'])) {
-        include_once './include/menuNavegacaoLogado.php';
+        if ($_SESSION['usuario']->email == 'admin' && $_SESSION['usuario']->senha == 'admin') {
+            include_once './include/menuAdmin.php';
+        } else {
+            include_once './include/menuNavegacaoLogado.php';
+        }
     } else {
         include_once './include/menuNavegacao.php';
     }
@@ -57,19 +61,19 @@ session_start();
                         <tr align='center'>
                             <td> <?php echo $cont ?> </td>
                             <td> <?php echo "$bebida->nome, $bebida->volume" ?> </td>
-                    
-                        <td>
-                            <input type="image" id="menos" onclick="menos(<?php echo $cont ?>)" src="imagens/menosPequeno.png">
-                            &nbsp;<input class="form-control-sm col-xl-3" type="number" style="text-align:center" value="<?php echo $item->getQuantidade() ?>" id="quantidade<?php echo $cont ?>">
-                            <input hidden="" value="<?php echo $bebida->idBebida ?>" id="idBebida<?php echo $cont ?>">
-                            &nbsp;<input type="image" id="mais" onclick="mais(<?php echo $cont ?>)" src="imagens/addPequeno.png">                            
-                            
-                        </td> 
-                    
 
-                        <td >R$ <?php echo $item->getValorItem() ?></td> 
+                            <td>
+                                <input type="image" id="menos" onclick="menos(<?php echo $cont ?>)" src="imagens/menosPequeno.png">
+                                &nbsp;<input class="form-control-sm col-xl-3" type="number" style="text-align:center" value="<?php echo $item->getQuantidade() ?>" id="quantidade<?php echo $cont ?>">
+                                <input hidden="" value="<?php echo $bebida->idBebida ?>" id="idBebida<?php echo $cont ?>">
+                                &nbsp;<input type="image" id="mais" onclick="mais(<?php echo $cont ?>)" src="imagens/addPequeno.png">                            
 
-                        <td><a href="controler/carrinhoControler.php?opcao=2&index=<?php echo ($cont - 1) ?> "><img src="imagens/excluir.png"></a></td>
+                            </td> 
+
+
+                            <td >R$ <?php echo $item->getValorItem() ?></td> 
+
+                            <td><a href="controler/carrinhoControler.php?opcao=2&index=<?php echo ($cont - 1) ?> "><img src="imagens/excluir.png"></a></td>
                         </tr>                        
 
                         <?php
@@ -80,12 +84,12 @@ session_start();
                     }
                     ?>
                 <tfoot>
-                    <td colspan="3" align='right'>
-                        Valor Parcial:
-                    </td>
-                    <td colspan="2" align='center'>
-                        <?php echo "R$ " . number_format($valorTotal, 2, ',', '.'); ?>
-                    </td>
+                <td colspan="3" align='right'>
+                    Valor Parcial:
+                </td>
+                <td colspan="2" align='center'>
+                    <?php echo "R$ " . number_format($valorTotal, 2, ',', '.'); ?>
+                </td>
                 </tfoot>
 
                 </tbody>

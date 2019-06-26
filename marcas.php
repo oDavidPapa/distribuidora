@@ -4,7 +4,18 @@
 <body>
 
 
-    <?php include_once './include/menuNavegacao.php'; ?>
+    <?php
+     session_start();
+    if (isset($_SESSION['usuario'])) {
+        if ($_SESSION['usuario']->email == 'admin' && $_SESSION['usuario']->senha == 'admin') {
+            include_once './include/menuAdmin.php';
+        } else {
+            include_once './include/menuNavegacaoLogado.php';
+        }
+    } else {
+        include_once './include/menuNavegacao.php';
+    }
+    ?>
 
 
     <div class="row mb-5 pt-4 mr-2 ml-2">

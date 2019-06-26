@@ -16,8 +16,12 @@ $cidade = $cidadeDAO->getCidade($usuario->idCidade);
 <body>
 
     <?php
-    if (isset($_SESSION['usuario'])) {
-        include_once './include/menuNavegacaoLogado.php';
+        if (isset($_SESSION['usuario'])) {
+        if ($_SESSION['usuario']->email == 'admin' && $_SESSION['usuario']->senha == 'admin') {
+            include_once './include/menuAdmin.php';
+        } else {
+            include_once './include/menuNavegacaoLogado.php';
+        }
     } else {
         include_once './include/menuNavegacao.php';
     }

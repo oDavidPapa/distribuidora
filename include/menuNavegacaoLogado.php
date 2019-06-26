@@ -16,8 +16,6 @@
                 <li class ="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-white" href="#" data-toggle="dropdown" id="navDrop">Produto</a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="../distribuidora/formCadastroBebida.php">Cadastrar</a>
-                        <a class="dropdown-item" href="../distribuidora/controler/controlerBebida.php?opcao=2">Alterar/Excluir</a>
                         <a class="dropdown-item" href="../distribuidora/controler/carregandoProduto.php">Comprar</a>
                         
                     </div>

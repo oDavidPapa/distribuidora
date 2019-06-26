@@ -16,6 +16,8 @@
                 <li class ="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-white" href="#" data-toggle="dropdown" id="navDrop">Produto</a>
                     <div class="dropdown-menu">
+                        <a class="dropdown-item" href="../distribuidora/formCadastroBebida.php">Cadastrar</a>
+                        <a class="dropdown-item" href="../distribuidora/controler/controlerBebida.php?opcao=2">Alterar/Excluir</a>
                         <a class="dropdown-item" href="../distribuidora/controler/carregandoProduto.php">Comprar</a>
 
                     </div>
@@ -37,17 +39,22 @@
 
             </ul>
 
-            <!--
-            <form class="form-inline ml-5">
-                <input class="form-control ml-5 mr-2" type="search" placeholder="Buscar...">
-                <button class="btn btn-dark" type="subtmit">Ok</button>
-            </form>
-            -->
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item ml-1">
-                    <a class="nav-link text-white" href="./loginPage.php"> Login </a>
+            <?php
+            $usuario = $_SESSION['usuario'];
+            ?>
+
+            <ul class="navbar-nav ml-auto"> <!--ml-auto :  alinha a margem left da UL automáticamente --> 
+                <li class ="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" href="#" data-toggle="dropdown" id="navDrop"><?php echo"$usuario->nome" ?></a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="../distribuidora/contaCliente.php">Minha Conta</a>
+                        <a class="dropdown-item" href="../distribuidora/minhasCompras.php">Minhas Compras</a>
+                        <a class="dropdown-item" href="../distribuidora/controler/logoffControler.php?logoff=true">Sair</a>
+                    </div>
                 </li>
+
             </ul>
+
             <div class="collapse navbar-collapse" id="navbarSite">
                 <ul class="navbar-nav ml-auto"> <!--mr-auto :  alinha a margem right da UL automáticamente -->
                     <li class="nav-item">
