@@ -84,6 +84,7 @@ if ($opcao == 3) {
 
     if ($_REQUEST['quantidade'] > 0) {
         $quantidade = $_REQUEST['quantidade'];
+        $quantidade = $quantidade + 1;
     } else {
         $quantidade = 1;
     }
