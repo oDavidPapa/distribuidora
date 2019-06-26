@@ -107,4 +107,31 @@ if ($opcao == 3) {
         header("Location:carrinhoControler.php?opcao=3");
     }
 }
+if ($opcao == 8) {
+
+    if ($_REQUEST['quantidade'] > 1) {
+        $quantidade = $_REQUEST['quantidade'];
+        $quantidade = $quantidade - 1;
+    } else {
+        $quantidade = 1;
+    }
+
+
+    $idBebida = $_REQUEST['idBebida'];
+    $bebidaDAO = new BebidaDAO();
+    $bebida = $bebidaDAO->getBebida($idBebida);
+    $preco = (float) $bebida->preco;
+
+    session_start();
+    $carrinho = $_SESSION['carrinho'];
+
+    foreach ($carrinho as $item) {
+        if ($item->getIdBebida() == $bebida->idBebida) {
+            $item->setQuantidade($quantidade);
+            $item->setValorItem($preco * $quantidade);
+        }
+
+        header("Location:carrinhoControler.php?opcao=3");
+    }
+}
 ?>
