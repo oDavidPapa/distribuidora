@@ -43,7 +43,7 @@ if ($opcao == 1) {
                     $bebida = $bebidaDAO->getBebida($idBebida);
                     $it->setValorItem($it->getValorItem() + $bebida->preco);
                     $it->setQuantidade($it->getQuantidade() + 1);
-                    $carrinho[] = $item;
+                    
                 }
             }
         } else {
