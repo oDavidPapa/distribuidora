@@ -35,7 +35,7 @@ if ($opcao == 1) {
         header("Location:../exibirCarrinho.php");
     } else {
         $status = $_REQUEST['status'];
-        header("Location:../loginPage.php?status=".$status);
+        header("Location:../loginPage.php?status=" . $status);
     }
 }
 if ($opcao == 2) {
@@ -62,8 +62,12 @@ if ($opcao == 3) {
         header("Location:../exibirCarrinho.php");
     }
 } if ($opcao == 7) {
+    if ($_REQUEST['quantidade'] > 0) {
+        $quantidade = $_REQUEST['quantidade'];
+    } else {
+        $quantidade = 1;
+    }
 
-    $quantidade = $_REQUEST['quantidade'];
     $idBebida = $_REQUEST['idBebida'];
     $bebidaDAO = new BebidaDAO();
     $bebida = $bebidaDAO->getBebida($idBebida);

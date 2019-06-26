@@ -23,7 +23,7 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#contato"> Contatos </a>
+                    <a class="nav-link text-white" href="../distribuidora/index.php?#contato"> Contatos </a>
                 </li>
             </ul>
 
