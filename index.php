@@ -61,18 +61,18 @@
     <div class="container">
         <div class="col-5">
             <h5 class="font-italic text-center">Nossos Produtos</h5>
-            <p class="text-justify">Os produtos variam entre bebidas alcóolicas e não alcóolicas de diversas marcas já consolidadas no mercado brasileiro, atendendo a todos os públicos. Nossa equipe é responsável por suprir grande parte da demanda dos comércios do município de Alegre - ES, e conta também com uma consideravel fatia do mercado do Estado.
+            <p class="text-justify">Os produtos variam entre bebidas alcóolicas e não alcóolicas de diversas marcas já consolidadas no mercado brasileiro e internacional, atendendo a todos os públicos. Nossa equipe é responsável por suprir grande parte da demanda dos comércios do município de Alegre - ES, e conta também com uma considerável fatia do mercado do Estado.
                 Nosso atendimento fácil e personalizado garante total satisfação de nossos clientes, sejam eles empresas ou pessoas físicas buscando o melhor para seu evento de grande e médio porte. <a class="text-truncate" href="./controler/carregandoProduto.php">Adquirir nossos produtos.</a></p>
         </div>
         <div class="offset-6">
             <h5 class="font-italic text-center">Marcas</h5>
             <p class="text-justify">Trabalhamos em conjunto com as maiores produtoras de bebidas do Brasil e do Mundo, prezamos pela qualidade de nossos serviços e produtos, por isso escolhemos marcas já consolidadas no mercado para que nossos clientes se sintam seguros na hora de contar com nossa equipe.
-                Entre elas podemos destacar: <i>Antartica, Brahma, Budweiser, Corona, Skol, Stella Artois, Red Bull, Bacardi, Jhonnie Walker, Smirnoff</i>, entre outras.<br>
+                Entre elas podemos destacar: <i>Antartica, Brahma, Budweiser, Corona, Skol, Stella Artois, Red Bull, Bacardi, Jhonnie Walker, Smirnoff, Coca Cola, Do Bem</i>, entre outras.<br>
                 <br>Para mais informações acesse: <a class="text-truncate" href="marcas.php">Marcas.</a></p>
         </div>
         <div class="col-5" id="representantes">
             <h5 class="font-italic text-center">Representantes</h5>
-            <p class="text-justify">Atuamos na região sudeste do país, a expectativa é que possamos expandir os negócios para todas as regiões brasileiras, nosso foco atual estão nos Estados do Rio de Janeiro, Espírito Santo e Minas Gerais, com representantes nas seguintes cidades:<br> <b><br>Espírito Santo:</b> Alegre, Vitória, Linhares <br><b>Rio De Janeiro: </b>
+            <p class="text-justify">Atuamos na região sudeste do país, a expectativa é que possamos expandir os negócios para todas as regiões brasileiras. Nosso foco atual estão nos Estados do Rio de Janeiro, Espírito Santo e Minas Gerais, com representantes nas seguintes cidades:<br> <b><br>Espírito Santo:</b> Alegre, Vitória, Linhares <br><b>Rio De Janeiro: </b>
                 Rio de Janeiro, Niterói, Barra da Tijuca<br><b>Minas Gerais:</b> Belo Horizonte, Ipatinga, São Lourenço <br>
                 <br>
                 Para mais informações: <a class="text-truncate" href="#contato">Entre em contato conosco.</a></p></p>
