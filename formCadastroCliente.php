@@ -27,23 +27,24 @@
                     <div class="card-body ">
                         <h5 class="card-title text-muted mt-3 mb-3">Cadastro de Usuário</h5>
 
-                        <form name="form1" action="controler/controlerCliente.php" onSubmit="return validacao()"> 
+                        <form name="form1" action="controler/controlerCliente.php" onSubmit="return validacao(); return validacao2()"> 
                             <h6 class="text-muted text-justify"><label for="email">Dados Pessoais:</label></h6>
                             <div class="form-group mb-3">
-                                <input type="text" class="form-control" id="nomeInput" required="" name="nome" placeholder="Nome">
-                                <p><span id="campos"></span></p>
+                                <input type="text" class="form-control" id="nomeInput"  name="nome" onKeypress="return somenteLetra(event);" placeholder="Nome">
+                                <p><span id="campo1"></span></p>
+                                <p><span id="nome"></span></p>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" class="form-control" id="cnpjInput" required="" name="cnpj" onKeypress="return somenteNumero(event);" placeholder="CNPJ ou CPF">
+                                <input type="text" class="form-control" id="cnpjInput"  name="cnpj" onKeypress="return somenteNumero(event);" placeholder="CNPJ ou CPF">
+                                <p><span id="campo2"></span></p>
                                 <p><span id="doc"></span></p>
-                                <p><span id="doc2"></span></p>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" class="form-control" id="enderecoInput" required="" name="endereco" placeholder="Endereço. Ex: Rua, número, bairro">
-                                <p><span id="campos"></span></p>
+                                <input type="text" class="form-control" id="enderecoInput" name="endereco" placeholder="Endereço. Ex: Rua, número, bairro">
+                                <p><span id="campo3"></span></p>
                             </div>
                             <div class="form-group mb-3">
-                                <select class="form-control" required="" name="cidade">
+                                <select class="form-control" required = "" name="cidade">
                                     <option value="0">Selecione a cidade</option>
                                     <optgroup label="Espírito Santo">
                                         <option value="1">Alegre</option>
@@ -64,18 +65,21 @@
                             </div>
                             <h6 class="text-muted text-justify"><label for="email">Informações site:</label></h6>
                             <div class="form-group mb-3">
-                                <input type="text" class="form-control" id="emailInput" required="" name="email" placeholder="E-mail">
-                                <p><span id="campos"></span></p>
+                                <input type="text" class="form-control" id="emailInput"  name="email" onKeypress="return verificaEmail(event);" placeholder="E-mail">
+                                <p><span id="campo4"></span></p>
+                                <p><span id="email"></span></p>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="password" class="form-control" id="senhaInput" required="" name="senha" placeholder="Senha">
+                                <input type="password" class="form-control" id="senhaInput" name="senha" placeholder="Senha">
                                 <p><span id="erroSenha"></span></p>
-                                <p><span id="erroSenha2"></span></p>
+                                <p><span id="campo5"></span></p>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="password" class="form-control" id="senhaInput2" required="" name="confirmasenha" placeholder="Confirmar Senha">
-                                <p><span id="erroSenha3"></span></p>
+                                <input type="password" class="form-control" id="senhaInput2" name="confirmasenha" placeholder="Confirmar Senha">
+                                <p><span id="erroSenha2"></span></p>
+                                <p><span id="campo6"></span></p>
                             </div>
+                            <!--<p><span id="campo6"></span></p>-->
                             <div class="form-group mb-3">
                                 <input type="hidden" class="form-control" value="1" name="opcao">
                             </div>

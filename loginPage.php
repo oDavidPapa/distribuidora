@@ -39,7 +39,7 @@
                                     <label class="form-check-label mb-3 small" for="manterConectado">Manter-me conectado</label>
                                 </div>
                                 <p class="text-muted">Não possui conta?</p>
-                                <a class="card-link mt-0" href="./formCadastroCliente.php"> Cadastrar </a>
+                                <a class="card-link mt-0" href="./formCadastroCliente.php"> Cadastre-se</a>
                         </form>
 
                     </div>

@@ -1,6 +1,8 @@
 <?php
 session_start();
 include_once ('dao/CidadeDAO.php');
+include_once ('model/Cidade.php');
+
 $usuario = $_SESSION['usuario'];
 
 

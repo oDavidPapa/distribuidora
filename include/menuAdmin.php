@@ -18,7 +18,7 @@
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="../distribuidora/formCadastroBebida.php">Cadastrar</a>
                         <a class="dropdown-item" href="../distribuidora/controler/controlerBebida.php?opcao=2">Alterar/Excluir</a>
-                        <a class="dropdown-item" href="../distribuidora/controler/carregandoProduto.php">Comprar</a>
+                        <!--<a class="dropdown-item" href="../distribuidora/controler/carregandoProduto.php">Comprar</a>-->
 
                     </div>
                 </li>
@@ -48,7 +48,7 @@
                     <a class="nav-link dropdown-toggle text-white" href="#" data-toggle="dropdown" id="navDrop"><?php echo"$usuario->nome" ?></a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="../distribuidora/contaCliente.php">Minha Conta</a>
-                        <a class="dropdown-item" href="../distribuidora/minhasCompras.php">Minhas Compras</a>
+                        <!--<a class="dropdown-item" href="../distribuidora/minhasCompras.php">Minhas Compras</a>-->
                         <a class="dropdown-item" href="../distribuidora/controler/logoffControler.php?logoff=true">Sair</a>
                     </div>
                 </li>
