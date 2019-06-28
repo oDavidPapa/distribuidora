@@ -25,24 +25,35 @@
                     <div class="card-body ">
                         <h5 class="card-title text-muted mt-3 mb-3">Cadastro de Bebidas</h5>
 
-                        <form action="./controler/controlerBebida.php"> 
+                        <form name="form2" action="./controler/controlerBebida.php" onSubmit="return validacaoObrigatorio(); return tamanhocodigo();"> 
                             <div class="form-group mb-3">
-                                <input type="text" class="form-control" required="" id="nomeInput" name="idBebida" placeholder="Código">
+                                <input type="text" class="form-control" id="nomeInput" name="idBebida" onKeypress="return tamanhocodigo(event);" placeholder="Código">
+                                <p><span id="campo1"></span></p>
+                                <p><span id="cod"></span></p>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" class="form-control" required="" id="nomeInput" name="nome" placeholder="Nome">
+                                <input type="text" class="form-control" id="nomeInput" name="nome" onKeypress="return somenteLetraNome(event);" placeholder="Nome">
+                                <p><span id="campo2"></span></p>
+                                <p><span id="nome"></span></p>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" class="form-control" required="" id="cnpjInput" name="volume" placeholder="Volume L/ml">
+                                <input type="text" class="form-control" id="cnpjInput" name="volume" onKeypress="return somenteNumeroVolume(event);" placeholder="Volume L/ml">
+                                <p><span id="campo3"></span></p>
+                                <p><span id="vol"></span></p>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" class="form-control" required="" id="enderecoInput" name="preco" placeholder="Preço R$">
+                                <input type="text" class="form-control" id="enderecoInput" name="preco" onKeypress="return somenteNumeroPreco(event);" placeholder="Preço R$">
+                                <p><span id="campo4"></span></p>
+                                <p><span id="preco"></span></p>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" class="form-control" required="" id="cidadeInput" name="fabricante" placeholder="Fabricante">
+                                <input type="text" class="form-control" id="cidadeInput" name="fabricante" onKeypress="return somenteLetraFabricante(event);" placeholder="Fabricante">
+                                <p><span id="campo5"></span></p>
+                                <p><span id="fabricante"></span></p>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="number" class="form-control" required="" id="senhaInput" name="quantidadeEstoque" placeholder="Quantidade no Estoque">
+                                <input type="number" class="form-control" id="senhaInput" name="quantidadeEstoque" placeholder="Quantidade no Estoque">
+                                <p><span id="campo6"></span></p>
                             </div>
                             <div class="form-group mb-3">
                                 <input type="hidden" class="form-control" value="1" name="opcao">
