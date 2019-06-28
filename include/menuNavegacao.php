@@ -1,11 +1,11 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-gradient-primary">
     <div class="container">
-        <a class="navbar-brand h1 mb-0" href="../distribuidora/index.php" >Distribuidora</a> <!--mb-0 : Margem 0 do componente -->
+        <a class="navbar-brand h1 mb-0 py-0" href="../distribuidora/index.php" ><img src="../distribuidora/imagens/caminhaoPequeno.png"></a> <!--mb-0 : Margem 0 do componente -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">
             <span class="navbar-toggler-icon"></span>
         </button> 
 
-        <div class="collapse navbar-collapse" id="navbarSite">
+        <div class="collapse navbar-collapse ml-4" id="navbarSite">
             <ul class="navbar-nav mr-auto"> <!--mr-auto :  alinha a margem right da UL automáticamente -->
                 <li class="nav-item">
                     <a class="nav-link text-white" href="../distribuidora/index.php?#representantes"> Representantes </a>

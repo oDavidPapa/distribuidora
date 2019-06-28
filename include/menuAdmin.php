@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-gradient-primary">
     <div class="container">
-        <a class="navbar-brand h1 mb-0" href="../distribuidora/index.php" >Distribuidora</a> <!--mb-0 : Margem 0 do componente -->
+        <a class="navbar-brand h1 mb-0 py-0" href="../distribuidora/index.php" ><img src="../distribuidora/imagens/caminhaoPequeno.png"></a> <!--mb-0 : Margem 0 do componente -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">
             <span class="navbar-toggler-icon"></span>
         </button> 

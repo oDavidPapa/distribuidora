@@ -49,15 +49,15 @@ session_start();
                 </thead>
                 <tbody>
 
-                    <?php
-                    $bebidaDAO = new BebidaDAO();
-                    $cont = 1;
-                    $volume = 0;
-                    $valorTotal = 0;
-                    foreach ($carrinho as $item) {
+    <?php
+    $bebidaDAO = new BebidaDAO();
+    $cont = 1;
+    $volume = 0;
+    $valorTotal = 0;
+    foreach ($carrinho as $item) {
 
-                        $bebida = $bebidaDAO->getBebida($item->getIdBebida());
-                        ?>
+        $bebida = $bebidaDAO->getBebida($item->getIdBebida());
+        ?>
                         <tr align='center'>
                             <td> <?php echo $cont ?> </td>
                             <td> <?php echo "$bebida->nome, $bebida->volume" ?> </td>
@@ -76,19 +76,19 @@ session_start();
                             <td><a href="controler/carrinhoControler.php?opcao=2&index=<?php echo ($cont - 1) ?> "><img src="imagens/excluir.png"></a></td>
                         </tr>                        
 
-                        <?php
-                        $cont ++;
-                        $volume += $item->getQuantidade() * (int) $bebida->volume;
+        <?php
+        $cont ++;
+        $volume += $item->getQuantidade() * (int) $bebida->volume;
 
-                        $valorTotal += $item->getValorItem();
-                    }
-                    ?>
+        $valorTotal += $item->getValorItem();
+    }
+    ?>
                 <tfoot>
                 <td colspan="3" align='right'>
                     Valor Parcial:
                 </td>
                 <td colspan="2" align='center'>
-                    <?php echo "R$ " . number_format($valorTotal, 2, ',', '.'); ?>
+    <?php echo "R$ " . number_format($valorTotal, 2, ',', '.'); ?>
                 </td>
                 </tfoot>
 
@@ -111,92 +111,95 @@ session_start();
                 </thead>
                 <tbody>
                 <td>
-                    <?php echo $usuario->nome ?>
+    <?php echo $usuario->nome ?>
                 </td>
                 <td>
-                    <?php
-                    switch ($usuario->idCidade) {
-                        CASE 1:
-                            echo "$usuario->endereco, Alegre, ES";
-                            break;
-                        CASE 2:
-                            echo "$usuario->endereco, Vitória, ES";
-                            break;
-                        CASE 3:
-                            echo "$usuario->endereco, Linhares, ES";
-                            break;
-                        CASE 4:
-                            echo "$usuario->endereco, Rio de Janeiro, RJ";
-                            break;
-                        CASE 5:
-                            echo "$usuario->endereco, Niterói, RJ";
-                            break;
-                        CASE 6:
-                            echo "$usuario->endereco, Barra da Tijuca, RJ";
-                            break;
-                        CASE 7:
-                            echo "$usuario->endereco, Belo Horizonte, MG";
-                            break;
-                        CASE 8:
-                            echo "$usuario->endereco, Ipatinga, MG";
-                            break;
-                        CASE 9:
-                            echo "$usuario->endereco, São Lourenço, MG";
-                            break;
-                    }
-                    ?>
+    <?php
+    switch ($usuario->idCidade) {
+        CASE 0:
+            echo "Edereço Inválido, favor alterar sua cidade";
+            break;
+        CASE 1:
+            echo "$usuario->endereco, Alegre, ES";
+            break;
+        CASE 2:
+            echo "$usuario->endereco, Vitória, ES";
+            break;
+        CASE 3:
+            echo "$usuario->endereco, Linhares, ES";
+            break;
+        CASE 4:
+            echo "$usuario->endereco, Rio de Janeiro, RJ";
+            break;
+        CASE 5:
+            echo "$usuario->endereco, Niterói, RJ";
+            break;
+        CASE 6:
+            echo "$usuario->endereco, Barra da Tijuca, RJ";
+            break;
+        CASE 7:
+            echo "$usuario->endereco, Belo Horizonte, MG";
+            break;
+        CASE 8:
+            echo "$usuario->endereco, Ipatinga, MG";
+            break;
+        CASE 9:
+            echo "$usuario->endereco, São Lourenço, MG";
+            break;
+    }
+    ?>
                 </td>
                 <td>
-                    <?php
-                    switch ($usuario->idCidade) {
-                        CASE 1:
-                            $valor = ($volume * 0.9) / 1000;
-                            echo number_format($valor, 2, ',', '.');
-                            break;
-                        CASE 2:
-                            $valor = ($volume * 0.5) / 1000;
-                            echo number_format($valor, 2, ',', '.');
-                            break;
-                        CASE 3:
-                            $valor = ($volume * 0.7) / 1000;
-                            echo $valor;
-                            break;
-                        CASE 4:
-                            $valor = ($volume * 0.5) / 1000;
-                            echo number_format($valor, 2, ',', '.');
-                            break;
-                        CASE 5:
-                            $valor = ($volume * 0.7) / 1000;
-                            echo number_format($valor, 2, ',', '.');
-                            break;
-                        CASE 6:
-                            $valor = ($volume * 0.9) / 1000;
-                            echo number_format($valor, 2, ',', '.');
-                            break;
-                        CASE 7:
-                            $valor = ($volume * 0.5) / 1000;
+    <?php
+    switch ($usuario->idCidade) {
+        CASE 1:
+            $valor = ($volume * 0.9) / 1000;
+            echo number_format($valor, 2, ',', '.');
+            break;
+        CASE 2:
+            $valor = ($volume * 0.5) / 1000;
+            echo number_format($valor, 2, ',', '.');
+            break;
+        CASE 3:
+            $valor = ($volume * 0.7) / 1000;
+            echo $valor;
+            break;
+        CASE 4:
+            $valor = ($volume * 0.5) / 1000;
+            echo number_format($valor, 2, ',', '.');
+            break;
+        CASE 5:
+            $valor = ($volume * 0.7) / 1000;
+            echo number_format($valor, 2, ',', '.');
+            break;
+        CASE 6:
+            $valor = ($volume * 0.9) / 1000;
+            echo number_format($valor, 2, ',', '.');
+            break;
+        CASE 7:
+            $valor = ($volume * 0.5) / 1000;
 
-                            echo number_format($valor, 2, ',', '.');
-                            break;
-                        CASE 8:
-                            $valor = ($volume * 0.9) / 1000;
-                            echo number_format($valor, 2, ',', '.');
-                            break;
-                        CASE 9:
-                            $valor = ($volume * 0.7) / 1000;
-                            echo number_format($valor, 2, ',', '.');
-                            break;
-                    }
-                    ?>
+            echo number_format($valor, 2, ',', '.');
+            break;
+        CASE 8:
+            $valor = ($volume * 0.9) / 1000;
+            echo number_format($valor, 2, ',', '.');
+            break;
+        CASE 9:
+            $valor = ($volume * 0.7) / 1000;
+            echo number_format($valor, 2, ',', '.');
+            break;
+    }
+    ?>
                 </td>
                 <td>
-                    <?php echo number_format($valorTotal, 2, ',', '.'); ?>
+    <?php echo number_format($valorTotal, 2, ',', '.'); ?>
                 </td>
                 <td>
-                    <?php
-                    $valorFinalCompra = $valorTotal + $valor;
-                    echo number_format($valorFinalCompra, 2, ',', '.');
-                    ?>
+    <?php
+    $valorFinalCompra = $valorTotal + $valor;
+    echo number_format($valorFinalCompra, 2, ',', '.');
+    ?>
                 </td>
                 </tbody>
             </table>
@@ -204,7 +207,7 @@ session_start();
 
         </div>
 
-    <?php } ?>
+<?php } ?>
 
 
 </body>
