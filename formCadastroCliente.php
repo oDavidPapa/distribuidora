@@ -40,8 +40,9 @@
                                 <p><span id="doc"></span></p>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" class="form-control" id="enderecoInput" name="endereco" placeholder="Endereço. Ex: Rua, número, bairro">
+                                <input type="text" class="form-control" id="enderecoInput" name="endereco" onKeypress="return somenteLetraNumero(event);" placeholder="Endereço. Ex: Rua, número, bairro">
                                 <p><span id="campo3"></span></p>
+                                <p><span id="endereco"></span></p>
                             </div>
                             <div class="form-group mb-3">
                                 <select class="form-control" required = "" name="cidade">

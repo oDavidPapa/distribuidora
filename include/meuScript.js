@@ -107,6 +107,29 @@ function somenteNumero(e){
    }
 }
 
+function somenteLetraNumero(e){
+   var tecla = (window.event)?event.keyCode:e.which;
+   if (((tecla >= 33) && (tecla <= 43)) || ((tecla >= 46) && (tecla <= 47)) || ((tecla >= 58) && (tecla <= 64)) || ((tecla >= 91) && (tecla <= 94)) || ((tecla >= 96) && (tecla < 97)) || ((tecla >= 123) && (tecla <= 126))){
+      //acerto = document.getElementById('doc2');
+      //acerto.innerHTML = "<p>Documento Correto!</p>";
+      erro = document.getElementById('endereco');
+      erro.innerHTML = "<p>Endereço Incorreto! Inválido para caracteres especiais</p>";
+      document.form1.endereco.focus();
+      return false;
+      //return true;
+   }else{
+      if((tecla == 8) || (tecla == 0)){
+         return true;
+      }else{
+         //erro = document.getElementById('endereco');
+        //erro.innerHTML = "<p>Endereço Incorreto! Inválido para caracteres especiais</p>";
+         //document.form1.endereco.focus();
+         //return false;
+         return true;
+      }
+   }
+}
+
 function somenteLetra(e){
    var tecla = (window.event)?event.keyCode:e.which;
    if(((tecla >= 33) && (tecla <= 64)) || ((tecla >= 91) && (tecla <= 96)) || ((tecla >= 123) && (tecla <= 126))){
