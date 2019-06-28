@@ -73,7 +73,7 @@
                                 <input type="password" class="form-control" id="senhaInput" name="senha" placeholder="Senha">
                                 <p><span id="campo5"></span></p>
                                 <p><span id="erroSenha"></span></p>
-                                <!--<p><span id="erroSenha2"></span></p>
+                                <p><span id="erroSenha2"></span></p>
                                 
                             </div>
                             <div class="form-group mb-3">
