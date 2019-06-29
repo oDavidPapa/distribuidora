@@ -26,16 +26,19 @@
                     <div class="card-body ">
                         <h5 class="card-title text-muted mt-3 mb-3">Cadastro de Usuário</h5>
 
-                        <form action="controler/controlerCliente.php"> 
+                        <form name="form4" action="controler/controlerCliente.php" onSubmit="return verificaSenha()";> 
                             <h6 class="text-muted text-justify"><label for="email">Dados Pessoais:</label></h6>
                             <div class="form-group mb-3">
-                                <input type="text" class="form-control" id="nomeInput" required="" name="nome" placeholder="Nome" value="<?php echo $usuario->nome?>">
+                                <input type="text" class="form-control" id="nomeInput" name="nome" onKeypress="return somenteLetraNome(event);" placeholder="Nome" value="<?php echo $usuario->nome?>">
+                                <p><span id="nome"></span></p>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" class="form-control" id="cnpjInput" required="" name="cnpj" placeholder="CNPJ ou CPF" value="<?php echo $usuario->cnpj?>">
+                                <input type="text" class="form-control" id="cnpjInput"  name="cnpj" onKeypress="return somenteNumeroDoc(event);" placeholder="CNPJ ou CPF" value="<?php echo $usuario->cnpj?>">
+                                <p><span id="doc"></span></p>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" class="form-control" id="enderecoInput" required="" name="endereco" placeholder="Endereço. Ex: Rua, número, bairro" value="<?php echo $usuario->endereco?>">
+                                <input type="text" class="form-control" id="enderecoInput"  name="endereco" onKeypress="return somenteLetraNumeroEnd(event);" placeholder="Endereço. Ex: Rua, número, bairro" value="<?php echo $usuario->endereco?>">
+                                <p><span id="endereco"></span></p>
                             </div>
                             <div class="form-group mb-3">
                                 <select class="form-control" required="" name="cidade">
@@ -58,10 +61,16 @@
                                 </select>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="hidden" class="form-control" id="emailInput" required="" name="email" placeholder="E-mail" value="<?php echo $usuario->email?>">
+                                <input type="hidden" class="form-control" id="emailInput"  name="email" onKeypress="return verificaEmailAtualizacao(event);" placeholder="E-mail" value="<?php echo $usuario->email?>">
+                                <p><span id="email"></span></p>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="hidden" class="form-control" id="senhaInput" required="" name="senha" placeholder="Senha" value="<?php echo $usuario->senha?>">
+                                <input type="hidden" class="form-control" id="senhaInput" name="senha" placeholder="Senha" value="<?php echo $usuario->senha?>">
+                                <p><span id="erroSenha"></span></p>
+                            </div>
+                            <div class="form-group mb-3">
+                                <input type="password" class="form-control" id="senhaInput2" name="confirmasenha" placeholder="Confirmar Senha">
+                                <p><span id="erroconfi"></span></p>
                             </div>
                             <div class="form-group mb-3">
                                 <input type="hidden" name ="idCliente" value="<?php echo $usuario->idCliente ?>">   

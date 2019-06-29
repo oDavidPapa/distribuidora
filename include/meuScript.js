@@ -17,7 +17,7 @@ function validacao(){
    senha = document.form1.senha.value;
    senha2 = document.form1.confirmasenha.value;
    
-   if (senha != senha2){
+   if (senha == senha2){
       if(senha.length < 6){
          //erro = document.getElementById('erroSenha');
          //erro.innerHTML = "<p>A senha deverá conter no mínimo 6 caracteres!</p>";
@@ -28,16 +28,40 @@ function validacao(){
          //return false;
       }
       erro = document.getElementById('erroSenha');
-      erro.innerHTML = "<p>A senha deverá conter no mínimo 6 caracteres e no máximo 8!</p>";
+      erro.innerHTML = "<p>A senha deverá conter no mínimo 6 e no máximo 8 caracteres!</p>";
       document.form1.senha.focus();
       return false;
+   }else{
+      erro = document.getElementById('erroconfi');
+      erro.innerHTML = "<p>Confirmação de Senha Incorreta!</p>";
+      document.form1.senha.focus();
+      return false;   
+   }
+}
+
+/*function validacao(){
+   senha = document.form1.senha.value;
+   senha2 = document.form1.confirmasenha.value;
+   
+   if (senha != senha2){
+      if(senha.length < 6){
+         erro = document.getElementById('erroSenha');
+         erro.innerHTML = "<p>A senha deverá conter no mínimo 6 caracteres!</p>";
+         document.form1.senha.focus();
+         return false;
+      }else if(senha.length > 8){
+         erro = document.getElementById('erroSenha');
+         erro.innerHTML = "<p>A senha deverá conter no máximo 8 caracteres!</p>";
+         document.form1.senha.focus();
+         return false;
+      }
    }else{
       erro = document.getElementById('erroconfi');
       erro.innerHTML = "<p>Confirmação de Senha Incorreta!</p>";
       document.form1.senha2.focus();
       return false;   
    }
-}
+}*/
 
 // ----- PARA FAZER OS CAMPOS SEREM OBRIGATÓRIOS ------!
 /*function validacao2(){
@@ -135,6 +159,7 @@ function somenteLetra(e){
    if(((tecla >= 33) && (tecla <= 64)) || ((tecla >= 91) && (tecla <= 96)) || ((tecla >= 123) && (tecla <= 126))){
       erro = document.getElementById('nome');
       erro.innerHTML = "<p>Nome Incorreto! Digite somente Letras.</p>";
+      document.form1.nome.focus();
       return false;
    }else{
       if((tecla == 8) || (tecla == 0)){
@@ -150,7 +175,7 @@ function somenteLetra(e){
 
 function verificaEmail(e){
    var tecla = (window.event)?event.keyCode:e.which;
-   if (((tecla >= 32) && (tecla <= 44)) || ((tecla >= 46) && (tecla <= 47)) || ((tecla >= 58) && (tecla <= 63)) || ((tecla >= 91) && (tecla <= 94)) || ((tecla >= 96) && (tecla < 97)) || ((tecla >= 123) && (tecla <= 126)) || ((tecla >= 135) && (tecla <= 191))){
+   if (((tecla >= 32) && (tecla <= 44)) || ((tecla > 46) && (tecla <= 47)) || ((tecla >= 58) && (tecla <= 63)) || ((tecla >= 91) && (tecla <= 94)) || ((tecla >= 96) && (tecla < 97)) || ((tecla >= 123) && (tecla <= 126)) || ((tecla >= 135) && (tecla <= 191))){
       erro = document.getElementById('email');
       erro.innerHTML = "<p>E-mail Invalido! Informe o email no padrão correto!</p>";
       document.form1.email.focus();
@@ -213,9 +238,9 @@ function tamanhocodigo(e){
   codigo = document.form2.idBebida.value;
   var tecla = (window.event)?event.keyCode:e.which;
    
-   if((codigo.length == 7) || ((tecla >= 32) && (tecla <= 44)) || ((tecla >= 46) && (tecla <= 47)) || ((tecla >= 58) && (tecla <= 63)) || ((tecla >= 91) && (tecla <= 94)) || ((tecla >= 96) && (tecla < 97)) || ((tecla >= 123) && (tecla <= 126)) || ((tecla >= 135) && (tecla <= 191))){
+   if((codigo.length == 11) || ((tecla >= 32) && (tecla <= 44)) || ((tecla >= 46) && (tecla <= 47)) || ((tecla >= 58) && (tecla <= 63)) || ((tecla >= 91) && (tecla <= 94)) || ((tecla >= 96) && (tecla < 97)) || ((tecla >= 123) && (tecla <= 126)) || ((tecla >= 135) && (tecla <= 191))){
       erro = document.getElementById('cod');
-      erro.innerHTML = "<p>O código deverá ter 7 dígitos, incluindo números e letras!</p>";
+      erro.innerHTML = "<p>O código deverá ter no máximo 11 dígitos, incluindo números e letras!</p>";
       document.form2.idBebida.focus();
       return false;
    }else{
@@ -264,6 +289,7 @@ function somenteLetraNome(e){
    if(((tecla >= 33) && (tecla <= 64)) || ((tecla >= 91) && (tecla <= 96)) || ((tecla >= 123) && (tecla <= 126))){
       erro = document.getElementById('nome');
       erro.innerHTML = "<p>Nome Incorreto! Digite somente letras.</p>";
+      document.form2.nome.focus();
       return false;
    }else{
       if((tecla == 8) || (tecla == 0)){
@@ -282,6 +308,7 @@ function somenteLetraFabricante(e){
    if(((tecla >= 33) && (tecla <= 64)) || ((tecla >= 91) && (tecla <= 96)) || ((tecla >= 123) && (tecla <= 126))){
       erro = document.getElementById('fabricante');
       erro.innerHTML = "<p>Fabricante Incorreto! Digite somente letras.</p>";
+      document.form2.fabricante.focus();
       return false;
    }else{
       if((tecla == 8) || (tecla == 0)){
@@ -295,6 +322,204 @@ function somenteLetraFabricante(e){
    }
 }
 
+//---------- COMEÇA AQUI A VALIDAÇÃO DO FORMULÁRIO DE LOGIN DO USUÁRIO ------------
 
+function verificaEmailLogin(e){
+   var tecla = (window.event)?event.keyCode:e.which;
+   if (((tecla >= 32) && (tecla <= 44)) || ((tecla > 46) && (tecla <= 47)) || ((tecla >= 58) && (tecla <= 63)) || ((tecla >= 91) && (tecla <= 94)) || ((tecla >= 96) && (tecla < 97)) || ((tecla >= 123) && (tecla <= 126)) || ((tecla >= 135) && (tecla <= 191))){
+      erro = document.getElementById('email');
+      erro.innerHTML = "<p>E-mail Invalido! Informe o email no padrão correto!</p>";
+      document.form3.login.focus();
+      return false;
+   }else{
+      return true;
+   }
+}
+
+function verificaSenhaLogin(){
+   senha = document.form3.senha.value;
+   if((senha.length < 6) || (senha.length > 8)){
+      erro = document.getElementById('senha');
+      erro.innerHTML = "<p>A senha deverá conter no mínimo 6 caracteres e no máximo 8!</p>";
+      document.form3.senha.focus();
+      return false;
+   }else{
+      return true;
+   }   
+}
+
+//------- COMEÇA AQUI A VALIDAÇÃO DO FORMULARIO DE ATUALIZAÇÃO DO CLIENTE --------
+
+function somenteLetraNome(e){
+   var tecla = (window.event)?event.keyCode:e.which;
+   if(((tecla >= 33) && (tecla <= 64)) || ((tecla >= 91) && (tecla <= 96)) || ((tecla >= 123) && (tecla <= 126))){
+      erro = document.getElementById('nome');
+      erro.innerHTML = "<p>Nome Incorreto! Digite somente Letras.</p>";
+      document.form4.nome.focus();
+      return false;
+   }else{
+      if((tecla == 8) || (tecla == 0)){
+         return true;
+      }else{
+         //erro = document.getElementById('doc');
+         //erro.innerHTML = "<p>Documento Incorreto! Digite somente Numeros.</p>";
+         //document.form1.cnpj.focus();
+         return true;
+      }
+   }
+}
+
+function somenteNumeroDoc(e){
+   tam = document.form4.cnpj.value;
+   var tecla = (window.event)?event.keyCode:e.which;
+   if(((tecla > 47) && (tecla < 58)) && (tam.length < 14)){
+      //acerto = document.getElementById('doc2');
+      //acerto.innerHTML = "<p>Documento Correto!</p>";
+      return true;
+   }else{
+      if((tecla == 8) || (tecla == 0)){
+         return true;
+      }else{
+         erro = document.getElementById('doc');
+         erro.innerHTML = "<p>Documento Incorreto! Digite somente Numeros.</br>A quantidade de dígitos deverá ser no maximo 14!</p>";
+         document.form4.cnpj.focus();
+         return false;
+      }
+   }
+}
+
+function somenteLetraNumeroEnd(e){
+   var tecla = (window.event)?event.keyCode:e.which;
+   if (((tecla >= 33) && (tecla <= 43)) || ((tecla >= 46) && (tecla <= 47)) || ((tecla >= 58) && (tecla <= 64)) || ((tecla >= 91) && (tecla <= 94)) || ((tecla >= 96) && (tecla < 97)) || ((tecla >= 123) && (tecla <= 126))){
+      //acerto = document.getElementById('doc2');
+      //acerto.innerHTML = "<p>Documento Correto!</p>";
+      erro = document.getElementById('endereco');
+      erro.innerHTML = "<p>Endereço Incorreto! Inválido para caracteres especiais</p>";
+      document.form4.endereco.focus();
+      return false;
+      //return true;
+   }else{
+      if((tecla == 8) || (tecla == 0)){
+         return true;
+      }else{
+         //erro = document.getElementById('endereco');
+        //erro.innerHTML = "<p>Endereço Incorreto! Inválido para caracteres especiais</p>";
+         //document.form1.endereco.focus();
+         //return false;
+         return true;
+      }
+   }
+}
+
+function verificaEmailAtualizacao(e){
+   var tecla = (window.event)?event.keyCode:e.which;
+   if (((tecla >= 32) && (tecla <= 44)) || ((tecla > 46) && (tecla <= 47)) || ((tecla >= 58) && (tecla <= 63)) || ((tecla >= 91) && (tecla <= 94)) || ((tecla >= 96) && (tecla < 97)) || ((tecla >= 123) && (tecla <= 126)) || ((tecla >= 135) && (tecla <= 191))){
+      erro = document.getElementById('email');
+      erro.innerHTML = "<p>E-mail Invalido! Informe o email no padrão correto!</p>";
+      document.form4.email.focus();
+      return false;
+   }else{
+      return true;
+   }
+}
+
+/*FAZER TESTES NA SENHA TANTO AQUI QUANTO NA FUNÇÃO VALIDAÇÃO()*/
+
+function verificaSenha(){
+   senha = document.form4.senha.value;
+   senha2 = document.form4.confirmasenha.value;
+   
+   if (senha != senha2){
+      if((senha.length < 6) || (senha.length > 8)){
+         erro = document.getElementById('erroSenha');
+         erro.innerHTML = "<p>A senha deverá conter no mínimo 6 caracteres e no máximo 8!</p>";
+         document.form4.senha.focus();
+         return false;
+      }else {
+         return true;
+      }
+   }else{
+      erro = document.getElementById('erroconfi');
+      erro.innerHTML = "<p>Confirmação de Senha Incorreta!</p>";
+      document.form4.senha2.focus();
+      return false;   
+   }
+}
+
+//------- COMEÇA AQUI A VALIDAÇÃO DO FORMULARIO DE ATUALIZAÇÃO DE BEBIDAS --------
+
+function somenteLetraNome(e){
+   var tecla = (window.event)?event.keyCode:e.which;
+   if(((tecla >= 33) && (tecla <= 64)) || ((tecla >= 91) && (tecla <= 96)) || ((tecla >= 123) && (tecla <= 126))){
+      erro = document.getElementById('nome');
+      erro.innerHTML = "<p>Nome da Bebida Incorreto! Digite somente letras.</p>";
+      document.form5.nome.focus();
+      return false;
+   }else{
+      if((tecla == 8) || (tecla == 0)){
+         return true;
+      }else{
+         //erro = document.getElementById('doc');
+         //erro.innerHTML = "<p>Documento Incorreto! Digite somente Numeros.</p>";
+         //document.form1.cnpj.focus();
+         return true;
+      }
+   }
+}
+
+function somenteNumeroVolume(e){
+   var tecla = (window.event)?event.keyCode:e.which;
+   if(((tecla > 47) && (tecla < 58)) || ((tecla == 46))){
+      //acerto = document.getElementById('doc2');
+      //acerto.innerHTML = "<p>Documento Correto!</p>";
+      return true;
+   }else{
+      if((tecla == 8) || (tecla == 0)){
+         return true;
+      }else{
+         erro = document.getElementById('vol');
+         erro.innerHTML = "<p>Volume Incorreto! Informe o volume em ml. Dica: 1 l corresponde a 1.000 ml</p>";
+         document.form5.volume.focus();
+         return false;
+      }
+   }
+}
+
+function somenteNumeroPreco(e){
+   var tecla = (window.event)?event.keyCode:e.which;
+   if(((tecla > 47) && (tecla < 58)) || ((tecla == 46))){
+      //acerto = document.getElementById('doc2');
+      //acerto.innerHTML = "<p>Documento Correto!</p>";
+      return true;
+   }else{
+      if((tecla == 8) || (tecla == 0)){
+         return true;
+      }else{
+         erro = document.getElementById('preco');
+         erro.innerHTML = "<p>Preço Incorreto! Dica: 20.50</p>";
+         document.form5.preco.focus();
+         return false;
+      }
+   }
+}
+
+function somenteLetraFabricante(e){
+   var tecla = (window.event)?event.keyCode:e.which;
+   if(((tecla >= 33) && (tecla <= 64)) || ((tecla >= 91) && (tecla <= 96)) || ((tecla >= 123) && (tecla <= 126))){
+      erro = document.getElementById('fabricante');
+      erro.innerHTML = "<p>Fabricante Incorreto! Digite somente letras.</p>";
+      document.form5.fabricante.focus();
+      return false;
+   }else{
+      if((tecla == 8) || (tecla == 0)){
+         return true;
+      }else{
+         //erro = document.getElementById('doc');
+         //erro.innerHTML = "<p>Documento Incorreto! Digite somente Numeros.</p>";
+         //document.form1.cnpj.focus();
+         return true;
+      }
+   }
+}
 
  

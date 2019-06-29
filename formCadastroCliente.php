@@ -72,15 +72,14 @@
                             </div>
                             <div class="form-group mb-3">
                                 <input type="password" class="form-control" id="senhaInput" name="senha" placeholder="Senha">
-                                <p><span id="campo5"></span></p>
+                                <p><span id="campo4"></span></p>
                                 <p><span id="erroSenha"></span></p>
-                                <p><span id="erroSenha2"></span></p>
-                                
+                                <!--<p><span id="erroSenha2"></span></p>-->
                             </div>
                             <div class="form-group mb-3">
                                 <input type="password" class="form-control" id="senhaInput2" name="confirmasenha" placeholder="Confirmar Senha">
-                                <p><span id="erroconfi"></span></p>
                                 <p><span id="campo6"></span></p>
+                                <p><span id="erroconfi"></span></p>
                             </div>
                             <!--<p><span id="campo6"></span></p>-->
                             <div class="form-group mb-3">

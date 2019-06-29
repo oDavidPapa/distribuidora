@@ -29,24 +29,28 @@ $bebida = $_SESSION['bebida'];
                     <div class="card-body ">
                         <h5 class="card-title text-muted mt-3 mb-3">Cadastro de Bebidas</h5>
 
-                        <form action="./controler/controlerBebida.php"> 
+                        <form name="form5" action="./controler/controlerBebida.php"> 
                             <div class="form-group mb-3">
                                 <input type="text" class="form-control" value="<?php echo $bebida->idBebida?>"readonly name="idBebida">
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" class="form-control" required="" value="<?php echo $bebida->nome?>"  name="nome">
+                                <input type="text" class="form-control" onKeypress="return somenteLetraNome(event);" value="<?php echo $bebida->nome?>"  name="nome">
+                                <p><span id="nome"></span></p>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" class="form-control" required="" value="<?php echo $bebida->volume?>" name="volume">
+                                <input type="text" class="form-control" onKeypress="return somenteNumeroVolume(event);"  value="<?php echo $bebida->volume?>" name="volume">
+                                <p><span id="vol"></span></p>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" class="form-control" required="" value="<?php echo $bebida->preco?>"  name="preco">
+                                <input type="text" class="form-control" onKeypress="return somenteNumeroPreco(event);" value="<?php echo $bebida->preco?>"  name="preco">
+                                <p><span id="preco"></span></p>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" class="form-control" required="" value="<?php echo $bebida->fabricante?>" name="fabricante">
+                                <input type="text" class="form-control" onKeypress="return somenteLetraFabricante(event);" value="<?php echo $bebida->fabricante?>" name="fabricante">
+                                <p><span id="fabricante"></span></p>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="number" class="form-control" required="" value="<?php echo $bebida->quantidadeEstoque?>" name="quantidadeEstoque">
+                                <input type="number" class="form-control"  value="<?php echo $bebida->quantidadeEstoque?>" name="quantidadeEstoque">
                             </div>
                             <div class="form-group mb-3">
                                 <input type="hidden" class="form-control" value="5" name="opcao">

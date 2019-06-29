@@ -20,15 +20,16 @@
                 <div class="card text-center">
                     <div class="card-body">
                         <h5 class="card-title text-muted mb-4">Identificação do Usuário</h5>
-                        <form action="controler/loginControler.php">
+                        <form name="form3"  action="controler/loginControler.php">
                             <div class="form-group mb-3">
                                 <!--<h6 class="text-muted"><label for="email">Email</label></h6> -->
-                                <input type="text" class="form-control" required="" name="login" id="emailInput" placeholder="E-mail">
+                                <input type="text" class="form-control" name="login" onKeypress="return verificaEmailLogin(event);" id="emailInput" placeholder="E-mail">
+                                <p><span id="email"></span></p>
                             </div>
                             <div class="form-group mb-3">
                                 <!--<h6 class="text-muted"><label for="formGroupExampleInput2">Senha</label></h6>-->
-                                <input type="password" class="form-control" required="" name="senha" id="senhaInput" placeholder="Senha">
-                                
+                                <input type="password" class="form-control" name="senha" onClick="return verificaSenhaLogin();" id="senhaInput" placeholder="Senha">
+                                <p><span id="senha"></span></p>
                             </div>
                             <input type="hidden" value="<?php echo $status ?>" name="status">
                             <input type="submit" value="Entrar" class="btn texte-center btn-primary btn-lg btn-block pt-0 pb-0">
