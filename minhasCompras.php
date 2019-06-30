@@ -7,9 +7,14 @@ $usuario = $_SESSION['usuario'];
 include_once './include/cabecalho.php';
 include_once './model/Compra.php';
 include_once './dao/ClienteDAO.php';
+include_once './dao/CompraDAO.php';
+include_once './model/ItemCompra.php';
+include_once './dao/BebidaDAO.php';
 
 $clienteDAO = new ClienteDAO();
 $compras = $clienteDAO->getCompras();
+$compraDAO = new CompraDAO();
+$bebidaDAO = new BebidaDAO;
 
 function formatarData($pData) {
     return date('d/m/Y', $pData);
@@ -43,6 +48,7 @@ function formatarData($pData) {
             <table id="tabela" class="table table-striped table-bordered">
                 <thead>
                     <tr>
+                        <th>#</th>
                         <th>Código</th>
                         <th>Data</th>
                         <th>Frete</th>
@@ -54,18 +60,41 @@ function formatarData($pData) {
                 <tbody>
 
                     <?php
+                    $cont = 1;
                     foreach ($compras as $compra) {
                         echo "<tr>";
+                        echo "<td>" . $cont . "</td>";
                         echo "<td>" . $compra->idCompra . "</td>";
                         echo "<td>" . formatarData(strtotime($compra->dataCompra)) . "</td>";
                         echo "<td>R$ " . number_format($compra->valorFrete, 2, ',', '.') . "</td>";
                         echo "<td>R$ " . number_format($compra->valorTotal, 2, ',', '.') . "</td>";
+                        ?>
+                    <td><a data-toggle="collapse" href="#expandir<?php echo $cont ?>" aria-expanded="false" aria-controls="multiCollapseExample">Detalhes</a></td>
+                    <tr>
+                        <td class="collapse multi-collapse text-justify" colspan="4" id="expandir<?php echo $cont ?>">
 
-                        echo "<td>Detalhes</td>";
+                            <?php
+                            $itens = $compraDAO->getItens($compra->idCompra);
+                            foreach ($itens as $it) {
+                                echo $it->getIdItem() . " - ";
+                                $bebida = $bebidaDAO->getBebida($it->getIdBebida());
+                                echo $bebida->nome;
+                                echo "<br>Quantidade: " . $it->getQuantidade();
+                                echo "<br>Valor: " . $it->getValorItem();
+                                echo "<br>";
+                            }
+                            ?>
+                    </tr>
+                    </td>
+
+                    <tr>
+
+                        <?php
                         echo "</tr>";
+                        $cont ++;
                     }
                     ?>
-                </tbody>
+                    </tbody>
             </table>
             <br><br><br><br><br><br><br><br>
         </div>

@@ -1,8 +1,8 @@
 <?php
 
 include_once('Conexao.php');
-include_once('../model/Compra.php');
-include_once('../model/ItemCompra.php');
+include_once('../distribuidora/model/Compra.php');
+include_once('../distribuidora/model/ItemCompra.php');
 
 class CompraDAO {
 
@@ -58,6 +58,24 @@ class CompraDAO {
 
     private function converterDataMysql($data) {
         return date('Y-m-d', $data);
+    }
+
+    public function getItens($compra) {
+        $rs = $this->con->prepare("SELECT * FROM itensCompra WHERE idCompra = $compra");
+        $rs->execute();
+
+        $itens = array();
+
+        while ($row = $rs->fetch(PDO::FETCH_OBJ)) {
+            $item = new ItemCompra();
+            $item->setIdBebida($row->idBebida);
+            $item->setIdCompra($row->idCompra);
+            $item->setIdItem($row->idItem);
+            $item->setQuantidade($row->quantidade);
+            $item->setValorItem($row->valorItem);
+            $itens[] = $item;
+        }
+        return $itens;
     }
 
 }
