@@ -19,7 +19,7 @@
                 <div class="card text-center">
                     <div class="card-body">
                         <h5 class="card-title text-muted mb-4">Identificação do Usuário</h5>
-                        <form name="form3"  action="controler/loginControler.php" onSubmit="return verificaSenhaLogin()">
+                        <form name="form3"  action="controler/loginControler.php" onSubmit="return verificaSenhaLogin();">
                             <div class="form-group mb-3">
                                 <input type="text" class="form-control" name="login" onKeypress="return verificaEmailLogin(event);" id="emailInput" placeholder="E-mail">
                                 <p align="left"><span id="email"></span></p>
@@ -53,8 +53,6 @@ if (isset($_REQUEST['falhaLogin'])) {
     ?>
     <script>
         document.getElementById('senha').innerHTML = "<p><font size='2' color='red'>E-mail ou Senha Incorretos</font></p>";
-        document.form3.senha.focus();
-        document.form3.email.focus();
     </script>
     <?php
 }

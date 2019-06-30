@@ -347,11 +347,6 @@ function verificaSenhaLogin(){
 
 
     
-   var quantidade = parseInt(document.getElementById("quantidade"+cont).value);
-   var idBebida= document.getElementById("idBebida"+cont).value;
-   window.location.assign("controler/carrinhoControler.php?opcao=8&quantidade="+quantidade+"&idBebida="+idBebida);
-}
-
 //------- COMEÇA AQUI A VALIDAÇÃO DO FORMULARIO DE ATUALIZAÇÃO DO CLIENTE --------
 
 function somenteLetraNome(e){
