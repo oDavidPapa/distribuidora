@@ -345,14 +345,9 @@ function verificaSenhaLogin(){
    }   
 }
 
-function validaBanco(){
-    senha = document.form3.senha.value;
-    email = document.form3.email.value;
-    if(verificaSenha()){
-        
-    }
+
     
-    var quantidade = parseInt(document.getElementById("quantidade"+cont).value);
+   var quantidade = parseInt(document.getElementById("quantidade"+cont).value);
    var idBebida= document.getElementById("idBebida"+cont).value;
    window.location.assign("controler/carrinhoControler.php?opcao=8&quantidade="+quantidade+"&idBebida="+idBebida);
 }

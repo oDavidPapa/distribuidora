@@ -1,3 +1,7 @@
+###### ATENÇÃO ######
+ NO SCRIPT distribuidora.sql já estão todos esses cadastros;
+
+
 INSERT INTO bebidas(idBebida, nome, volume, preco, quantidadeEstoque, fabricante) VALUES('cerv001', 'Cerveja Premium Pilsen Lager','550', 7.99, 500, 'Stella Artois');
 INSERT INTO bebidas(idBebida, nome, volume, preco, quantidadeEstoque, fabricante) VALUES('cerv002', 'Cerveja Long Neck','343', 7.99, 500, 'Budweiser');
 INSERT INTO bebidas(idBebida, nome, volume, preco, quantidadeEstoque, fabricante) VALUES('cerv003', 'Cerveja Extra','355', 4.89, 500, 'Corona');
