@@ -31,45 +31,61 @@ function formatarData($pData) {
     ?>
 
 <body>
-
-    <div class="container py-5 mb-5 text-center">
-        <h4 class="text-center text-muted font-italic">Informações das compras</h4>
-        <table id="tabela" class="table table-striped table-bordered">
-
+    <div class="container py-4 mb-2 text-center">
+        <h4 class="text-center text-muted font-italic">Minhas Compras</h4>
 
     </div>
-<thead>
-    <tr>
-        <th>Código</th>
-        <th>Data</th>
-        <th>Frete</th>
-        <th>Total</th>
-        <th></th>
-        <!--<th></th>-->      
-    </tr>
-</thead>
-<tbody>
 
     <?php
-    foreach ($compras as $compra) {
-        echo "<tr align='center'>";
-        echo "<td>" . $compra->idCompra . "</td>";
-        echo "<td>" . formatarData(strtotime($compra->dataCompra)) . "</td>";
-        echo "<td>R$ " . number_format($compra->valorFrete, 2, ',', '.') . "</td>";
-        echo "<td>R$ " . number_format($compra->valorTotal, 2, ',', '.') . "</td>";
+    if (sizeof($compras) > 0) {
+        ?>
+        <div class="container mb-4 text-center">
+            <table id="tabela" class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Data</th>
+                        <th>Frete</th>
+                        <th>Total</th>
+                        <th></th>
+                        <!--<th></th>-->      
+                    </tr>
+                </thead>
+                <tbody>
 
-        echo "<td>Detalhes</td>";
-        echo "</tr>";
+                    <?php
+                    foreach ($compras as $compra) {
+                        echo "<tr>";
+                        echo "<td>" . $compra->idCompra . "</td>";
+                        echo "<td>" . formatarData(strtotime($compra->dataCompra)) . "</td>";
+                        echo "<td>R$ " . number_format($compra->valorFrete, 2, ',', '.') . "</td>";
+                        echo "<td>R$ " . number_format($compra->valorTotal, 2, ',', '.') . "</td>";
+
+                        echo "<td>Detalhes</td>";
+                        echo "</tr>";
+                    }
+                    ?>
+                </tbody>
+            </table>
+            <br><br><br><br><br><br><br><br>
+        </div>
+        <?php
+    } else {
+        echo "<div class='container'>";
+        echo "<div class='py-4 '>";
+        echo "<h4 class='text-center text-muted'><img src='imagens/ops.png'> Ops... Você ainda não possui compras!</h4>";
+        echo "<br><h5 class='text-center'><a href='controler/carregandoProduto.php' style='text-decoration:none'><img src='imagens/primeiraCompra.png'>&nbsp;&nbsp;Realizar Compras</a></h5>";
+        echo "<br><br><br><br><br>";
+        echo "</div></div>";
     }
     ?>
-</tbody>
-</table>
-</div>
 
+</div>
 </body>
 
 
 
 
 
-<?php include_once './include/rodape.php'; ?>
+<?php include_once './include/rodape.php';
+?>
