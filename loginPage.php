@@ -4,11 +4,10 @@
 
     <?php include_once './include/menuNavegacao.php'; ?>
     <?php
-    if(isset($_REQUEST['status'])){
+    if (isset($_REQUEST['status'])) {
         $status = $_REQUEST['status'];
     } else {
         $status = 0;
-        
     }
     ?>
 
@@ -20,16 +19,14 @@
                 <div class="card text-center">
                     <div class="card-body">
                         <h5 class="card-title text-muted mb-4">Identificação do Usuário</h5>
-                        <form name="form3"  action="controler/loginControler.php" onSubmit="return verificaSenhaLogin();">
+                        <form name="form3"  action="controler/loginControler.php" onSubmit="return verificaSenhaLogin()">
                             <div class="form-group mb-3">
-                                <!--<h6 class="text-muted"><label for="email">Email</label></h6> -->
                                 <input type="text" class="form-control" name="login" onKeypress="return verificaEmailLogin(event);" id="emailInput" placeholder="E-mail">
-                                <p><span id="email"></span></p>
+                                <p align="left"><span id="email"></span></p>
                             </div>
                             <div class="form-group mb-3">
-                                <!--<h6 class="text-muted"><label for="formGroupExampleInput2">Senha</label></h6>-->
                                 <input type="password" class="form-control" name="senha" id="senhaInput" placeholder="Senha">
-                                <p><span id="senha"></span></p>
+                                <p align="left"><span id="senha"></span></p>
                             </div>
                             <input type="hidden" value="<?php echo $status ?>" name="status">
                             <input type="submit" value="Entrar" class="btn texte-center btn-primary btn-lg btn-block pt-0 pb-0">
@@ -51,7 +48,17 @@
     </div>
 
 </div>
-
+<?php
+if (isset($_REQUEST['falhaLogin'])) {
+    ?>
+    <script>
+        document.getElementById('senha').innerHTML = "<p><font size='2' color='red'>E-mail ou Senha Incorretos</font></p>";
+        document.form3.senha.focus();
+        document.form3.email.focus();
+    </script>
+    <?php
+}
+?>
 </body>
 
 <?php include_once './include/rodape.php'; ?>

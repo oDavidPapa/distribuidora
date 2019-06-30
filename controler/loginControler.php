@@ -25,7 +25,7 @@ if ($status == 1) {
 
     if (!$validado) {
 
-        header("Location: ../loginPage.php");
+        header("Location: ../loginPage.php?falhaLogin=1");
     } else if ($validado && $manterConectado == 'on') {
         $_SESSION['lembrarUsuario'] = $validado;
         $usuario = $autentica->getUsuario($login, $senha);
@@ -42,7 +42,7 @@ if ($status == 1) {
 } else if ($status == 2) {
     if (!$validado) {
 
-        header("Location: ../loginPage.php");
+       header("Location: ../loginPage.php?falhaLogin=1");
     } else if ($validado && $manterConectado == 'on') {
         $_SESSION['lembrarUsuario'] = $validado;
         $usuario = $autentica->getUsuario($login, $senha);
@@ -59,7 +59,7 @@ if ($status == 1) {
 } else {
     if (!$validado) {
 
-        header("Location: ../loginPage.php");
+       header("Location: ../loginPage.php?falhaLogin=1");
     } else if ($validado && $manterConectado == 'on') {
         $_SESSION['lembrarUsuario'] = $validado;
         $usuario = $autentica->getUsuario($login, $senha);

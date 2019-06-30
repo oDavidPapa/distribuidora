@@ -96,7 +96,7 @@ session_start();
             </table>
             <p align="right"><a href="./controler/carregandoProduto.php"><img src="./imagens/botao_continuar_comprando.png"></a></p>
         </div>
-        <div class="container text-center py-2">
+    <div class="container text-center py-2" id="finalizarCompra">
             <h4 class="text-center text-muted font-italic">Detalhes do Pedido</h4>
             <table id="tabela" class="table table-striped table-bordered">
                 <thead>

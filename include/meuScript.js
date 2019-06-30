@@ -43,7 +43,7 @@ function validacao(){
    senha = document.form1.senha.value;
    senha2 = document.form1.confirmasenha.value;
    
-      if((senha.length < 6) || (senha.length > 8)){
+      if((senha.length < 3)){
          erro = document.getElementById('erroSenha');
          erro.innerHTML = "<p>A senha deverá conter no mínimo 6 e no maximo 8 caracteres!</p>";
          document.form1.senha.focus();
@@ -325,7 +325,7 @@ function verificaEmailLogin(e){
    var tecla = (window.event)?event.keyCode:e.which;
    if (((tecla >= 32) && (tecla <= 44)) || ((tecla > 46) && (tecla <= 47)) || ((tecla >= 58) && (tecla <= 63)) || ((tecla >= 91) && (tecla <= 94)) || ((tecla >= 96) && (tecla < 97)) || ((tecla >= 123) && (tecla <= 126)) || ((tecla >= 135) && (tecla <= 191))){
       erro = document.getElementById('email');
-      erro.innerHTML = "<p>E-mail Invalido! Informe o email no padrão correto!</p>";
+      erro.innerHTML = "<p><font size='2' color='red'>Digite apenas caracteres válidos</font></p>";
       document.form3.login.focus();
       return false;
    }else{
@@ -335,14 +335,26 @@ function verificaEmailLogin(e){
 
 function verificaSenhaLogin(){
    senha = document.form3.senha.value;
-   if((senha.length < 6) || (senha.length > 8)){
+   if((senha.length < 3)){
       erro = document.getElementById('senha');
-      erro.innerHTML = "<p>A senha deverá conter no mínimo 6 caracteres e no máximo 8!</p>";
+      erro.innerHTML = "<p><font size='2' color='red'>Senha Incorreta</font></p>";
       document.form3.senha.focus();
       return false;
    }else{
       return true;
    }   
+}
+
+function validaBanco(){
+    senha = document.form3.senha.value;
+    email = document.form3.email.value;
+    if(verificaSenha()){
+        
+    }
+    
+    var quantidade = parseInt(document.getElementById("quantidade"+cont).value);
+   var idBebida= document.getElementById("idBebida"+cont).value;
+   window.location.assign("controler/carrinhoControler.php?opcao=8&quantidade="+quantidade+"&idBebida="+idBebida);
 }
 
 //------- COMEÇA AQUI A VALIDAÇÃO DO FORMULARIO DE ATUALIZAÇÃO DO CLIENTE --------
