@@ -13,7 +13,7 @@ function menos(cont){
    window.location.assign("controler/carrinhoControler.php?opcao=8&quantidade="+quantidade+"&idBebida="+idBebida);
 }
 
-function validacao(){
+/*function validacao(){
    senha = document.form1.senha.value;
    senha2 = document.form1.confirmasenha.value;
    
@@ -34,34 +34,31 @@ function validacao(){
    }else{
       erro = document.getElementById('erroconfi');
       erro.innerHTML = "<p>Confirmação de Senha Incorreta!</p>";
-      document.form1.senha.focus();
-      return false;   
-   }
-}
-
-/*function validacao(){
-   senha = document.form1.senha.value;
-   senha2 = document.form1.confirmasenha.value;
-   
-   if (senha != senha2){
-      if(senha.length < 6){
-         erro = document.getElementById('erroSenha');
-         erro.innerHTML = "<p>A senha deverá conter no mínimo 6 caracteres!</p>";
-         document.form1.senha.focus();
-         return false;
-      }else if(senha.length > 8){
-         erro = document.getElementById('erroSenha');
-         erro.innerHTML = "<p>A senha deverá conter no máximo 8 caracteres!</p>";
-         document.form1.senha.focus();
-         return false;
-      }
-   }else{
-      erro = document.getElementById('erroconfi');
-      erro.innerHTML = "<p>Confirmação de Senha Incorreta!</p>";
-      document.form1.senha2.focus();
+      document.form1.confirmasenha.focus();
       return false;   
    }
 }*/
+
+function validacao(){
+   senha = document.form1.senha.value;
+   senha2 = document.form1.confirmasenha.value;
+   
+      if((senha.length < 6) || (senha.length > 8)){
+         erro = document.getElementById('erroSenha');
+         erro.innerHTML = "<p>A senha deverá conter no mínimo 6 e no maximo 8 caracteres!</p>";
+         document.form1.senha.focus();
+         return false;
+      }
+      if(senha == senha2){
+         erro = document.getElementById('erroconfi');
+         erro.innerHTML = "<p>Confirmação de Senha Incorreta!</p>";
+         document.form1.senha2.focus();
+      }
+      else{
+         return true;  
+      } 
+
+}
 
 // ----- PARA FAZER OS CAMPOS SEREM OBRIGATÓRIOS ------!
 /*function validacao2(){
