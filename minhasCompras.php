@@ -58,7 +58,7 @@ function formatarData($pData) {
         echo "<td>R$ " . number_format($compra->valorFrete, 2, ',', '.') . "</td>";
         echo "<td>R$ " . number_format($compra->valorTotal, 2, ',', '.') . "</td>";
 
-        echo "<td>Visualizar</td>";
+        echo "<td>Detalhes</td>";
         echo "</tr>";
     }
     ?>
