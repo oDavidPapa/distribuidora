@@ -34,13 +34,10 @@ $lista = $_SESSION['listaBebidas'];
                             <h6 class="card-subtitle text-center mb-2 text-muted"><?php echo "R$ $bebida->preco" ?></h6>
 
                             <p class="card-text text-center"><?php echo "$bebida->fabricante" ?></p>
-                            <!--                            <form class="form-inline">
-                                                            <p class="text-muted text-center">Quantidade: <input type="number" class="form-control col-4" required=""> </p>
-                                                        </form>-->
-                            <p class="text-center"> <?php echo "<a href='./controler/carrinhoControler.php?status=1&opcao=1&idBebida=" . $bebida->idBebida . "'><img src='imagens/btnComprar.png'></a>"; ?></p>
+                                                       
+                            <p class="text-center"> <?php echo "<a href='./controler/carrinhoControler.php?&opcao=1&idBebida=" . $bebida->idBebida . "'><img src='imagens/btnComprar.png'></a>"; ?></p>
 
-                                <!--<p class="text-center"><button class="btn btn-link" href="./controler/carrinhoControler.php?&idBebida=">Comprar</button></p>-->
-                                        <!--<p class="text-center"><a class="card-link" href="#">Comprar</a></p>-->
+                                
                         </div>
                     </div>
                 </div>

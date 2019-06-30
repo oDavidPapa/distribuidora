@@ -59,12 +59,14 @@ $cidade = $cidadeDAO->getCidade($usuario->idCidade);
                     echo "<td>" . $cidade->cidade .", ".$cidade->estado. "</td>";
 
                     echo "<td><a href='controler/controlerCliente.php?opcao=3&idCliente=" .$usuario->idCliente ."'><img src='imagens/editar.png'></a>&nbsp;";
-                    echo "</tr>";
+                    echo "</tr> <br><br>";
                 
                 ?>
             </tbody>
         </table>
+        
     </div>
+    <br><br><br><br>
         
 </body>
 
