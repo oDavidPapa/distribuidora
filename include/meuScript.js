@@ -29,7 +29,7 @@ function validacao(){
          //erro.innerHTML = "<p>A senha deverá conter no máximo 8 caracteres!</p>";
          //return false;*/
          erro = document.getElementById('erroSenha');
-         erro.innerHTML = "<p><font size='2' color='red'>A senha deverá conter no mínimo 3 dígitos!</p>";// e no máximo 8 caracteres!</p>";
+         erro.innerHTML = "<p><font size='2' color='red'>A senha deverá conter no mínimo 3 dígitos!</font></p>";// e no máximo 8 caracteres!</p>";
          document.form1.senha.blur();
          return false;
       }
@@ -40,7 +40,7 @@ function validacao(){
       //return false;
    }else{
       erro = document.getElementById('erroconfi');
-      erro.innerHTML = "<p><font size='2' color='red'>Confirmação de Senha Incorreta!</p>";
+      erro.innerHTML = "<p><font size='2' color='red'>Confirmação de Senha Incorreta!</font></p>";
       document.form1.confirmasenha.focus();
       return false;   
    }
@@ -128,7 +128,7 @@ function somenteNumero(e){
          return true;
       }else{
          erro = document.getElementById('doc');
-         erro.innerHTML = "<p><font size='2' color='red'>Documento Incorreto! Digite somente números. </br>A quantidade de dígitos deverá ser no máximo 14!</p>";
+         erro.innerHTML = "<p><font size='2' color='red'>Documento Incorreto! Digite somente números. </br>A quantidade de dígitos deverá ser no máximo 14!</font></p>";
          document.form1.cnpj.focus();
          return false;
       }
@@ -141,7 +141,7 @@ function somenteLetraNumero(e){
       //acerto = document.getElementById('doc2');
       //acerto.innerHTML = "<p>Documento Correto!</p>";
       erro = document.getElementById('endereco');
-      erro.innerHTML = "<p><font size='2' color='red'>Endereço Incorreto! Inválido para caracteres especiais.</p>";
+      erro.innerHTML = "<p><font size='2' color='red'>Endereço Incorreto! Inválido para caracteres especiais.</font></p>";
       document.form1.endereco.focus();
       return false;
       //return true;
@@ -162,7 +162,7 @@ function somenteLetra(e){
    var tecla = (window.event)?event.keyCode:e.which;
    if(((tecla >= 33) && (tecla <= 64)) || ((tecla >= 91) && (tecla <= 96)) || ((tecla >= 123) && (tecla <= 126))){
       erro = document.getElementById('nome');
-      erro.innerHTML = "<p><font size='2' color='red'>Nome Incorreto! Digite somente Letras.</p>";
+      erro.innerHTML = "<p><font size='2' color='red'>Nome Incorreto! Digite somente Letras.</font></p>";
       document.form1.nome.focus();
       return false;
    }else{
@@ -181,7 +181,7 @@ function verificaEmail(e){
    var tecla = (window.event)?event.keyCode:e.which;
    if (((tecla >= 32) && (tecla <= 44)) || ((tecla > 46) && (tecla <= 47)) || ((tecla >= 58) && (tecla <= 63)) || ((tecla >= 91) && (tecla <= 94)) || ((tecla >= 96) && (tecla < 97)) || ((tecla >= 123) && (tecla <= 126)) || ((tecla >= 135) && (tecla <= 191))){
       erro = document.getElementById('email');
-      erro.innerHTML = "<p><font size='2' color='red'>E-mail Invalido! Informe o email no padrão correto!</p>";
+      erro.innerHTML = "<p><font size='2' color='red'>E-mail Invalido! Informe o email no padrão correto!</font></p>";
       document.form1.email.focus();
       return false;
    }else{
@@ -204,32 +204,32 @@ function validacaoObrigatorio(){
       
       if (codigo == ""){
          erro = document.getElementById('campo1');
-         erro.innerHTML = "<p><font size='2' color='red'>Favor preencher o campo Codigo da Bebida acima!</p>";
+         erro.innerHTML = "<p><font size='2' color='red'>Favor preencher o campo Codigo da Bebida acima!</font></p>";
          document.form2.idBebida.focus();
          
       }else if(bebida == ""){
          erro = document.getElementById('campo2');
-         erro.innerHTML = "<p><font size='2' color='red'>Favor preencher o campo Nome da Bebida acima!</p>";
+         erro.innerHTML = "<p><font size='2' color='red'>Favor preencher o campo Nome da Bebida acima!</font></p>";
          document.form2.nome.focus();
       
       }else if (volume == ""){
          erro = document.getElementById('campo3');
-         erro.innerHTML = "<p><font size='2' color='red'>Favor preencher o campo Volume acima!</p>";
+         erro.innerHTML = "<p><font size='2' color='red'>Favor preencher o campo Volume acima!</font></p>";
          document.form2.volume.focus();   
       
       }else if (preco == ""){
          erro = document.getElementById('campo4');
-         erro.innerHTML = "<p><font size='2' color='red'>Favor preencher o campo Preco acima!</p>";
+         erro.innerHTML = "<p><font size='2' color='red'>Favor preencher o campo Preco acima!</font></p>";
          document.form2.preco.focus();
       
       }else if (fabricante == ""){
          erro = document.getElementById('campo5');
-         erro.innerHTML = "<p><font size='2' color='red'>Favor preencher o campo Fabricante acima!</p>";
+         erro.innerHTML = "<p><font size='2' color='red'>Favor preencher o campo Fabricante acima!</font></p>";
          document.form2.fabricante.focus();
       
       }else if (qntdestoque == ""){
          erro = document.getElementById('campo6');
-         erro.innerHTML = "<p><font size='2' color='red'>Favor preencher o campo Quantidade no Estoque acima!</p>";
+         erro.innerHTML = "<p><font size='2' color='red'>Favor preencher o campo Quantidade no Estoque acima!</font></p>";
          document.form2.quantidadeEstoque.focus();
       }
       return false;
@@ -244,7 +244,7 @@ function tamanhocodigo(e){
    
    if((codigo.length == 11) || ((tecla >= 32) && (tecla <= 44)) || ((tecla >= 46) && (tecla <= 47)) || ((tecla >= 58) && (tecla <= 63)) || ((tecla >= 91) && (tecla <= 94)) || ((tecla >= 96) && (tecla < 97)) || ((tecla >= 123) && (tecla <= 126)) || ((tecla >= 135) && (tecla <= 191))){
       erro = document.getElementById('cod');
-      erro.innerHTML = "<p><font size='2' color='red'>O código deverá ter no máximo 11 dígitos, incluindo números e letras!</p>";
+      erro.innerHTML = "<p><font size='2' color='red'>O código deverá ter no máximo 11 dígitos, incluindo números e letras!</font></p>";
       document.form2.idBebida.focus();
       return false;
    }else{
@@ -263,7 +263,7 @@ function somenteNumeroVolume(e){
          return true;
       }else{
          erro = document.getElementById('vol');
-         erro.innerHTML = "<p><font size='2' color='red'>Volume Incorreto! Informe o volume em ml. Dica: 1 l corresponde a 1.000 ml.</p>";
+         erro.innerHTML = "<p><font size='2' color='red'>Volume Incorreto! Informe o volume em ml. Dica: 1 l corresponde a 1.000 ml.</font></p>";
          document.form2.volume.focus();
          return false;
       }
@@ -281,7 +281,7 @@ function somenteNumeroPreco(e){
          return true;
       }else{
          erro = document.getElementById('preco');
-         erro.innerHTML = "<p><font size='2' color='red'>Preço Incorreto! Dica: 20.50</p>";
+         erro.innerHTML = "<p><font size='2' color='red'>Preço Incorreto! Dica: 20.50</font></p>";
          document.form2.preco.focus();
          return false;
       }
@@ -292,7 +292,7 @@ function somenteLetraNome(e){
    var tecla = (window.event)?event.keyCode:e.which;
    if(((tecla >= 33) && (tecla <= 64)) || ((tecla >= 91) && (tecla <= 96)) || ((tecla >= 123) && (tecla <= 126))){
       erro = document.getElementById('nome');
-      erro.innerHTML = "<p><font size='2' color='red'>Nome Incorreto! Digite somente letras.</p>";
+      erro.innerHTML = "<p><font size='2' color='red'>Nome Incorreto! Digite somente letras.</font></p>";
       document.form2.nome.focus();
       return false;
    }else{
@@ -311,7 +311,7 @@ function somenteLetraFabricante(e){
    var tecla = (window.event)?event.keyCode:e.which;
    if(((tecla >= 33) && (tecla <= 64)) || ((tecla >= 91) && (tecla <= 96)) || ((tecla >= 123) && (tecla <= 126))){
       erro = document.getElementById('fabricante');
-      erro.innerHTML = "<p><font size='2' color='red'>Fabricante Incorreto! Digite somente letras.</p>";
+      erro.innerHTML = "<p><font size='2' color='red'>Fabricante Incorreto! Digite somente letras.</font></p>";
       document.form2.fabricante.focus();
       return false;
    }else{
