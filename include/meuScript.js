@@ -337,7 +337,7 @@ function verificaSenhaLogin(){
    senha = document.form3.senha.value;
    if((senha.length < 3)){
       erro = document.getElementById('senha');
-      erro.innerHTML = "<p><font size='2' color='red'>Senha Incorreta</font></p>";
+      erro.innerHTML = "<p><font size='2' color='red'>Senha Inválida</font></p>";
       document.form3.senha.focus();
       return false;
    }else{
