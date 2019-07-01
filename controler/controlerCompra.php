@@ -18,30 +18,34 @@ if ($opcao == 1) {
     $_SESSION['valorFrete'] = $valorFrete;
 
     header("Location: ../informacaoCompra.php");
-} if($opcao == 2){
+} if ($opcao == 2) {
     session_start();
-    
+
     $valorTotal = $_SESSION['valorTotal'];
-    $valorFrete = $_SESSION['valorFrete'] ;
+    $valorFrete = $_SESSION['valorFrete'];
     $cliente = $_SESSION['usuario'];
-    
+
     $clienteDAO = new ClienteDAO();
     $cidadeCliente = $clienteDAO->getCidade($cliente->idCidade);
     $carrinho = $_SESSION['carrinho'];
     $_SESSION['cidadeCliente'] = $cidadeCliente->cidade;
     $_SESSION['estadoCliente'] = $cidadeCliente->estado;
-    
-    
+
+
     $compra = new Compra($cliente->idCliente, $valorTotal, $valorFrete);
     $compraDAO = new CompraDAO();
     $compraDAO->incluirCompra($compra, $carrinho);
-    
+
+    var_dump($carrinho);
     $formaPagamento = $_REQUEST['formaPagamento'];
-    
-    if($formaPagamento == 1){
-        header("Location: ../boleto/meuBoleto.php");
+
+
+    unset($_SESSION['carrinho']);
+
+    if ($formaPagamento == 1) {
+      header("Location: ../boleto/meuBoleto.php");
     } else {
-        echo "Tipo de pagamento Indisponível";
+     header("Location: ../boleto/meuBoleto.php");
     }
 }
 ?>

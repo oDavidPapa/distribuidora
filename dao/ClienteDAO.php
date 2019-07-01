@@ -1,7 +1,7 @@
 <?php
 
 include_once("Conexao.php");
-include_once '../distribuidora/model/Cliente.php';
+include_once "../distribuidora/model/Cliente.php";
 
 class ClienteDAO {
 

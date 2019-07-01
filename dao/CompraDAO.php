@@ -1,8 +1,8 @@
 <?php
 
 include_once('Conexao.php');
-include_once('../distribuidora/model/Compra.php');
-include_once('../distribuidora/model/ItemCompra.php');
+include_once('../model/Compra.php');
+include_once('../model/ItemCompra.php');
 
 class CompraDAO {
 
