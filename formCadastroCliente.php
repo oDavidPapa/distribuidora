@@ -31,18 +31,18 @@
                             <h6 class="text-muted text-justify"><label for="email">Dados Pessoais:</label></h6>
                             <div class="form-group mb-3">
                                 <input type="text" class="form-control" id="nomeInput"  name="nome" onKeypress="return somenteLetra(event);" placeholder="Nome">
-                                <p><span id="campo1"></span></p>
-                                <p><span id="nome"></span></p>
+                                <p align="left"><span id="campo1"></span></p>
+                                <p align="left"><span id="nome"></span></p>
                             </div>
                             <div class="form-group mb-3">
                                 <input type="text" class="form-control" id="cnpjInput"  name="cnpj" onKeypress="return somenteNumero(event);" placeholder="CNPJ ou CPF">
-                                <p><span id="campo2"></span></p>
-                                <p><span id="doc"></span></p>
+                                <p align="left"><span id="campo2"></span></p>
+                                <p align="left"><span id="doc"></span></p>
                             </div>
                             <div class="form-group mb-3">
                                 <input type="text" class="form-control" id="enderecoInput" name="endereco" onKeypress="return somenteLetraNumero(event);" placeholder="Endereço. Ex: Rua, número, bairro">
-                                <p><span id="campo3"></span></p>
-                                <p><span id="endereco"></span></p>
+                                <p align="left"><span id="campo3"></span></p>
+                                <p align="left"><span id="endereco"></span></p>
                             </div>
                             <div class="form-group mb-3">
                                 <select class="form-control" required = "" name="cidade">
@@ -67,20 +67,20 @@
                             <h6 class="text-muted text-justify"><label for="email">Informações site:</label></h6>
                             <div class="form-group mb-3">
                                 <input type="text" class="form-control" id="emailInput"  name="email" onKeypress="return verificaEmail(event);" placeholder="E-mail">
-                                <p><span id="campo4"></span></p>
-                                <p><span id="email"></span></p>
+                                <p align="left"><span id="campo4"></span></p>
+                                <p align="left"><span id="email"></span></p>
                             </div>
                             <div class="form-group mb-3">
                                 <input type="password" class="form-control" id="senhaInput" name="senha" placeholder="Senha">
-                                <p><span id="erroSenha"></span></p>
-                                <p><span id="campo4"></span></p>
+                                <p align="left"><span id="erroSenha"></span></p>
+                                <p align="left"><span id="campo4"></span></p>
                                 
                                 <!--<p><span id="erroSenha2"></span></p>-->
                             </div>
                             <div class="form-group mb-3">
                                 <input type="password" class="form-control" id="senhaInput2" name="confirmasenha" placeholder="Confirmar Senha">
-                                <p><span id="erroconfi"></span></p>
-                                <p><span id="campo6"></span></p>
+                                <p align="left"><span id="erroconfi"></span></p>
+                                <p align="left"><span id="campo6"></span></p>
                                 
                             </div>
                             <!--<p><span id="campo6"></span></p>-->

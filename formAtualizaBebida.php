@@ -35,19 +35,19 @@ $bebida = $_SESSION['bebida'];
                             </div>
                             <div class="form-group mb-3">
                                 <input type="text" class="form-control" onKeypress="return somenteLetraNome(event);" value="<?php echo $bebida->nome?>"  name="nome">
-                                <p><span id="nome"></span></p>
+                                <p align="left"><span id="nome"></span></p>
                             </div>
                             <div class="form-group mb-3">
                                 <input type="text" class="form-control" onKeypress="return somenteNumeroVolume(event);"  value="<?php echo $bebida->volume?>" name="volume">
-                                <p><span id="vol"></span></p>
+                                <p align="left"><span id="vol"></span></p>
                             </div>
                             <div class="form-group mb-3">
                                 <input type="text" class="form-control" onKeypress="return somenteNumeroPreco(event);" value="<?php echo $bebida->preco?>"  name="preco">
-                                <p><span id="preco"></span></p>
+                                <p align="left"><span id="preco"></span></p>
                             </div>
                             <div class="form-group mb-3">
                                 <input type="text" class="form-control" onKeypress="return somenteLetraFabricante(event);" value="<?php echo $bebida->fabricante?>" name="fabricante">
-                                <p><span id="fabricante"></span></p>
+                                <p align="left"><span id="fabricante"></span></p>
                             </div>
                             <div class="form-group mb-3">
                                 <input type="number" class="form-control"  value="<?php echo $bebida->quantidadeEstoque?>" name="quantidadeEstoque">
