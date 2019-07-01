@@ -1,7 +1,7 @@
 <?php
 session_start();
 $usuario = $_SESSION['usuario'];
-error_reporting(0); // PARA SUMIR OS WARNING
+error_reporting(0); // PARA SUMIR OS WARNINGs
 ?>
 
 <?php

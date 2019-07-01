@@ -76,6 +76,5 @@ $boleto = new BancoDoBrasil(array(
         ));
 
 echo $boleto->getOutput();
-unset($_SESSION['carrinho']);
 
 echo"</center>";
