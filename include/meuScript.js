@@ -53,12 +53,12 @@ function validacao(){
    
       if((senha.length < 3)){
          erro = document.getElementById('erroSenha');
-         erro.innerHTML = "<p><font size='2' color='red'>A senha deverá conter no mínimo 3 caracteres!</p>";
+         erro.innerHTML = "<p><font size='2' color='red'>A senha deverá conter no mínimo 3 caracteres!</font></p>";
          document.form1.senha.blur();
          return false;
       }else if(senha != senha2){
          erro = document.getElementById('erroconfi');
-         erro.innerHTML = "<p><font size='2' color='red'>Confirmação de Senha Incorreta!</p>";
+         erro.innerHTML = "<p><font size='2' color='red'>Confirmação de Senha Incorreta!</font></p>";
          document.form1.senha2.focus();
       }
       else{
@@ -81,32 +81,32 @@ function validacao(){
       
       if (nome == ""){
          erro = document.getElementById('campo1');
-         erro.innerHTML = "<p><font size='2' color='red'>Favor preencher o campo Nome acima!</p>";
+         erro.innerHTML = "<p><font size='2' color='red'>Favor preencher o campo Nome acima!</font></p>";
          document.form1.nome.focus();
          
       }else if(doc == ""){
          erro = document.getElementById('campo2');
-         erro.innerHTML = "<p><font size='2' color='red'>Favor preencher o campo Documento acima!</p>";
+         erro.innerHTML = "<p><font size='2' color='red'>Favor preencher o campo Documento acima!</font></p>";
          document.form1.cnpj.focus();
       
       }else if (endereco == ""){
          erro = document.getElementById('campo3');
-         erro.innerHTML = "<p><font size='2' color='red'>Favor preencher o campo Endereço acima!</p>";
+         erro.innerHTML = "<p><font size='2' color='red'>Favor preencher o campo Endereço acima!</font></p>";
          document.form1.endereco.focus();   
       
       }else if (email == ""){
          erro = document.getElementById('campo4');
-         erro.innerHTML = "<p><font size='2' color='red'>Favor preencher o campo Email acima!</p>";
+         erro.innerHTML = "<p><font size='2' color='red'>Favor preencher o campo Email acima!</font></p>";
          document.form1.email.focus();
       
       }else if (senha == ""){
          erro = document.getElementById('campo5');
-         erro.innerHTML = "<p><font size='2' color='red'>Favor preencher o campo Senha acima!</p>";
+         erro.innerHTML = "<p><font size='2' color='red'>Favor preencher o campo Senha acima!</font></p>";
          document.form1.senha.focus();
       
       }else if (confsenha == ""){
          erro = document.getElementById('campo6');
-         erro.innerHTML = "<p><font size='2' color='red'>Favor preencher o campo Confirma Senha acima!</p>";
+         erro.innerHTML = "<p><font size='2' color='red'>Favor preencher o campo Confirma Senha acima!</font></p>";
          document.form1.confirmasenha.focus();
       }
       return false;
@@ -300,7 +300,7 @@ function somenteLetraNome(e){
          return true;
       }else{
          //erro = document.getElementById('doc');
-         //erro.innerHTML = "<p><font size='2' color='red'>Documento Incorreto! Digite somente Numeros.</p>";
+         //erro.innerHTML = "<p><font size='2' color='red'>Documento Incorreto! Digite somente Numeros.</font></p>";
          //document.form1.cnpj.focus();
          return true;
       }
@@ -319,7 +319,7 @@ function somenteLetraFabricante(e){
          return true;
       }else{
          //erro = document.getElementById('doc');
-         //erro.innerHTML = "<p><font size='2' color='red'>Documento Incorreto! Digite somente Numeros.</p>";
+         //erro.innerHTML = "<p><font size='2' color='red'>Documento Incorreto! Digite somente Numeros.</font></p>";
          //document.form1.cnpj.focus();
          return true;
       }
@@ -360,7 +360,7 @@ function somenteLetraNome(e){
    var tecla = (window.event)?event.keyCode:e.which;
    if(((tecla >= 33) && (tecla <= 64)) || ((tecla >= 91) && (tecla <= 96)) || ((tecla >= 123) && (tecla <= 126))){
       erro = document.getElementById('nome');
-      erro.innerHTML = "<p><font size='2' color='red'>Nome Incorreto! Digite somente Letras.</p>";
+      erro.innerHTML = "<p><font size='2' color='red'>Nome Incorreto! Digite somente Letras.</font></p>";
       document.form4.nome.focus();
       return false;
    }else{
@@ -368,7 +368,7 @@ function somenteLetraNome(e){
          return true;
       }else{
          //erro = document.getElementById('doc');
-         //erro.innerHTML = "<p><font size='2' color='red'>Documento Incorreto! Digite somente Numeros.</p>";
+         //erro.innerHTML = "<p><font size='2' color='red'>Documento Incorreto! Digite somente Numeros.</font></p>";
          //document.form1.cnpj.focus();
          return true;
       }
@@ -380,14 +380,14 @@ function somenteNumeroDoc(e){
    var tecla = (window.event)?event.keyCode:e.which;
    if(((tecla > 47) && (tecla < 58)) && (tam.length < 14)){
       //acerto = document.getElementById('doc2');
-      //acerto.innerHTML = "<p><font size='2' color='red'>Documento Correto!</p>";
+      //acerto.innerHTML = "<p><font size='2' color='red'>Documento Correto!</font></p>";
       return true;
    }else{
       if((tecla == 8) || (tecla == 0)){
          return true;
       }else{
          erro = document.getElementById('doc');
-         erro.innerHTML = "<p><font size='2' color='red'>Documento Incorreto! Digite somente Numeros.</br>A quantidade de dígitos deverá ser no maximo 14!</p>";
+         erro.innerHTML = "<p><font size='2' color='red'>Documento Incorreto! Digite somente Numeros.</br>A quantidade de dígitos deverá ser no maximo 14!</font></p>";
          document.form4.cnpj.focus();
          return false;
       }
@@ -400,7 +400,7 @@ function somenteLetraNumeroEnd(e){
       //acerto = document.getElementById('doc2');
       //acerto.innerHTML = "<p>Documento Correto!</p>";
       erro = document.getElementById('endereco');
-      erro.innerHTML = "<p><font size='2' color='red'>Endereço Incorreto! Inválido para caracteres especiais</p>";
+      erro.innerHTML = "<p><font size='2' color='red'>Endereço Incorreto! Inválido para caracteres especiais</font></p>";
       document.form4.endereco.focus();
       return false;
       //return true;
@@ -409,7 +409,7 @@ function somenteLetraNumeroEnd(e){
          return true;
       }else{
          //erro = document.getElementById('endereco');
-        //erro.innerHTML = "<p><font size='2' color='red'>Endereço Incorreto! Inválido para caracteres especiais</p>";
+        //erro.innerHTML = "<p><font size='2' color='red'>Endereço Incorreto! Inválido para caracteres especiais.</font></p>";
          //document.form1.endereco.focus();
          //return false;
          return true;
@@ -421,7 +421,7 @@ function verificaEmailAtualizacao(e){
    var tecla = (window.event)?event.keyCode:e.which;
    if (((tecla >= 32) && (tecla <= 44)) || ((tecla > 46) && (tecla <= 47)) || ((tecla >= 58) && (tecla <= 63)) || ((tecla >= 91) && (tecla <= 94)) || ((tecla >= 96) && (tecla < 97)) || ((tecla >= 123) && (tecla <= 126)) || ((tecla >= 135) && (tecla <= 191))){
       erro = document.getElementById('email');
-      erro.innerHTML = "<p><font size='2' color='red'>E-mail Invalido! Informe o email no padrão correto!</p>";
+      erro.innerHTML = "<p><font size='2' color='red'>E-mail Invalido! Informe o email no padrão correto!</font></p>";
       document.form4.email.focus();
       return false;
    }else{
@@ -443,7 +443,7 @@ function verificaSenha(){
          //erro.innerHTML = "<p>A senha deverá conter no máximo 8 caracteres!</p>";
          //return false;*/
          erro = document.getElementById('erroSenha');
-         erro.innerHTML = "<p><font size='2' color='red'>A senha deverá conter no mínimo 3 dígitos!</p>";// e no máximo 8 caracteres!</p>";
+         erro.innerHTML = "<p><font size='2' color='red'>A senha deverá conter no mínimo 3 dígitos!</font></p>";// e no máximo 8 caracteres!</p>";
          document.form4.senha.blur();
          return false;
       }
@@ -454,7 +454,7 @@ function verificaSenha(){
       //return false;
    }else{
       erro = document.getElementById('erroconfi');
-      erro.innerHTML = "<p><font size='2' color='red'>Confirmação de Senha Incorreta!</p>";
+      erro.innerHTML = "<p><font size='2' color='red'>Confirmação de Senha Incorreta!</font></p>";
       document.form4.confirmasenha.focus();
       return false;   
    }
@@ -470,7 +470,7 @@ function verificaSenha(){
    if (senha != senha2){
       if((senha.length < 6) || (senha.length > 8)){
          erro = document.getElementById('erroSenha');
-         erro.innerHTML = "<p><font size='2' color='red'>A senha deverá conter no mínimo 3 caracteres</p>";
+         erro.innerHTML = "<p><font size='2' color='red'>A senha deverá conter no mínimo 3 caracteres.</font></p>";
          document.form4.senha.focus();
          return false;
       }else {
@@ -490,7 +490,7 @@ function somenteLetraNome(e){
    var tecla = (window.event)?event.keyCode:e.which;
    if(((tecla >= 33) && (tecla <= 64)) || ((tecla >= 91) && (tecla <= 96)) || ((tecla >= 123) && (tecla <= 126))){
       erro = document.getElementById('nome');
-      erro.innerHTML = "<p><font size='2' color='red'>Nome da Bebida Incorreto! Digite somente letras.</p>";
+      erro.innerHTML = "<p><font size='2' color='red'>Nome da Bebida Incorreto! Digite somente letras.</font></p>";
       document.form5.nome.focus();
       return false;
    }else{
@@ -498,7 +498,7 @@ function somenteLetraNome(e){
          return true;
       }else{
          //erro = document.getElementById('doc');
-         //erro.innerHTML = "<p><font size='2' color='red'>Documento Incorreto! Digite somente Numeros.</p>";
+         //erro.innerHTML = "<p><font size='2' color='red'>Documento Incorreto! Digite somente Numeros.</font></p>";
          //document.form1.cnpj.focus();
          return true;
       }
@@ -516,7 +516,7 @@ function somenteNumeroVolume(e){
          return true;
       }else{
          erro = document.getElementById('vol');
-         erro.innerHTML = "<p><font size='2' color='red'>Volume Incorreto! Informe o volume em ml. Dica: 1 l corresponde a 1.000 ml</p>";
+         erro.innerHTML = "<p><font size='2' color='red'>Volume Incorreto! Informe o volume em ml. Dica: 1 l corresponde a 1.000 ml</font></p>";
          document.form5.volume.focus();
          return false;
       }
@@ -527,14 +527,14 @@ function somenteNumeroPreco(e){
    var tecla = (window.event)?event.keyCode:e.which;
    if(((tecla > 47) && (tecla < 58)) || ((tecla == 46))){
       //acerto = document.getElementById('doc2');
-      //acerto.innerHTML = "<p><font size='2' color='red'>Documento Correto!</p>";
+      //acerto.innerHTML = "<p><font size='2' color='red'>Documento Correto!</font></p>";
       return true;
    }else{
       if((tecla == 8) || (tecla == 0)){
          return true;
       }else{
          erro = document.getElementById('preco');
-         erro.innerHTML = "<p><font size='2' color='red'>Preço Incorreto! Dica: 20.50</p>";
+         erro.innerHTML = "<p><font size='2' color='red'>Preço Incorreto! Dica: 20.50</font></p>";
          document.form5.preco.focus();
          return false;
       }
@@ -545,7 +545,7 @@ function somenteLetraFabricante(e){
    var tecla = (window.event)?event.keyCode:e.which;
    if(((tecla >= 33) && (tecla <= 64)) || ((tecla >= 91) && (tecla <= 96)) || ((tecla >= 123) && (tecla <= 126))){
       erro = document.getElementById('fabricante');
-      erro.innerHTML = "<p><font size='2' color='red'>Fabricante Incorreto! Digite somente letras.</p>";
+      erro.innerHTML = "<p><font size='2' color='red'>Fabricante Incorreto! Digite somente letras.</font></p>";
       document.form5.fabricante.focus();
       return false;
    }else{
@@ -553,7 +553,7 @@ function somenteLetraFabricante(e){
          return true;
       }else{
          //erro = document.getElementById('doc');
-         //erro.innerHTML = "<p><font size='2' color='red'>Documento Incorreto! Digite somente Numeros.</p>";
+         //erro.innerHTML = "<p><font size='2' color='red'>Documento Incorreto! Digite somente Numeros.</font></p>";
          //document.form1.cnpj.focus();
          return true;
       }
