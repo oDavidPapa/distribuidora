@@ -50,7 +50,7 @@ function formatarData($pData) {
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Código</th>
+                        <!--<th>Código</th>-->
                         <th>Data</th>
                         <th>Frete</th>
                         <th>Total</th>
@@ -65,7 +65,7 @@ function formatarData($pData) {
                     foreach ($compras as $compra) {
                         echo "<tr>";
                         echo "<td>" . $cont . "</td>";
-                        echo "<td>" . $compra->idCompra . "</td>";
+                        //echo "<td>" . $compra->idCompra . "</td>";
                         echo "<td>" . formatarData(strtotime($compra->dataCompra)) . "</td>";
                         echo "<td>R$ " . number_format($compra->valorFrete, 2, ',', '.') . "</td>";
                         echo "<td>R$ " . number_format($compra->valorTotal, 2, ',', '.') . "</td>";
