@@ -63,7 +63,7 @@ function formatarData($pData) {
                 <?php
                     $cont = 1;
                     foreach ($compras as $compra) {
-                        echo "<tr class='clickable' style='cursor: pointer;' data-toggle='collapse' data-target='#expandir$cont' aria-expanded='false' aria-controls='#expandir$cont'>";
+                        echo "<tr class='clickable font-weight-bold' style='cursor: pointer;' data-toggle='collapse' data-target='#expandir$cont' aria-expanded='false' aria-controls='#expandir$cont'>";
                         echo "<th scope='row'>" . $cont . "</th>";
                         echo "<td>" . formatarData(strtotime($compra->dataCompra)) . "</td>";
                         echo "<td>R$ " . number_format($compra->valorFrete, 2, ',', '.') . "</td>";

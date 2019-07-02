@@ -153,40 +153,40 @@ session_start();
     <?php
     switch ($usuario->idCidade) {
         CASE 1:
-            $valor = ($volume * 0.9) / 1000;
+            $valor = ($volume * 0.9) / 100;
             echo number_format($valor, 2, ',', '.');
             break;
         CASE 2:
-            $valor = ($volume * 0.5) / 1000;
+            $valor = ($volume * 0.5) / 100;
             echo number_format($valor, 2, ',', '.');
             break;
         CASE 3:
-            $valor = ($volume * 0.7) / 1000;
-            echo $valor;
+            $valor = ($volume * 0.7) / 100;
+            echo number_format($valor, 2, ',', '.');
             break;
         CASE 4:
-            $valor = ($volume * 0.5) / 1000;
+            $valor = ($volume * 0.5) / 100;
             echo number_format($valor, 2, ',', '.');
             break;
         CASE 5:
-            $valor = ($volume * 0.7) / 1000;
+            $valor = ($volume * 0.7) / 100;
             echo number_format($valor, 2, ',', '.');
             break;
         CASE 6:
-            $valor = ($volume * 0.9) / 1000;
+            $valor = ($volume * 0.9) / 100;
             echo number_format($valor, 2, ',', '.');
             break;
         CASE 7:
-            $valor = ($volume * 0.5) / 1000;
+            $valor = ($volume * 0.5) / 100;
 
             echo number_format($valor, 2, ',', '.');
             break;
         CASE 8:
-            $valor = ($volume * 0.9) / 1000;
+            $valor = ($volume * 0.9) / 100;
             echo number_format($valor, 2, ',', '.');
             break;
         CASE 9:
-            $valor = ($volume * 0.7) / 1000;
+            $valor = ($volume * 0.7) / 100;
             echo number_format($valor, 2, ',', '.');
             break;
     }
