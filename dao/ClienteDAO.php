@@ -87,7 +87,7 @@ class ClienteDAO {
         $usuario = $_SESSION['usuario'];
         $idCliente = $usuario->idCliente;
         
-        $sql = $this->con->prepare("SELECT * FROM compras WHERE idCliente = :idCliente");
+        $sql = $this->con->prepare("SELECT * FROM compras WHERE idCliente = :idCliente ORDER BY dataCompra DESC");
 
         $sql->bindValue(':idCliente', $idCliente);
         $sql->execute();
