@@ -46,15 +46,15 @@ function formatarData($pData) {
     if (sizeof($compras) > 0) {
         ?>
         <div class="container mb-4 text-center">
-            <table id="tabela" class="table table-striped table-bordered">
-                <thead class="">
+            <table id="tabela" class="table table-hover table-bordered">
+                <thead class="bg-gradient-primary text-white">
                     <tr>
                         <th>#</th>
                         <!--<th>Código</th>-->
                         <th>Data</th>
                         <th>Frete</th>
                         <th>Total</th>
-                        <th></th>
+                        
                     </tr>
                 </thead>
                 
@@ -63,42 +63,53 @@ function formatarData($pData) {
                 <?php
                     $cont = 1;
                     foreach ($compras as $compra) {
-                        echo "<tr>";
+                        echo "<tr class='clickable' style='cursor: pointer;' data-toggle='collapse' data-target='#expandir$cont' aria-expanded='false' aria-controls='#expandir$cont'>";
                         echo "<th scope='row'>" . $cont . "</th>";
                         echo "<td>" . formatarData(strtotime($compra->dataCompra)) . "</td>";
                         echo "<td>R$ " . number_format($compra->valorFrete, 2, ',', '.') . "</td>";
                         echo "<td>R$ " . number_format($compra->valorTotal, 2, ',', '.') . "</td>";
-                        ?>
-                    <td><a data-toggle="collapse" href="#expandir<?php echo $cont ?>" aria-expanded="false" aria-controls="multiCollapseExample">Detalhes</a></td>
-                    
-                    <tr class="collapse multi-collapse text-justify table-light" id="expandir<?php echo $cont ?>">
-                        <td></td>
-                        <td  colspan="4" >
-                            <?php
-                            $itens = $compraDAO->getItens($compra->idCompra);
-                            foreach ($itens as $it) {
-                               $bebida = $bebidaDAO->getBebida($it->getIdBebida());
-                                echo $bebida->nome;
-                                echo " Quantidade: " . $it->getQuantidade();
-                                echo " Valor: R$ " . number_format($it->getValorItem(), 2, ',', '.');
-                                echo "<br>";
-                            }
-                            ?>
-                    
-                        </td>
-                    </tr>
-
-                    <tr>
-
-                        <?php
                         echo "</tr>";
-                        $cont ++;
+                       
+                ?>
+
+                </tbody>    
+                
+                
+                <tbody class="collapse" id="expandir<?php echo $cont ?>">
+                    <?php
+                    $itens = $compraDAO->getItens($compra->idCompra);
+                    foreach ($itens as $it) {
+                        echo "<tr class='table-info'>";
+                        echo "<td></td>";
+                        
+                        echo "<td>";
+                        $bebida = $bebidaDAO->getBebida($it->getIdBebida());
+                        echo $bebida->nome;
+                        echo "</td>";
+
+                        echo "<td>";
+                        echo " Quantidade: " . $it->getQuantidade();
+                        echo "</td>";
+
+                        echo "<td>";
+                        echo " Valor: R$ " . number_format($it->getValorItem(), 2, ',', '.');
+                        echo "</td>";
+
+                        echo "</tr>";
+                        
                     }
                     ?>
-                    </tbody>
+                </tbody>
+
+                
+                <?php
+                    $cont ++;
+                    }
+                ?>
+
             </table>
             <br><br><br><br><br><br><br><br>
-        </div>
+        </div>        
         <?php
     } else {
         echo "<div class='container'>";
