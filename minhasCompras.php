@@ -73,7 +73,7 @@ function formatarData($pData) {
                     
                     <tr class="collapse multi-collapse text-justify table-light" id="expandir<?php echo $cont ?>">
                         <td></td>
-                        <td  colspan="3" >
+                        <td  colspan="4" >
                             <?php
                             $itens = $compraDAO->getItens($compra->idCompra);
                             foreach ($itens as $it) {
