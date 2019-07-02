@@ -29,15 +29,15 @@
                         <form name="form4" action="controler/controlerCliente.php" onSubmit="return verificaSenha()";> 
                             <h6 class="text-muted text-justify"><label for="email">Dados Pessoais:</label></h6>
                             <div class="form-group mb-3">
-                                <input type="text" class="form-control" id="nomeInput" name="nome" onKeypress="return somenteLetraNome(event);" placeholder="Nome" value="<?php echo $usuario->nome?>">
+                                <input type="text" class="form-control" id="nomeInput" name="nome" onKeypress="return somenteLetraCliente(event);" onChange="campoNomeCliente();" placeholder="Nome" value="<?php echo $usuario->nome?>">
                                 <p align="left"><span id="nome"></span></p>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" class="form-control" id="cnpjInput"  name="cnpj" onKeypress="return somenteNumeroDoc(event);" placeholder="CNPJ ou CPF" value="<?php echo $usuario->cnpj?>">
+                                <input type="text" class="form-control" id="cnpjInput"  name="cnpj" onKeypress="return somenteNumeroDoc(event);" onChange="campoDocCliente();" placeholder="CNPJ ou CPF" value="<?php echo $usuario->cnpj?>">
                                 <p align="left"><span id="doc"></span></p>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" class="form-control" id="enderecoInput"  name="endereco" onKeypress="return somenteLetraNumeroEnd(event);" placeholder="Endereço. Ex: Rua, número, bairro" value="<?php echo $usuario->endereco?>">
+                                <input type="text" class="form-control" id="enderecoInput"  name="endereco" onKeypress="return somenteLetraNumeroEnd(event);" onChange="campoEndeCliente();" placeholder="Endereço. Ex: Rua, número, bairro" value="<?php echo $usuario->endereco?>">
                                 <p align="left"><span id="endereco"></span></p>
                             </div>
                             <div class="form-group mb-3">
@@ -61,15 +61,15 @@
                                 </select>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="hidden" class="form-control" id="emailInput"  name="email" onKeypress="return verificaEmailAtualizacao(event);" placeholder="E-mail" value="<?php echo $usuario->email?>">
+                                <input type="hidden" class="form-control" id="emailInput"  name="email" onKeypress="return verificaEmailAtualizacao(event);" onChange="campoEmailCliente();" placeholder="E-mail" value="<?php echo $usuario->email?>">
                                 <p align="left"><span id="email"></span></p>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="hidden" class="form-control" id="senhaInput" name="senha" placeholder="Senha" value="<?php echo $usuario->senha?>">
+                                <input type="hidden" class="form-control" id="senhaInput" name="senha" onChange="campoSenhaCliente();" placeholder="Senha" value="<?php echo $usuario->senha?>">
                                 <p align="left"><span id="erroSenha"></span></p>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="password" class="form-control" id="senhaInput2" name="confirmasenha" placeholder="Confirmar Senha">
+                                <input type="password" class="form-control" id="senhaInput2" name="confirmasenha" onChange="campoConfiSenhaCliente();" placeholder="Confirmar Senha">
                                 <p align="left"><span id="erroconfi"></span></p>
                             </div>
                             <div class="form-group mb-3">

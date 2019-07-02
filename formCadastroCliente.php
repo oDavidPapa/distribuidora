@@ -27,25 +27,25 @@
                     <div class="card-body ">
                         <h5 class="card-title text-muted mt-3 mb-3">Cadastro de Usuário</h5>
 
-                        <form name="form1" action="controler/controlerCliente.php" onSubmit="return validacao(); return validacao2();"> <!-- pus ; aqui-->
+                        <form name="form1" action="controler/controlerCliente.php" onSubmit="return validacao();">
                             <h6 class="text-muted text-justify"><label for="email">Dados Pessoais:</label></h6>
                             <div class="form-group mb-3">
-                                <input type="text" class="form-control" id="nomeInput"  name="nome" onKeypress="return somenteLetra(event);" placeholder="Nome">
+                                <input type="text" class="form-control" id="nomeInput"  name="nome" onKeypress="return somenteLetra(event);" onChange="campo1();" onChange="campoNome();"  placeholder="Nome">
                                 <p align="left"><span id="campo1"></span></p>
                                 <p align="left"><span id="nome"></span></p>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" class="form-control" id="cnpjInput"  name="cnpj" onKeypress="return somenteNumero(event);" placeholder="CNPJ ou CPF">
+                                <input type="text" class="form-control" id="cnpjInput"  name="cnpj" onKeypress="return somenteNumero(event);" onChange="campo2();" onChange="campoDoc();"  placeholder="CNPJ ou CPF">
                                 <p align="left"><span id="campo2"></span></p>
                                 <p align="left"><span id="doc"></span></p>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" class="form-control" id="enderecoInput" name="endereco" onKeypress="return somenteLetraNumero(event);" placeholder="Endereço. Ex: Rua, número, bairro">
+                                <input type="text" class="form-control" id="enderecoInput" name="endereco" onKeypress="return somenteLetraNumero(event);" onChange="campo3();" onChange="campoEnde();" placeholder="Endereço. Ex: Rua, número, bairro">
                                 <p align="left"><span id="campo3"></span></p>
                                 <p align="left"><span id="endereco"></span></p>
                             </div>
                             <div class="form-group mb-3">
-                                <select class="form-control" required = "" name="cidade">
+                                <select class="form-control" name="cidade">
                                     <option value="0">Selecione a cidade</option>
                                     <optgroup label="Espírito Santo">
                                         <option value="1">Alegre</option>
@@ -63,24 +63,25 @@
                                         <option value="9">São Lourenço</option>
                                     </optgroup>
                                 </select>
+                                <p align="left"><span id="campo7"></span></p>
                             </div>
                             <h6 class="text-muted text-justify"><label for="email">Informações site:</label></h6>
                             <div class="form-group mb-3">
-                                <input type="text" class="form-control" id="emailInput"  name="email" onKeypress="return verificaEmail(event);" placeholder="E-mail">
+                                <input type="text" class="form-control" id="emailInput"  name="email" onKeypress="return verificaEmail(event);" onChange="campo4();" onChange="campoEmail();" placeholder="E-mail">
                                 <p align="left"><span id="campo4"></span></p>
                                 <p align="left"><span id="email"></span></p>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="password" class="form-control" id="senhaInput" name="senha" placeholder="Senha">
+                                <input type="password" class="form-control" id="senhaInput" name="senha" onChange="campo5();" onChange="campoSenha();" placeholder="Senha">
+                                <p align="left"><span id="campo5"></span></p>
                                 <p align="left"><span id="erroSenha"></span></p>
-                                <p align="left"><span id="campo4"></span></p>
                                 
                                 <!--<p><span id="erroSenha2"></span></p>-->
                             </div>
                             <div class="form-group mb-3">
-                                <input type="password" class="form-control" id="senhaInput2" name="confirmasenha" placeholder="Confirmar Senha">
-                                <p align="left"><span id="erroconfi"></span></p>
+                                <input type="password" class="form-control" id="senhaInput2" name="confirmasenha" onChange="campo6();" onChange="campoConfiSenha();" placeholder="Confirmar Senha">
                                 <p align="left"><span id="campo6"></span></p>
+                                <p align="left"><span id="erroconfi"></span></p>
                                 
                             </div>
                             <!--<p><span id="campo6"></span></p>-->

@@ -34,23 +34,24 @@ $bebida = $_SESSION['bebida'];
                                 <input type="text" class="form-control" value="<?php echo $bebida->idBebida?>"readonly name="idBebida">
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" class="form-control" onKeypress="return somenteLetraNome(event);" value="<?php echo $bebida->nome?>"  name="nome">
+                                <input type="text" class="form-control" onKeypress="return somenteLetraNomeBebida(event);" onChange="campoNomeBebida();" value="<?php echo $bebida->nome?>"  name="nome">
                                 <p align="left"><span id="nome"></span></p>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" class="form-control" onKeypress="return somenteNumeroVolume(event);"  value="<?php echo $bebida->volume?>" name="volume">
+                                <input type="text" class="form-control" onKeypress="return somenteNumeroVolumeBebida(event);"  onChange="campoVolumeBebida();" value="<?php echo $bebida->volume?>" name="volume">
                                 <p align="left"><span id="vol"></span></p>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" class="form-control" onKeypress="return somenteNumeroPreco(event);" value="<?php echo $bebida->preco?>"  name="preco">
+                                <input type="text" class="form-control" onKeypress="return somenteNumeroPrecoBebida(event);" onChange="campoPrecoBebida();" value="<?php echo $bebida->preco?>"  name="preco">
                                 <p align="left"><span id="preco"></span></p>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" class="form-control" onKeypress="return somenteLetraFabricante(event);" value="<?php echo $bebida->fabricante?>" name="fabricante">
+                                <input type="text" class="form-control" onKeypress="return somenteLetraFabricanteBebida(event);" onChange="campoFabricanteBebida();" value="<?php echo $bebida->fabricante?>" name="fabricante">
                                 <p align="left"><span id="fabricante"></span></p>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="number" class="form-control"  value="<?php echo $bebida->quantidadeEstoque?>" name="quantidadeEstoque">
+        <!-- era type:number --><input type="text" class="form-control" onKeypress="return somenteNumeroQuantidadeBebida(event);" onChange="campoQuantidadeBebida();"  value="<?php echo $bebida->quantidadeEstoque?>" name="quantidadeEstoque">
+                                <p align="left"><span id="quantidadeEstoque"></span></p>
                             </div>
                             <div class="form-group mb-3">
                                 <input type="hidden" class="form-control" value="5" name="opcao">

@@ -21,11 +21,11 @@
                         <h5 class="card-title text-muted mb-4">Identificação do Usuário</h5>
                         <form name="form3"  action="controler/loginControler.php" onSubmit="return verificaSenhaLogin();">
                             <div class="form-group mb-3">
-                                <input type="text" class="form-control" name="login" onKeypress="return verificaEmailLogin(event);" id="emailInput" placeholder="E-mail">
+                                <input type="text" class="form-control" name="login" onKeypress="return verificaEmailLogin(event);" onChange="campoEmail();"  id="emailInput" placeholder="E-mail">
                                 <p align="left"><span id="email"></span></p>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="password" class="form-control" name="senha" id="senhaInput" placeholder="Senha">
+                                <input type="password" class="form-control" name="senha" id="senhaInput" onChange="campoSenha();" placeholder="Senha">
                                 <p align="left"><span id="senha"></span></p>
                             </div>
                             <input type="hidden" value="<?php echo $status ?>" name="status">
